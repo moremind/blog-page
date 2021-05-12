@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Mybaits的参数处理 | Finen&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    <link rel="icon" href="/logo.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="Stay Hungry! Stay Foolish!">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/assets/css/0.styles.331bc503.css" as="style"><link rel="preload" href="/assets/js/app.8657dc36.js" as="script"><link rel="preload" href="/assets/js/3.655fda8f.js" as="script"><link rel="preload" href="/assets/js/30.ba0ae8b1.js" as="script"><link rel="preload" href="/assets/js/11.32858d9c.js" as="script"><link rel="prefetch" href="/assets/js/1.af5e15a9.js"><link rel="prefetch" href="/assets/js/10.3d57a2e0.js"><link rel="prefetch" href="/assets/js/12.cef9d203.js"><link rel="prefetch" href="/assets/js/13.02beb1f0.js"><link rel="prefetch" href="/assets/js/14.7efc03c9.js"><link rel="prefetch" href="/assets/js/15.6bbbab3f.js"><link rel="prefetch" href="/assets/js/16.f90edb71.js"><link rel="prefetch" href="/assets/js/17.0d4d6c13.js"><link rel="prefetch" href="/assets/js/18.76dd8979.js"><link rel="prefetch" href="/assets/js/19.7da82e6f.js"><link rel="prefetch" href="/assets/js/20.55ee1642.js"><link rel="prefetch" href="/assets/js/21.088a02d1.js"><link rel="prefetch" href="/assets/js/22.73d5a697.js"><link rel="prefetch" href="/assets/js/23.829e24c3.js"><link rel="prefetch" href="/assets/js/24.2f258433.js"><link rel="prefetch" href="/assets/js/25.0a52df22.js"><link rel="prefetch" href="/assets/js/26.1c66cc2f.js"><link rel="prefetch" href="/assets/js/27.aa781144.js"><link rel="prefetch" href="/assets/js/28.b2cf7947.js"><link rel="prefetch" href="/assets/js/29.b61b1598.js"><link rel="prefetch" href="/assets/js/31.7637d043.js"><link rel="prefetch" href="/assets/js/32.e552a016.js"><link rel="prefetch" href="/assets/js/33.334376b0.js"><link rel="prefetch" href="/assets/js/34.08c95f99.js"><link rel="prefetch" href="/assets/js/35.76b6b95d.js"><link rel="prefetch" href="/assets/js/36.539b6d80.js"><link rel="prefetch" href="/assets/js/37.850783a5.js"><link rel="prefetch" href="/assets/js/38.06c33708.js"><link rel="prefetch" href="/assets/js/39.85fc61d5.js"><link rel="prefetch" href="/assets/js/4.12c21fd1.js"><link rel="prefetch" href="/assets/js/40.cdc93796.js"><link rel="prefetch" href="/assets/js/41.be79357e.js"><link rel="prefetch" href="/assets/js/42.e1ea76e5.js"><link rel="prefetch" href="/assets/js/43.06bf748b.js"><link rel="prefetch" href="/assets/js/44.ebd514b5.js"><link rel="prefetch" href="/assets/js/45.12908515.js"><link rel="prefetch" href="/assets/js/46.78fb0130.js"><link rel="prefetch" href="/assets/js/47.1a3b6cfd.js"><link rel="prefetch" href="/assets/js/48.ef04cdb5.js"><link rel="prefetch" href="/assets/js/49.763fd944.js"><link rel="prefetch" href="/assets/js/5.e50a6b6f.js"><link rel="prefetch" href="/assets/js/50.c8a7a24d.js"><link rel="prefetch" href="/assets/js/51.aaa9e6c7.js"><link rel="prefetch" href="/assets/js/52.7d3a85df.js"><link rel="prefetch" href="/assets/js/53.00784a7d.js"><link rel="prefetch" href="/assets/js/54.bd3845dd.js"><link rel="prefetch" href="/assets/js/55.10a67e4b.js"><link rel="prefetch" href="/assets/js/56.eb909b5a.js"><link rel="prefetch" href="/assets/js/57.4b821666.js"><link rel="prefetch" href="/assets/js/58.1db8af1f.js"><link rel="prefetch" href="/assets/js/59.d3045373.js"><link rel="prefetch" href="/assets/js/6.f25d4964.js"><link rel="prefetch" href="/assets/js/60.e1ccc619.js"><link rel="prefetch" href="/assets/js/61.eca4de24.js"><link rel="prefetch" href="/assets/js/62.be7238a5.js"><link rel="prefetch" href="/assets/js/63.a6ace044.js"><link rel="prefetch" href="/assets/js/64.bbd88e61.js"><link rel="prefetch" href="/assets/js/65.1f6c1848.js"><link rel="prefetch" href="/assets/js/66.d22e96e8.js"><link rel="prefetch" href="/assets/js/67.80ad6427.js"><link rel="prefetch" href="/assets/js/68.130aa1f6.js"><link rel="prefetch" href="/assets/js/69.4b778299.js"><link rel="prefetch" href="/assets/js/7.9c54e368.js"><link rel="prefetch" href="/assets/js/70.edcac904.js"><link rel="prefetch" href="/assets/js/71.90aa842c.js"><link rel="prefetch" href="/assets/js/72.4cb8aeae.js"><link rel="prefetch" href="/assets/js/73.6f272f7b.js"><link rel="prefetch" href="/assets/js/74.d36a7a16.js"><link rel="prefetch" href="/assets/js/75.362400fa.js"><link rel="prefetch" href="/assets/js/76.140673a6.js"><link rel="prefetch" href="/assets/js/77.5f1336bf.js"><link rel="prefetch" href="/assets/js/78.6105e050.js"><link rel="prefetch" href="/assets/js/79.dd680c04.js"><link rel="prefetch" href="/assets/js/8.786d8198.js"><link rel="prefetch" href="/assets/js/80.ebfb944f.js"><link rel="prefetch" href="/assets/js/81.892d344c.js"><link rel="prefetch" href="/assets/js/9.b0b77105.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.331bc503.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Finen's Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/post/" class="nav-link">
+  文章
+</a></div><div class="nav-item"><a href="/archives/" class="nav-link">
+  归档
+</a></div><div class="nav-item"><a href="/tags/" class="nav-link">
+  标签云
+</a></div><div class="nav-item"><a href="/friends/" class="nav-link">
+  友人帐
+</a></div> <a href="https://github.com/hirCodd" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/post/" class="nav-link">
+  文章
+</a></div><div class="nav-item"><a href="/archives/" class="nav-link">
+  归档
+</a></div><div class="nav-item"><a href="/tags/" class="nav-link">
+  标签云
+</a></div><div class="nav-item"><a href="/friends/" class="nav-link">
+  友人帐
+</a></div> <a href="https://github.com/hirCodd" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <!----> </aside> <main class="page"> <div class="title-content"><div class="el-card box-cards is-never-shadow"><!----><div class="el-card__body"><h2>Mybaits的参数处理</h2> <div class="page-info"><i aria-hidden="true" class="el-icon-s-custom"></i> <span class="i-text">Finen</span> <i aria-hidden="true" class="el-icon-collection-tag"><span class="i-text">Mybatis</span></i> <i aria-hidden="true" class="el-icon-time"></i> <span class="i-text">2019-02-25</span> <span id="/blog/java/mybatis/mybatis-param-process.html" data-flag-title="Mybaits的参数处理" class="leancloud-visitors"><i aria-hidden="true" class="el-icon-view"></i> <i class="leancloud-visitors-count">1000000</i></span></div></div></div></div> <div class="theme-default-content content__default"><h2 id="mybaits的参数处理"><a href="#mybaits的参数处理" class="header-anchor">#</a> Mybaits的参数处理</h2> <h3 id="单个参数：mybatis不会做特殊处理"><a href="#单个参数：mybatis不会做特殊处理" class="header-anchor">#</a> 单个参数：mybatis不会做特殊处理</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>	#{参数}: 取出参数值
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="多个参数：mybatis会做特殊处理"><a href="#多个参数：mybatis会做特殊处理" class="header-anchor">#</a> 多个参数：mybatis会做特殊处理</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>	多个参数会被封装成一个map
+		key:param1...paraN,或者参数的索引也可以
+		value:传入的参数值
+	#{}就是从map中获取指定的key的值
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="多个参数："><a href="#多个参数：" class="header-anchor">#</a> 多个参数：</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>	异常
+	操作：
+		方法：public Employee getEmpByIdAndLastName(Integer id, String lastName);
+		取值：#{id}, #{lastName}
+		命名参数：明确的之处封装参数值的map的key：@Param(&quot;id&quot;)
+		多个参数会被封装成一个map
+			key:使用@Param注释指定的值
+			value:参数值
+		#{指定的key}取出对应的参数值
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h3 id="pojo"><a href="#pojo" class="header-anchor">#</a> POJO:</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code> 如果多个参数正好是我们业务逻辑的数据类型，我们就可以直接传入POJO
+ 	#{属性名}：取出传入的pojo的值
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="map"><a href="#map" class="header-anchor">#</a> Map:</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>如果多个参数不是我们业务模型的数据，没有对应的pojo，为了方便，我们也可以直接传入map
+	#{key}：取出map中对应的值
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="to"><a href="#to" class="header-anchor">#</a> TO:</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>如果多个参数不是业务模型中的数据，但是要经常使用，推荐来编写一个TO(Transfer Object)数据传输对象
+Page{
+	int index;
+	int size;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="mybaits中源码如何处理参数"><a href="#mybaits中源码如何处理参数" class="header-anchor">#</a> Mybaits中源码如何处理参数</h3> <div class="language-java line-numbers-mode"><pre class="language-java"><code>总结：参数多时会封装map，为了不混乱，我们可以使用<span class="token annotation punctuation">@Param</span>来指定封装时使用的key；
+#<span class="token punctuation">{</span>key<span class="token punctuation">}</span>就可以取出map中的值；
+
+<span class="token punctuation">(</span><span class="token annotation punctuation">@Param</span><span class="token punctuation">(</span><span class="token string">&quot;id&quot;</span><span class="token punctuation">)</span><span class="token class-name">Integer</span> id<span class="token punctuation">,</span><span class="token annotation punctuation">@Param</span><span class="token punctuation">(</span><span class="token string">&quot;lastName&quot;</span><span class="token punctuation">)</span><span class="token class-name">String</span> lastName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">ParamNameResolver</span>解析参数封装map的；
+<span class="token comment">//1、names：{0=id, 1=lastName}；构造器的时候就确定好了</span>
+
+	确定流程：
+	<span class="token number">1.</span>获取每个标了param注解的参数的<span class="token annotation punctuation">@Param</span>的值：id，lastName；  赋值给name<span class="token punctuation">;</span>
+	<span class="token number">2.</span>每次解析一个参数给map中保存信息：（key：参数索引，value：name的值）
+		name的值：
+			标注了param注解：注解的值
+			没有标注：
+				<span class="token number">1.</span>全局配置：useActualParamName（jdk1<span class="token punctuation">.</span><span class="token number">8</span>）：name<span class="token operator">=</span>参数名
+				<span class="token number">2.</span>name<span class="token operator">=</span>map<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span>；相当于当前元素的索引
+	<span class="token punctuation">{</span><span class="token number">0</span><span class="token operator">=</span>id<span class="token punctuation">,</span> <span class="token number">1</span><span class="token operator">=</span>lastName<span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">}</span>
+				
+args【<span class="token number">1</span>，<span class="token string">&quot;Tom&quot;</span><span class="token punctuation">,</span><span class="token string">'hello'</span>】<span class="token operator">:</span>
+
+
+<span class="token keyword">public</span> <span class="token class-name">Object</span> <span class="token function">getNamedParams</span><span class="token punctuation">(</span><span class="token class-name">Object</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">final</span> <span class="token keyword">int</span> paramCount <span class="token operator">=</span> names<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//1、参数为null直接返回</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>args <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> paramCount <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+     
+    <span class="token comment">//2、如果只有一个元素，并且没有Param注解；args[0]：单个参数直接返回</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>hasParamAnnotation <span class="token operator">&amp;&amp;</span> paramCount <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> args<span class="token punctuation">[</span>names<span class="token punctuation">.</span><span class="token function">firstKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      
+    <span class="token comment">//3、多个元素或者有Param标注</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">final</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">&gt;</span></span> param <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ParamMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Object</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      
+      <span class="token comment">//4、遍历names集合；{0=id, 1=lastName,2=2}</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Map</span><span class="token punctuation">.</span><span class="token class-name">Entry</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> entry <span class="token operator">:</span> names<span class="token punctuation">.</span><span class="token function">entrySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      
+      	<span class="token comment">//names集合的value作为key;  names集合的key又作为取值的参考args[0]:args【1，&quot;Tom&quot;】:</span>
+      	<span class="token comment">//eg:{id=args[0]:1,lastName=args[1]:Tom,2=args[2]}</span>
+        param<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>entry<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> args<span class="token punctuation">[</span>entry<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        
+        <span class="token comment">// add generic param names (param1, param2, ...)param</span>
+        <span class="token comment">//额外的将每一个参数也保存到map中，使用新的key：param1...paramN</span>
+        <span class="token comment">//效果：有Param注解可以#{指定的key}，或者#{param1}</span>
+        <span class="token keyword">final</span> <span class="token class-name">String</span> genericParamName <span class="token operator">=</span> GENERIC_NAME_PREFIX <span class="token operator">+</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// ensure not to overwrite parameter named with @Param</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>names<span class="token punctuation">.</span><span class="token function">containsValue</span><span class="token punctuation">(</span>genericParamName<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          param<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>genericParamName<span class="token punctuation">,</span> args<span class="token punctuation">[</span>entry<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        i<span class="token operator">++</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> param<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br></div></div><h3 id="参数的获取"><a href="#参数的获取" class="header-anchor">#</a> 参数的获取</h3> <div class="language-java line-numbers-mode"><pre class="language-java"><code>#<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token operator">:</span>可以获取map中的值或者pojo对象属性的值
+$<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token operator">:</span>可以获取map中的值或者pojo对象属性的值
+	区别：
+		#<span class="token punctuation">{</span><span class="token punctuation">}</span>：是以预编译的形式，将参数设置到sql语句中，<span class="token class-name">PrepareStatement</span>：防止sql诸如
+		$<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token operator">:</span> 取出的值直接拼装在sql语句；会有安全问题；无法防止sql注入
+			大多数情况下：我们去参数的值应该去使用#<span class="token punctuation">{</span><span class="token punctuation">}</span>
+			
+			
+			原生jdbc不支持占位符的地方我们就可以使用$<span class="token punctuation">{</span><span class="token punctuation">}</span>进行取值
+			比如分表：按照年份分表拆分
+				select <span class="token operator">*</span> from $<span class="token punctuation">{</span>year<span class="token punctuation">}</span>_salary where xxx<span class="token punctuation">;</span>
+				select <span class="token operator">*</span> from tbl_employee order by $<span class="token punctuation">{</span>f_name <span class="token punctuation">}</span>
+
+				
+#<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token operator">:</span>更加丰富的类型
+	规定参数的一些规则：
+	javaType、jdbcType、<span class="token class-name">Mode</span><span class="token punctuation">(</span>存储过程<span class="token punctuation">)</span>、numericalScale、
+	resultMap、typeHandle、jdbcTypeName、expression
+	
+	jdbcType通常需要在某种特定的条件下被设置：
+		在我们数据为<span class="token keyword">null</span>的时候，有些数据库不能识别mybatis对<span class="token keyword">null</span>的默认处理。比如<span class="token function">oracle</span><span class="token punctuation">(</span>报错<span class="token punctuation">)</span>；
+		jdbcType OTHER<span class="token operator">:</span>无效类型；因为mybatis对所有<span class="token keyword">null</span>都映射是原生jdbc的OTHER类型；
+		
+		由于全局配置中：jdbcTypeForNull<span class="token operator">=</span>OTHER；oracle不支持；两种办法
+		<span class="token number">1</span>、#<span class="token punctuation">{</span>email<span class="token punctuation">,</span>jdbcType<span class="token operator">=</span>OTHER<span class="token punctuation">}</span><span class="token punctuation">;</span>
+		<span class="token number">2</span>、jdbcTypeForNull<span class="token operator">=</span>NULL
+			<span class="token operator">&lt;</span>setting name<span class="token operator">=</span><span class="token string">&quot;jdbcTypeForNull&quot;</span> value<span class="token operator">=</span><span class="token string">&quot;NULL&quot;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <!---->  <div class="vcomment"><div id="vcomments"></div></div></main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.8657dc36.js" defer></script><script src="/assets/js/3.655fda8f.js" defer></script><script src="/assets/js/30.ba0ae8b1.js" defer></script><script src="/assets/js/11.32858d9c.js" defer></script>
+  </body>
+</html>

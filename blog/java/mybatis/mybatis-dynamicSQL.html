@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Mybatis动态SQL | Finen&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    <link rel="icon" href="/logo.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="Stay Hungry! Stay Foolish!">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/assets/css/0.styles.331bc503.css" as="style"><link rel="preload" href="/assets/js/app.8657dc36.js" as="script"><link rel="preload" href="/assets/js/3.655fda8f.js" as="script"><link rel="preload" href="/assets/js/29.b61b1598.js" as="script"><link rel="preload" href="/assets/js/11.32858d9c.js" as="script"><link rel="prefetch" href="/assets/js/1.af5e15a9.js"><link rel="prefetch" href="/assets/js/10.3d57a2e0.js"><link rel="prefetch" href="/assets/js/12.cef9d203.js"><link rel="prefetch" href="/assets/js/13.02beb1f0.js"><link rel="prefetch" href="/assets/js/14.7efc03c9.js"><link rel="prefetch" href="/assets/js/15.6bbbab3f.js"><link rel="prefetch" href="/assets/js/16.f90edb71.js"><link rel="prefetch" href="/assets/js/17.0d4d6c13.js"><link rel="prefetch" href="/assets/js/18.76dd8979.js"><link rel="prefetch" href="/assets/js/19.7da82e6f.js"><link rel="prefetch" href="/assets/js/20.55ee1642.js"><link rel="prefetch" href="/assets/js/21.088a02d1.js"><link rel="prefetch" href="/assets/js/22.73d5a697.js"><link rel="prefetch" href="/assets/js/23.829e24c3.js"><link rel="prefetch" href="/assets/js/24.2f258433.js"><link rel="prefetch" href="/assets/js/25.0a52df22.js"><link rel="prefetch" href="/assets/js/26.1c66cc2f.js"><link rel="prefetch" href="/assets/js/27.aa781144.js"><link rel="prefetch" href="/assets/js/28.b2cf7947.js"><link rel="prefetch" href="/assets/js/30.ba0ae8b1.js"><link rel="prefetch" href="/assets/js/31.7637d043.js"><link rel="prefetch" href="/assets/js/32.e552a016.js"><link rel="prefetch" href="/assets/js/33.334376b0.js"><link rel="prefetch" href="/assets/js/34.08c95f99.js"><link rel="prefetch" href="/assets/js/35.76b6b95d.js"><link rel="prefetch" href="/assets/js/36.539b6d80.js"><link rel="prefetch" href="/assets/js/37.850783a5.js"><link rel="prefetch" href="/assets/js/38.06c33708.js"><link rel="prefetch" href="/assets/js/39.85fc61d5.js"><link rel="prefetch" href="/assets/js/4.12c21fd1.js"><link rel="prefetch" href="/assets/js/40.cdc93796.js"><link rel="prefetch" href="/assets/js/41.be79357e.js"><link rel="prefetch" href="/assets/js/42.e1ea76e5.js"><link rel="prefetch" href="/assets/js/43.06bf748b.js"><link rel="prefetch" href="/assets/js/44.ebd514b5.js"><link rel="prefetch" href="/assets/js/45.12908515.js"><link rel="prefetch" href="/assets/js/46.78fb0130.js"><link rel="prefetch" href="/assets/js/47.1a3b6cfd.js"><link rel="prefetch" href="/assets/js/48.ef04cdb5.js"><link rel="prefetch" href="/assets/js/49.763fd944.js"><link rel="prefetch" href="/assets/js/5.e50a6b6f.js"><link rel="prefetch" href="/assets/js/50.c8a7a24d.js"><link rel="prefetch" href="/assets/js/51.aaa9e6c7.js"><link rel="prefetch" href="/assets/js/52.7d3a85df.js"><link rel="prefetch" href="/assets/js/53.00784a7d.js"><link rel="prefetch" href="/assets/js/54.bd3845dd.js"><link rel="prefetch" href="/assets/js/55.10a67e4b.js"><link rel="prefetch" href="/assets/js/56.eb909b5a.js"><link rel="prefetch" href="/assets/js/57.4b821666.js"><link rel="prefetch" href="/assets/js/58.1db8af1f.js"><link rel="prefetch" href="/assets/js/59.d3045373.js"><link rel="prefetch" href="/assets/js/6.f25d4964.js"><link rel="prefetch" href="/assets/js/60.e1ccc619.js"><link rel="prefetch" href="/assets/js/61.eca4de24.js"><link rel="prefetch" href="/assets/js/62.be7238a5.js"><link rel="prefetch" href="/assets/js/63.a6ace044.js"><link rel="prefetch" href="/assets/js/64.bbd88e61.js"><link rel="prefetch" href="/assets/js/65.1f6c1848.js"><link rel="prefetch" href="/assets/js/66.d22e96e8.js"><link rel="prefetch" href="/assets/js/67.80ad6427.js"><link rel="prefetch" href="/assets/js/68.130aa1f6.js"><link rel="prefetch" href="/assets/js/69.4b778299.js"><link rel="prefetch" href="/assets/js/7.9c54e368.js"><link rel="prefetch" href="/assets/js/70.edcac904.js"><link rel="prefetch" href="/assets/js/71.90aa842c.js"><link rel="prefetch" href="/assets/js/72.4cb8aeae.js"><link rel="prefetch" href="/assets/js/73.6f272f7b.js"><link rel="prefetch" href="/assets/js/74.d36a7a16.js"><link rel="prefetch" href="/assets/js/75.362400fa.js"><link rel="prefetch" href="/assets/js/76.140673a6.js"><link rel="prefetch" href="/assets/js/77.5f1336bf.js"><link rel="prefetch" href="/assets/js/78.6105e050.js"><link rel="prefetch" href="/assets/js/79.dd680c04.js"><link rel="prefetch" href="/assets/js/8.786d8198.js"><link rel="prefetch" href="/assets/js/80.ebfb944f.js"><link rel="prefetch" href="/assets/js/81.892d344c.js"><link rel="prefetch" href="/assets/js/9.b0b77105.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.331bc503.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Finen's Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/post/" class="nav-link">
+  文章
+</a></div><div class="nav-item"><a href="/archives/" class="nav-link">
+  归档
+</a></div><div class="nav-item"><a href="/tags/" class="nav-link">
+  标签云
+</a></div><div class="nav-item"><a href="/friends/" class="nav-link">
+  友人帐
+</a></div> <a href="https://github.com/hirCodd" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/post/" class="nav-link">
+  文章
+</a></div><div class="nav-item"><a href="/archives/" class="nav-link">
+  归档
+</a></div><div class="nav-item"><a href="/tags/" class="nav-link">
+  标签云
+</a></div><div class="nav-item"><a href="/friends/" class="nav-link">
+  友人帐
+</a></div> <a href="https://github.com/hirCodd" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <!----> </aside> <main class="page"> <div class="title-content"><div class="el-card box-cards is-never-shadow"><!----><div class="el-card__body"><h2>Mybatis动态SQL</h2> <div class="page-info"><i aria-hidden="true" class="el-icon-s-custom"></i> <span class="i-text">Finen</span> <i aria-hidden="true" class="el-icon-collection-tag"><span class="i-text">Mybatis</span></i> <i aria-hidden="true" class="el-icon-time"></i> <span class="i-text">2019-02-26</span> <span id="/blog/java/mybatis/mybatis-dynamicSQL.html" data-flag-title="Mybatis动态SQL" class="leancloud-visitors"><i aria-hidden="true" class="el-icon-view"></i> <i class="leancloud-visitors-count">1000000</i></span></div></div></div></div> <div class="theme-default-content content__default"><h2 id="mybatis动态sql"><a href="#mybatis动态sql" class="header-anchor">#</a> Mybatis动态SQL</h2> <h3 id="if判断条件"><a href="#if判断条件" class="header-anchor">#</a> if判断条件</h3> <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span class="token comment">&lt;!-- public List&lt;Employee&gt; getEmpsByConditionIf(Employee employee); --&gt;</span>
+	 
+	 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>getEmpsByConditionIf<span class="token punctuation">&quot;</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>com.finen.mybatis.bean.Employee<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	 	select * from tbl_employee
+	 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>where</span><span class="token punctuation">&gt;</span></span>
+	 		<span class="token comment">&lt;!-- test:判断表达式； c:if test 
+	 		从参数中取值进行判断
+		 	--&gt;</span>
+		 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>id != null<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+		 		id=#{id}
+		 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">&gt;</span></span>
+		 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>lastName != null and lastName != ''<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+		 		and last_name like #{lastName}
+		 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">&gt;</span></span>
+		 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>email != null and email.trim()!=''<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+		 		and email=#{email}
+		 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">&gt;</span></span>
+		 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>gender == 0 or gender == 1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+		 		and gender=#{gender}
+		 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">&gt;</span></span>
+	 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>where</span><span class="token punctuation">&gt;</span></span>
+	 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><h3 id="trim"><a href="#trim" class="header-anchor">#</a> trim</h3> <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span class="token comment">&lt;!-- public List&lt;Employee&gt; getEmpsByConditionTrim(Employee employee); --&gt;</span>
+	 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>getEmpsByConditionTrim<span class="token punctuation">&quot;</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>com.finen.mybatis.bean.Employee<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	 	select * from tbl_employee
+	 	<span class="token comment">&lt;!-- 后面多出的and或者or where不能解决 --&gt;</span>
+	 	<span class="token comment">&lt;!-- 
+	 		prefix=&quot;&quot; :前缀，trim标签体中是整个字符拼串后的结果
+	 				prefix给拼串后的整个字符串加一个前缀
+	 		prefixOverrides=&quot;&quot; 
+	 				前缀覆盖：去掉整个字符串前面多余的字符
+	 		suffix=&quot;&quot; 后缀
+	 				suffix给拼串后的整个字符串多余的字符
+	 		suffixOverrides=&quot;&quot;
+	 				后缀覆盖：去掉整个字符串后面多余的字符
+	 	 --&gt;</span>
+	 	 <span class="token comment">&lt;!-- 自定义字符串的截取规则 --&gt;</span>
+	 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>trim</span> <span class="token attr-name">prefix</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>where<span class="token punctuation">&quot;</span></span> <span class="token attr-name">suffixOverrides</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>and<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	 		<span class="token comment">&lt;!-- test:判断表达式； c:if test 
+	 		从参数中取值进行判断
+		 	--&gt;</span>
+		 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>id != null<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+		 		id=#{id} and
+		 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">&gt;</span></span>
+		 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>lastName != null and lastName != ''<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+		 		last_name like #{lastName} and
+		 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">&gt;</span></span>
+		 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>email != null and email.trim()!=''<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+		 		email=#{email} and
+		 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">&gt;</span></span>
+		 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>gender == 0 or gender == 1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+		 		gender=#{gender}
+		 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">&gt;</span></span>
+	 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>trim</span><span class="token punctuation">&gt;</span></span>
+	 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br></div></div><h3 id="choose选择判断"><a href="#choose选择判断" class="header-anchor">#</a> choose选择判断</h3> <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span class="token comment">&lt;!-- public List&lt;Employee&gt; getEmpsByConditionChoose(Employee employee); --&gt;</span>
+	 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>getEmpsByConditionChoose<span class="token punctuation">&quot;</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>com.finen.mybatis.bean.Employee<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	 	select * from tbl_employee
+	 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>where</span><span class="token punctuation">&gt;</span></span>
+	 		<span class="token comment">&lt;!-- 如果带了id就用id查，如果带了lastName就用lastName查，只会进入其中一个 --&gt;</span>
+	 		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>choose</span><span class="token punctuation">&gt;</span></span>
+	 			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>when</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>id != null<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	 				id = #{id}
+	 			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>when</span><span class="token punctuation">&gt;</span></span>
+	 			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>when</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>email != null<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	 				last_name like #{lastName}
+	 			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>when</span><span class="token punctuation">&gt;</span></span>
+	 			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>when</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>lastName != null<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	 				email = #{email}
+	 			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>when</span><span class="token punctuation">&gt;</span></span>
+	 			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>otherwise</span><span class="token punctuation">&gt;</span></span>
+	 				gender = 0
+	 			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>otherwise</span><span class="token punctuation">&gt;</span></span>
+	 		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>choose</span><span class="token punctuation">&gt;</span></span>
+	 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>where</span><span class="token punctuation">&gt;</span></span>
+	 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><h3 id="set标签"><a href="#set标签" class="header-anchor">#</a> set标签</h3> <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span class="token comment">&lt;!-- public void updateEmp(Employee employee); --&gt;</span>
+	 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>update</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>updateEmp<span class="token punctuation">&quot;</span></span> <span class="token punctuation">&gt;</span></span>
+	 	update tbl_employee
+	 	
+	 	
+		<span class="token comment">&lt;!-- 
+		Set
+			&lt;set&gt;
+				&lt;if test=&quot;lastName != null&quot;&gt;
+					last_name = #{lastName},
+				&lt;/if&gt;
+				&lt;if test=&quot;email != null&quot;&gt;
+					email = #{email},
+				&lt;/if&gt;
+				&lt;if test=&quot;gender != null&quot;&gt;
+					gender = #{gender}
+				&lt;/if&gt;
+			&lt;/set&gt;
+		--&gt;</span>
+		<span class="token comment">&lt;!-- Trim --&gt;</span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>trim</span> <span class="token attr-name">prefix</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>set<span class="token punctuation">&quot;</span></span> <span class="token attr-name">suffixOverrides</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>,<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>lastName != null<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+				last_name = #{lastName},
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>email != null<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+				email = #{email},
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>gender != null<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+				gender = #{gender}
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">&gt;</span></span>
+		
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>trim</span><span class="token punctuation">&gt;</span></span>
+			
+			where id=#{id}
+	 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>update</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br></div></div><h3 id="foreach"><a href="#foreach" class="header-anchor">#</a> Foreach</h3> <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span class="token comment">&lt;!-- 动态SQL-Foreach --&gt;</span>
+	 <span class="token comment">&lt;!-- public List&lt;Employee&gt; getEmpsByConditionForeach(List&lt;Integer&gt; list); --&gt;</span>
+	 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>getEmpsByConditionForeach<span class="token punctuation">&quot;</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>com.finen.mybatis.bean.Employee<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	 	select * from tbl_employee where id in
+	 	<span class="token comment">&lt;!-- 
+	 		collection:指定要遍历的集合
+	 			list类型的参数会特殊处理封装在map中，map的key叫list
+	 		item：将遍历出来的元素赋值给指定的变量
+	 		separator:每个元素之间的分隔符
+	 		open:遍历出所有结果拼接拼接处一个开始字符
+	 		close:遍历出所有结果拼接拼接处一个结束字符
+	 		index：索引，遍历list的时候是index就是索引，item就是当前值
+	 					遍历map的时候index表示map的key，item就是map的值
+	 		
+	 		#{变量名}就能取出变量的值也就是当前遍历出的元素
+	 	 --&gt;</span>
+	 	 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>foreach</span> <span class="token attr-name">collection</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>ids<span class="token punctuation">&quot;</span></span> <span class="token attr-name">item</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>item_id<span class="token punctuation">&quot;</span></span> <span class="token attr-name">separator</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>,<span class="token punctuation">&quot;</span></span>
+	 	 	<span class="token attr-name">open</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>(<span class="token punctuation">&quot;</span></span>
+	 	 	<span class="token attr-name">close</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>)<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	 	 	#{item_id}
+	 	 
+	 	 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>foreach</span><span class="token punctuation">&gt;</span></span>
+	 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><h3 id="foreach批量操作"><a href="#foreach批量操作" class="header-anchor">#</a> foreach批量操作</h3> <div class="language-xml line-numbers-mode"><pre class="language-xml"><code><span class="token comment">&lt;!-- 批量保存 --&gt;</span>
+	 <span class="token comment">&lt;!-- public void addEmps(@Param(&quot;emps&quot;)List&lt;Employee&gt; emps); --&gt;</span>
+	 <span class="token comment">&lt;!-- MySQL下批量保存，可以foreach遍历 --&gt;</span>
+	 <span class="token comment">&lt;!-- 首选方式 --&gt;</span>
+	 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>insert</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>addEmps<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	 	insert into tbl_employee(last_name, email, gender, d_id)
+	 	values
+	 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>foreach</span> <span class="token attr-name">collection</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>emps<span class="token punctuation">&quot;</span></span> <span class="token attr-name">item</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>emp<span class="token punctuation">&quot;</span></span> <span class="token attr-name">separator</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>,<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	 		(#{emp.lastName}, #{emp.email}, #{emp.gender}, #{emp.dept.id})
+	 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>foreach</span><span class="token punctuation">&gt;</span></span>
+	 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>insert</span><span class="token punctuation">&gt;</span></span>
+	 
+	 <span class="token comment">&lt;!-- 这种方式需要数据库连接属性allowMultiQueries=true
+	 		这种分号分隔多个sql可以用于其他的批量操作（删除，修改）
+	  --&gt;</span>
+	 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>insert</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>addEmps<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>foreach</span> <span class="token attr-name">collection</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>emps<span class="token punctuation">&quot;</span></span> <span class="token attr-name">item</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>emp<span class="token punctuation">&quot;</span></span> <span class="token attr-name">separator</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>;<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	 		insert into tbl_employee(last_name, email, gender, d_id)
+	 		values(#{emp.lastName}, #{emp.email}, #{emp.gender}, #{emp.dept.id})
+	 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>foreach</span><span class="token punctuation">&gt;</span></span>
+	 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>insert</span><span class="token punctuation">&gt;</span></span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <!---->  <div class="vcomment"><div id="vcomments"></div></div></main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.8657dc36.js" defer></script><script src="/assets/js/3.655fda8f.js" defer></script><script src="/assets/js/29.b61b1598.js" defer></script><script src="/assets/js/11.32858d9c.js" defer></script>
+  </body>
+</html>
