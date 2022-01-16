@@ -1,0 +1,649 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Moremind's Blog",
+  "home_page_url": "https://www.moremind.cn/",
+  "feed_url": "https://www.moremind.cn/feed.json",
+  "description": "Stay Hungry, Stay Foolish!",
+  "author": {
+    "name": "Moremind"
+  },
+  "items": [
+    {
+      "title": "友链",
+      "url": "https://www.moremind.cn/friends/",
+      "id": "https://www.moremind.cn/friends/",
+      "content_html": "<h3 id=\"左领右舍\"> 左领右舍</h3>\n<table>\n<thead>\n<tr>\n<th>✌️✌️名称</th>\n<th style=\"text-align:left\">👍👍链接</th>\n<th style=\"text-align:center\">简介🎉 💯</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>赵俊</td>\n<td style=\"text-align:left\"><a href=\"http://www.zhaojun.im/\" target=\"_blank\" rel=\"noopener noreferrer\">赵俊的博客</a></td>\n<td style=\"text-align:center\">一个 Java 学习者的博客</td>\n</tr>\n<tr>\n<td>R'Blog</td>\n<td style=\"text-align:left\"><a href=\"http://bolg.rvich.com/\" target=\"_blank\" rel=\"noopener noreferrer\">R'Blog</a></td>\n<td style=\"text-align:center\">分享资源</td>\n</tr>\n<tr>\n<td>Yorushika Shi</td>\n<td style=\"text-align:left\"><a href=\"https://sh.yorushika.live/\" target=\"_blank\" rel=\"noopener noreferrer\">Yorushika Shi</a></td>\n<td style=\"text-align:center\">杂谈与技术</td>\n</tr>\n<tr>\n<td>董沅鑫</td>\n<td style=\"text-align:left\"><a href=\"https://godbmw.com/\" target=\"_blank\" rel=\"noopener noreferrer\">董沅鑫的个人网站</a></td>\n<td style=\"text-align:center\">有干货 有态度 亦有你</td>\n</tr>\n<tr>\n<td>随遇而安</td>\n<td style=\"text-align:left\"><a href=\"https://www.iszy.cc/\" target=\"_blank\" rel=\"noopener noreferrer\">随遇而安</a></td>\n<td style=\"text-align:center\">技术分享&amp;生活吐槽</td>\n</tr>\n<tr>\n<td>GongJS</td>\n<td style=\"text-align:left\"><a href=\"https://gongjs.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">GongJS</a></td>\n<td style=\"text-align:center\">Talk is cheap,show me the code.</td>\n</tr>\n<tr>\n<td>嘉美伯爵</td>\n<td style=\"text-align:left\"><a href=\"https://blog.gaozhe.top\" target=\"_blank\" rel=\"noopener noreferrer\">嘉美伯爵</a></td>\n<td style=\"text-align:center\">Like author，like book.</td>\n</tr>\n<tr>\n<td>隔壁老王的随笔</td>\n<td style=\"text-align:left\"><a href=\"https://dojay.cn/\" target=\"_blank\" rel=\"noopener noreferrer\">隔壁老王的随笔</a></td>\n<td style=\"text-align:center\">一个喜欢撸猫的前端码农的YY天地</td>\n</tr>\n<tr>\n<td>谭升的博客</td>\n<td style=\"text-align:left\"><a href=\"https://face2ai.com\" target=\"_blank\" rel=\"noopener noreferrer\">谭升的博客</a></td>\n<td style=\"text-align:center\">人工智能算法，数学基础类原创博客</td>\n</tr>\n<tr>\n<td>冰水鉴心的博客</td>\n<td style=\"text-align:left\"><a href=\"https://xq773939719.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">冰水鉴心的博客</a></td>\n<td style=\"text-align:center\">.软工渣.编程痴.开发宅.系统迷.强迫症</td>\n</tr>\n<tr>\n<td>Mulander</td>\n<td style=\"text-align:left\"><a href=\"https://mulander-j.github.io/Wiki1001Pro/\" target=\"_blank\" rel=\"noopener noreferrer\">Mulander</a></td>\n<td style=\"text-align:center\">Meet 1000 Books &amp; Unit Them Into 1 Wiki</td>\n</tr>\n<tr>\n<td>LmCjl在线工具</td>\n<td style=\"text-align:left\"><a href=\"https://www.lmcjl.com\" target=\"_blank\" rel=\"noopener noreferrer\">LmCjl在线工具</a></td>\n<td style=\"text-align:center\"></td>\n</tr>\n<tr>\n<td>YuYe</td>\n<td style=\"text-align:left\"><a href=\"https://chenyeah.com/\" target=\"_blank\" rel=\"noopener noreferrer\">YuYe</a></td>\n<td style=\"text-align:center\">专注于前端技术</td>\n</tr>\n<tr>\n<td>笨小孩杂谈</td>\n<td style=\"text-align:left\"><a href=\"https://rocky-191.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">笨小孩杂谈</a></td>\n<td style=\"text-align:center\">专注前端技术</td>\n</tr>\n<tr>\n<td>yoko blog</td>\n<td style=\"text-align:left\"><a href=\"https://pengrl.com\" target=\"_blank\" rel=\"noopener noreferrer\">yoko blog</a></td>\n<td style=\"text-align:center\">目前主要写些c++和Go语言方面的博客</td>\n</tr>\n<tr>\n<td>六阿哥博客</td>\n<td style=\"text-align:left\"><a href=\"https://blog.6ag.cn/\" target=\"_blank\" rel=\"noopener noreferrer\">六阿哥博客</a></td>\n<td style=\"text-align:center\">记录一个程序员的成长历程</td>\n</tr>\n<tr>\n<td>枫糖</td>\n<td style=\"text-align:left\"><a href=\"https://blog.maplesugar.top\" target=\"_blank\" rel=\"noopener noreferrer\">枫糖</a></td>\n<td style=\"text-align:center\">From rookie to master</td>\n</tr>\n<tr>\n<td>Serence</td>\n<td style=\"text-align:left\"><a href=\"https://blog.blinkstar.cn\" target=\"_blank\" rel=\"noopener noreferrer\">Serence</a></td>\n<td style=\"text-align:center\">一个程序员 + 文艺青年的博客</td>\n</tr>\n<tr>\n<td>羽叶丶</td>\n<td style=\"text-align:left\"><a href=\"https://yuye.fun\" target=\"_blank\" rel=\"noopener noreferrer\">羽叶丶</a></td>\n<td style=\"text-align:center\">羽叶丶的个人博客</td>\n</tr>\n<tr>\n<td>阿业战记</td>\n<td style=\"text-align:left\"><a href=\"https://eeee.im/\" target=\"_blank\" rel=\"noopener noreferrer\">阿业战记</a></td>\n<td style=\"text-align:center\">提升码农亩产，掰直码农方向</td>\n</tr>\n<tr>\n<td>飞跃高山和大洋的🐟</td>\n<td style=\"text-align:left\"><a href=\"https://timspan.github.io/documents/\" target=\"_blank\" rel=\"noopener noreferrer\">飞跃高山和大洋的🐟</a></td>\n<td style=\"text-align:center\">前端</td>\n</tr>\n<tr>\n<td>Forex Trading</td>\n<td style=\"text-align:left\"><a href=\"https://www.fi-forex.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Forex Trading</a></td>\n<td style=\"text-align:center\">外汇交易教程博客</td>\n</tr>\n</tbody>\n</table>\n<h3 id=\"优秀技术博客\"> 优秀技术博客</h3>\n<table>\n<thead>\n<tr>\n<th>名称</th>\n<th style=\"text-align:left\">链接</th>\n<th style=\"text-align:center\">简介</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>美团技术团队</td>\n<td style=\"text-align:left\"><a href=\"https://tech.meituan.com/\" target=\"_blank\" rel=\"noopener noreferrer\">美团技术团队</a></td>\n<td style=\"text-align:center\">美团技术团队相关文档</td>\n</tr>\n<tr>\n<td>前端技术总汇</td>\n<td style=\"text-align:left\"><a href=\"http://html5ify.com/fks/fks_chart/\" target=\"_blank\" rel=\"noopener noreferrer\">前端技术总汇</a></td>\n<td style=\"text-align:center\">前端各项技术汇总</td>\n</tr>\n<tr>\n<td>FEX技术周刊</td>\n<td style=\"text-align:left\"><a href=\"http://fex.baidu.com/\" target=\"_blank\" rel=\"noopener noreferrer\">FEX技术周刊</a></td>\n<td style=\"text-align:center\">FEX技术周刊</td>\n</tr>\n<tr>\n<td>奇舞周刊</td>\n<td style=\"text-align:left\"><a href=\"https://weekly.75team.com/\" target=\"_blank\" rel=\"noopener noreferrer\">奇舞周刊</a></td>\n<td style=\"text-align:center\">奇舞周刊</td>\n</tr>\n<tr>\n<td>前端精读周刊</td>\n<td style=\"text-align:left\"><a href=\"https://github.com/dt-fe/weekly\" target=\"_blank\" rel=\"noopener noreferrer\">前端精读周刊</a></td>\n<td style=\"text-align:center\">前端精读周刊</td>\n</tr>\n<tr>\n<td>前端资源汇总仓库</td>\n<td style=\"text-align:left\"><a href=\"https://github.com/helloqingfeng/Awsome-Front-End-learning-resource\" target=\"_blank\" rel=\"noopener noreferrer\">前端资源汇总仓库</a></td>\n<td style=\"text-align:center\">前端资源汇总仓库</td>\n</tr>\n<tr>\n<td>后端架构师技术图谱</td>\n<td style=\"text-align:left\"><a href=\"https://github.com/xingshaocheng/architect-awesome\" target=\"_blank\" rel=\"noopener noreferrer\">后端架构师技术图谱</a></td>\n<td style=\"text-align:center\">后端架构师技术图谱</td>\n</tr>\n<tr>\n<td>CS-NOTES</td>\n<td style=\"text-align:left\"><a href=\"https://github.com/CyC2018/CS-Notes\" target=\"_blank\" rel=\"noopener noreferrer\">CS-NOTES</a></td>\n<td style=\"text-align:center\">CS-NOTES</td>\n</tr>\n<tr>\n<td>JAVA-进阶</td>\n<td style=\"text-align:left\"><a href=\"https://doocs.gitee.io/advanced-java/#/\" target=\"_blank\" rel=\"noopener noreferrer\">JAVA-进阶</a></td>\n<td style=\"text-align:center\">JAVA-进阶</td>\n</tr>\n<tr>\n<td>经典编程书籍大全</td>\n<td style=\"text-align:left\"><a href=\"https://github.com/jobbole/awesome-programming-books\" target=\"_blank\" rel=\"noopener noreferrer\">经典编程书籍大全</a></td>\n<td style=\"text-align:center\">经典编程书籍大全</td>\n</tr>\n<tr>\n<td>代码日志</td>\n<td style=\"text-align:left\"><a href=\"https://codeday.me/\" target=\"_blank\" rel=\"noopener noreferrer\">代码日志</a></td>\n<td style=\"text-align:center\">代码日志</td>\n</tr>\n<tr>\n<td>阿里中间件团队博客</td>\n<td style=\"text-align:left\"><a href=\"http://jm.taobao.org/\" target=\"_blank\" rel=\"noopener noreferrer\">阿里中间件团队博客</a></td>\n<td style=\"text-align:center\">阿里中间件团队博客</td>\n</tr>\n<tr>\n<td>自然语言处理</td>\n<td style=\"text-align:left\"><a href=\"http://www.hankcs.com/\" target=\"_blank\" rel=\"noopener noreferrer\">自然语言处理</a></td>\n<td style=\"text-align:center\">自然语言处理</td>\n</tr>\n<tr>\n<td>崔庆才的个人博客</td>\n<td style=\"text-align:left\"><a href=\"https://cuiqingcai.com/\" target=\"_blank\" rel=\"noopener noreferrer\">崔庆才的个人博客</a></td>\n<td style=\"text-align:center\">崔庆才的个人博客</td>\n</tr>\n<tr>\n<td>Frank</td>\n<td style=\"text-align:left\"><a href=\"https://www.frankfeekr.cn/\" target=\"_blank\" rel=\"noopener noreferrer\">Frank</a></td>\n<td style=\"text-align:center\">Frank的个人博客</td>\n</tr>\n<tr>\n<td>并发编程网</td>\n<td style=\"text-align:left\"><a href=\"http://ifeve.com/\" target=\"_blank\" rel=\"noopener noreferrer\">并发编程网</a></td>\n<td style=\"text-align:center\">并发编程网</td>\n</tr>\n<tr>\n<td>java与cs-base</td>\n<td style=\"text-align:left\"><a href=\"http://java.isture.com/\" target=\"_blank\" rel=\"noopener noreferrer\">java与cs-base</a></td>\n<td style=\"text-align:center\">java与cs-base</td>\n</tr>\n</tbody>\n</table>\n<div><p>提示</p>\n<p>欢迎留言提交互加友链!最好提供你网站的简介哟<br>\n如果您需要更改您的链接或者链接有错误，请联系我: <a href=\"mailto:hefengen@hotmail.com\">hefengen@hotmail.com</a></p>\n</div>\n<div><p>我的个人链接</p>\n<p>昵称：Finen<br>\n链接：https://www.finen.top/<br>\n头像链接：https://finen-1251602255.cos.ap-shanghai.myqcloud.com/file/pic/finen.png<br>\n介绍：Stay Hungry! Stay Foolish!</p>\n</div>\n",
+      "date_published": "2018-04-28T00:00:00.000Z",
+      "date_modified": "2022-01-14T17:15:37.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Project home",
+      "url": "https://www.moremind.cn/home/",
+      "id": "https://www.moremind.cn/home/",
+      "content_html": "<p>This is an example of a normal homepage. You can place your main content here.</p>\n<p>To use this layout, you need to set <code>home: true</code> in the page front matter.</p>\n<p>For related descriptions of configuration items, please see <a href=\"https://vuepress-theme-hope.github.io/guide/layout/home/\" target=\"_blank\" rel=\"noopener noreferrer\">Project HomePage Layout Config</a>.</p>\n",
+      "date_published": "2022-01-12T12:29:41.000Z",
+      "date_modified": "2022-01-12T12:29:41.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Intro Page",
+      "url": "https://www.moremind.cn/intro/",
+      "id": "https://www.moremind.cn/intro/",
+      "content_html": "<h1 id=\"intro-page\"> Intro Page</h1>\n<p>Place your introducation and profile here.</p>\n",
+      "date_published": "2022-01-12T12:29:41.000Z",
+      "date_modified": "2022-01-14T09:08:36.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "算法",
+      "url": "https://www.moremind.cn/md/construct/construct/",
+      "id": "https://www.moremind.cn/md/construct/construct/",
+      "content_html": "<p>JVM 内存分析图</p>\n",
+      "date_published": "2022-01-13T16:50:45.000Z",
+      "date_modified": "2022-01-13T16:50:45.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "算法",
+      "url": "https://www.moremind.cn/md/construct/design/",
+      "id": "https://www.moremind.cn/md/construct/design/",
+      "content_html": "<p>JVM 内存分析图</p>\n",
+      "date_published": "2022-01-13T16:50:45.000Z",
+      "date_modified": "2022-01-13T16:50:45.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "算法",
+      "url": "https://www.moremind.cn/md/cs/alg/",
+      "id": "https://www.moremind.cn/md/cs/alg/",
+      "content_html": "<p>JVM 内存分析图</p>\n",
+      "date_published": "2022-01-13T16:50:45.000Z",
+      "date_modified": "2022-01-13T16:50:45.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "数据结构",
+      "url": "https://www.moremind.cn/md/cs/datastructure/",
+      "id": "https://www.moremind.cn/md/cs/datastructure/",
+      "content_html": "<p>JVM 内存分析图\nJVM 内存分析图</p>\n",
+      "date_published": "2022-01-13T16:50:45.000Z",
+      "date_modified": "2022-01-13T16:50:45.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "计算机网络",
+      "url": "https://www.moremind.cn/md/cs/network/",
+      "id": "https://www.moremind.cn/md/cs/network/",
+      "content_html": "<p>JVM 内存分析图</p>\n",
+      "date_published": "2022-01-13T16:50:45.000Z",
+      "date_modified": "2022-01-13T16:50:45.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "操作系统",
+      "url": "https://www.moremind.cn/md/cs/os/",
+      "id": "https://www.moremind.cn/md/cs/os/",
+      "content_html": "<p>JVM 内存分析图</p>\n",
+      "date_published": "2022-01-13T16:50:45.000Z",
+      "date_modified": "2022-01-13T16:50:45.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "hibernate",
+      "url": "https://www.moremind.cn/md/data-persistence/hibernate/",
+      "id": "https://www.moremind.cn/md/data-persistence/hibernate/",
+      "content_html": "<p>JVM 内存分析图</p>\n",
+      "date_published": "2022-01-13T09:49:12.000Z",
+      "date_modified": "2022-01-14T09:08:36.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "jpa",
+      "url": "https://www.moremind.cn/md/data-persistence/jpa/",
+      "id": "https://www.moremind.cn/md/data-persistence/jpa/",
+      "content_html": "<p>JVM 内存分析图</p>\n",
+      "date_published": "2022-01-13T09:49:12.000Z",
+      "date_modified": "2022-01-14T09:08:36.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "mybatis",
+      "url": "https://www.moremind.cn/md/data-persistence/mybatis/",
+      "id": "https://www.moremind.cn/md/data-persistence/mybatis/",
+      "content_html": "<p>JVM 内存分析图</p>\n",
+      "date_published": "2022-01-13T09:49:12.000Z",
+      "date_modified": "2022-01-14T09:08:36.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "java基础",
+      "url": "https://www.moremind.cn/md/db/db-advance/",
+      "id": "https://www.moremind.cn/md/db/db-advance/",
+      "content_html": "<p>JVM 内存分析图</p>\n",
+      "date_published": "2022-01-14T17:15:37.000Z",
+      "date_modified": "2022-01-14T17:15:37.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "java基础",
+      "url": "https://www.moremind.cn/md/db/db-basic/",
+      "id": "https://www.moremind.cn/md/db/db-basic/",
+      "content_html": "<p>JVM 内存分析图</p>\n",
+      "date_published": "2022-01-14T17:15:37.000Z",
+      "date_modified": "2022-01-14T17:15:37.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "java基础",
+      "url": "https://www.moremind.cn/md/java/basic/",
+      "id": "https://www.moremind.cn/md/java/basic/",
+      "content_html": "<p>JVM 内存分析图</p>\n",
+      "date_published": "2022-01-13T09:49:12.000Z",
+      "date_modified": "2022-01-14T09:08:36.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "java基础",
+      "url": "https://www.moremind.cn/md/java/collection/",
+      "id": "https://www.moremind.cn/md/java/collection/",
+      "content_html": "<p>JVM 内存分析图</p>\n",
+      "date_published": "2022-01-13T09:49:12.000Z",
+      "date_modified": "2022-01-14T09:08:36.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "java基础",
+      "url": "https://www.moremind.cn/md/java/io/",
+      "id": "https://www.moremind.cn/md/java/io/",
+      "content_html": "<p>JVM 内存分析图</p>\n",
+      "date_published": "2022-01-13T09:49:12.000Z",
+      "date_modified": "2022-01-14T09:08:36.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "JVM内存图谱",
+      "url": "https://www.moremind.cn/md/java/jvm/",
+      "id": "https://www.moremind.cn/md/java/jvm/",
+      "content_html": "<p>JVM 内存分析图</p>\n",
+      "date_published": "2022-01-13T09:49:12.000Z",
+      "date_modified": "2022-01-14T09:08:36.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "Java 字节码反编译成汇编-使用JITWatch",
+      "url": "https://www.moremind.cn/md/java/jvm/java-jitwatch/",
+      "id": "https://www.moremind.cn/md/java/jvm/java-jitwatch/",
+      "content_html": "<h1 id=\"java-字节码反编译成汇编\"> Java 字节码反编译成汇编</h1>\n<blockquote>\n<p>本位以windows环境为前提，JDK版本为Oracle Sun JDK8-64位</p>\n</blockquote>\n<h2 id=\"hsdis环境准备\"> Hsdis环境准备</h2>\n<h3 id=\"_1-下载hsdis-amd64-dylib\"> 1.下载hsdis-amd64.dylib</h3>\n<blockquote>\n<p>下载地址如下：https://github.com/evolvedmicrobe/benchmarks/blob/master/hsdis-amd64.dylib</p>\n</blockquote>\n<h3 id=\"_2-下载hsdis-amd64-dll\"> 2.下载hsdis-amd64.dll</h3>\n<blockquote>\n<p>下载地址如下：https://github.com/atzhangsan/file_loaded</p>\n</blockquote>\n<h3 id=\"_3-配置hsdis-amd64-dylib和hsdis-amd64-dll\"> 3.配置hsdis-amd64.dylib和hsdis-amd64.dll</h3>\n<p>a.将下载好的hsdis-amd64.dll文件放置在JDK路径下<code>\\jre\\bin</code>目录下。</p>\n<blockquote>\n<p>e.g. C:\\Program Files\\Java\\jdk1.8.0_161\\jre\\bin</p>\n</blockquote>\n<p>b.将下载好的hsdis-amd64.dylib文件放置在JDK路径下的<code>\\jre\\lib</code>目录下。</p>\n<blockquote>\n<p>e.g. C:\\Program Files\\Java\\jdk1.8.0_161\\jre\\lib</p>\n</blockquote>\n<h3 id=\"_4-测试验证是否配置成功\"> 4.测试验证是否配置成功</h3>\n<p>使用命令<code>java -XX:+UnlockDiagnosticVMOptions -XX:+PrintAssembly -version</code>验证是否配置成功。如果出现如下所示则说明配置成功。</p>\n<p><img src=\"https://gitee.com/forge-logic/images-lib/raw/master/img/image-20210414230849483.png\" alt=\"image-20210414230849483\" /></p>\n<h3 id=\"_5-自行构建hsdis-如果你有兴趣的话\"> 5.自行构建hsdis(如果你有兴趣的话)</h3>\n<p>如果你有兴趣自行编译hsdis的话，可以参考如下的几个链接，然后把编译好的文件放在jdk的jre目录下的如上所<code>3</code>述路径。</p>\n<p>1.http://www.chrisnewland.com/building-hsdis-on-linux-amd64-on-debian-369</p>\n<p>2.http://psy-lob-saw.blogspot.com/2013/01/java-print-assembly.html</p>\n<h2 id=\"jitwatch环境\"> JITWatch环境</h2>\n<h3 id=\"_1-下载jitwatch\"> 1.下载JITWatch</h3>\n<blockquote>\n<p>下载路径如下：https://github.com/AdoptOpenJDK/jitwatch/releases</p>\n</blockquote>\n<p>如果你有兴趣的话，当然也可以参考官方文档进行编译。</p>\n<p>JITWatch链接如下：</p>\n<blockquote>\n<p>https://github.com/AdoptOpenJDK/jitwatch</p>\n</blockquote>\n<p>编译命令如下：</p>\n<div><pre><code>ant编译：\nant clean compile <span>test</span> run\nmaven编译：\nmvn clean compile <span>test</span> exec:java\ngradle编译：\ngradlew clean build run\n</code></pre>\n<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h3 id=\"_2-配置运行jitwatch\"> 2.配置运行JITWatch</h3>\n<p>a.启动，使用<code>java -jar jitwatch-ui-1.4.0-shaded-win.jar</code>启动jitwatch，启动成功后如下所示</p>\n<p><img src=\"https://gitee.com/forge-logic/images-lib/raw/master/img/image-20210414232505669.png\" alt=\"image-20210414232505669\" /></p>\n<p>b.配置，点击<code>sandbox</code>按钮打开窗口，再点击<code>Configure Sandbox</code>按钮，配置如下几个参数</p>\n<blockquote>\n<p>1.java classes目录</p>\n<p>2.java 运行目录为你本地的配置使用的JDK路径</p>\n<p>3.java运行参数，添加hsdis的运行参数配置</p>\n</blockquote>\n<p><img src=\"https://gitee.com/forge-logic/images-lib/raw/master/img/image-20210414233652204.png\" alt=\"image-20210414233652204\" /></p>\n<p>c.运行，点击<code>open</code>按钮打开需要编译的java代码，点击<code>Run</code>按钮运行得到下图所示</p>\n<p><img src=\"https://gitee.com/forge-logic/images-lib/raw/master/img/image-20210414232726380.png\" alt=\"image-20210414232726380\" /></p>\n<p><img src=\"https://gitee.com/forge-logic/images-lib/raw/master/img/image-20210414234418226.png\" alt=\"image-20210414234418226\" /></p>\n<h3 id=\"_3-jitwatch简单使用\"> 3.JITwatch简单使用</h3>\n<h4 id=\"模块化查看字节码和汇编码\"> 模块化查看字节码和汇编码</h4>\n<p><img src=\"https://gitee.com/forge-logic/images-lib/raw/master/img/image-20210414234700267.png\" alt=\"image-20210414234700267\" /></p>\n<h4 id=\"使用toplist查看资源占用率\"> 使用topList查看资源占用率</h4>\n<p>在JITWatch窗口点击<code>TopList</code>按钮，即可查看资源占用率。</p>\n<p><img src=\"https://gitee.com/forge-logic/images-lib/raw/master/img/image-20210414235239556.png\" alt=\"image-20210414235239556\" /></p>\n<h4 id=\"更多资料\"> 更多资料</h4>\n<p>1.https://www.chrisnewland.com/images/jitwatch/HotSpot_Profiling_Using_JITWatch.pdf</p>\n<p>2.https://github.com/AdoptOpenJDK/jitwatch/wiki</p>\n<h2 id=\"参考文章\"> 参考文章</h2>\n<p>1.利用hsdis和JITWatch查看分析HotSpot JIT compiler生成的汇编代码.https://blog.csdn.net/hengyunabc/article/details/26898657</p>\n<p>2.JITWatch Wiki.https://github.com/AdoptOpenJDK/jitwatch/wiki</p>\n<blockquote>\n<p>我的博客即将同步至腾讯云+社区，邀请大家一同入驻：https://cloud.tencent.com/developer/support-plan?invite_code=17nuh698omdi4</p>\n</blockquote>\n",
+      "image": "https://gitee.com/forge-logic/images-lib/raw/master/img/image-20210414230849483.png",
+      "date_published": "2022-01-13T09:49:12.000Z",
+      "date_modified": "2022-01-13T09:49:12.000Z",
+      "authors": [
+        {
+          "name": "finen"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "java基础",
+      "url": "https://www.moremind.cn/md/java/new-feature/",
+      "id": "https://www.moremind.cn/md/java/new-feature/",
+      "content_html": "<p>JVM 内存分析图</p>\n",
+      "date_published": "2022-01-13T09:49:12.000Z",
+      "date_modified": "2022-01-14T09:08:36.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "java基础",
+      "url": "https://www.moremind.cn/md/java/thread/",
+      "id": "https://www.moremind.cn/md/java/thread/",
+      "content_html": "<p>JVM 内存分析图</p>\n",
+      "date_published": "2022-01-13T09:49:12.000Z",
+      "date_modified": "2022-01-14T09:08:36.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "算法",
+      "url": "https://www.moremind.cn/md/middleware/cache/memcache/",
+      "id": "https://www.moremind.cn/md/middleware/cache/memcache/",
+      "content_html": "<p>JVM 内存分析图</p>\n",
+      "date_published": "2022-01-13T16:50:45.000Z",
+      "date_modified": "2022-01-13T16:50:45.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "算法",
+      "url": "https://www.moremind.cn/md/middleware/cache/redis/",
+      "id": "https://www.moremind.cn/md/middleware/cache/redis/",
+      "content_html": "<p>JVM 内存分析图</p>\n",
+      "date_published": "2022-01-13T16:50:45.000Z",
+      "date_modified": "2022-01-13T16:50:45.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "算法",
+      "url": "https://www.moremind.cn/md/middleware/message/kafka/",
+      "id": "https://www.moremind.cn/md/middleware/message/kafka/",
+      "content_html": "<p>JVM 内存分析图</p>\n",
+      "date_published": "2022-01-13T16:50:45.000Z",
+      "date_modified": "2022-01-13T16:50:45.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "算法",
+      "url": "https://www.moremind.cn/md/middleware/message/rabbitmq/",
+      "id": "https://www.moremind.cn/md/middleware/message/rabbitmq/",
+      "content_html": "<p>JVM 内存分析图</p>\n",
+      "date_published": "2022-01-13T16:50:45.000Z",
+      "date_modified": "2022-01-13T16:50:45.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "算法",
+      "url": "https://www.moremind.cn/md/middleware/message/rocketmq/",
+      "id": "https://www.moremind.cn/md/middleware/message/rocketmq/",
+      "content_html": "<p>JVM 内存分析图</p>\n",
+      "date_published": "2022-01-13T16:50:45.000Z",
+      "date_modified": "2022-01-13T16:50:45.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "spring",
+      "url": "https://www.moremind.cn/md/spring/spring-framework/",
+      "id": "https://www.moremind.cn/md/spring/spring-framework/",
+      "content_html": "<p>JVM 内存分析图</p>\n",
+      "date_published": "2022-01-13T09:49:12.000Z",
+      "date_modified": "2022-01-14T09:08:36.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "springboot",
+      "url": "https://www.moremind.cn/md/spring/springboot/",
+      "id": "https://www.moremind.cn/md/spring/springboot/",
+      "content_html": "<p>JVM 内存分析图</p>\n",
+      "date_published": "2022-01-13T09:49:12.000Z",
+      "date_modified": "2022-01-14T09:08:36.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "springcloud",
+      "url": "https://www.moremind.cn/md/spring/springcloud/",
+      "id": "https://www.moremind.cn/md/spring/springcloud/",
+      "content_html": "<p>JVM 内存分析图</p>\n",
+      "date_published": "2022-01-13T09:49:12.000Z",
+      "date_modified": "2022-01-14T09:08:36.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "springwebflux",
+      "url": "https://www.moremind.cn/md/spring/springwebflux/",
+      "id": "https://www.moremind.cn/md/spring/springwebflux/",
+      "content_html": "<p>JVM 内存分析图</p>\n",
+      "date_published": "2022-01-13T09:49:12.000Z",
+      "date_modified": "2022-01-14T09:08:36.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "算法",
+      "url": "https://www.moremind.cn/md/tools/docker/",
+      "id": "https://www.moremind.cn/md/tools/docker/",
+      "content_html": "<p>JVM 内存分析图</p>\n",
+      "date_published": "2022-01-14T10:01:55.000Z",
+      "date_modified": "2022-01-14T10:01:55.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "Git基本简介",
+      "url": "https://www.moremind.cn/md/tools/git/",
+      "id": "https://www.moremind.cn/md/tools/git/",
+      "content_html": "\n<h1 id=\"git与svn的基本介绍\"> git与svn的基本介绍</h1>\n<h2 id=\"git与svn\"> git与svn</h2>\n<h3 id=\"svn\"> svn</h3>\n<p>SVN是集中式版本控制系统，版本库是集中放在中央服务器的，而干活的时候，用的都是自己的电脑，所以首先要从中央服务器哪里得到最新的版本，然后干活，干完后，需要把自己做完的活推送到中央服务器。一般公司用svn的比较多，至于原因,嘿嘿嘿....</p>\n<h3 id=\"git\"> git</h3>\n<p>git是一个分布式版本控制系统，没有中心服务器，每个人的电脑就是一个版本库，你的电脑上的Gitrepository就是你的版本库，那多人之间是如何合作的呢？这样，</p>\n<blockquote>\n<p>A在A的电脑上修改了A.Gitrepository里面的文件,而B在B的电脑上修改了clone过来的A.Gitrepository，你们两个只要把各自的修改推送给对方就行了，这就是为什么你就是没有网络也能使用版本控制。</p>\n</blockquote>\n<h1 id=\"下载\"> 下载</h1>\n<h2 id=\"网址\"> 网址</h2>\n<p><a href=\"https://git-scm.com/downloads\" target=\"_blank\" rel=\"noopener noreferrer\">git-download</a></p>\n<h2 id=\"选择你的os版本即可\"> 选择你的OS版本即可</h2>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git.png\" alt=\"git\" /></p>\n",
+      "image": "https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git.png",
+      "date_published": "2022-01-14T10:01:55.000Z",
+      "date_modified": "2022-01-14T10:01:55.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "git 进阶操作命令",
+      "url": "https://www.moremind.cn/md/tools/git/git-advanced-command/",
+      "id": "https://www.moremind.cn/md/tools/git/git-advanced-command/",
+      "content_html": "<h1 id=\"工作区与暂存区\"> 工作区与暂存区</h1>\n<h2 id=\"工作区\"> 工作区</h2>\n<div><p>提示</p>\n<p>工作区就是在你电脑上的Repository下的某一个工作目录，比如：F:\\Repository\\test01这个目录。test01这个目录就是工作区，或者你新建的任何一个目录，都是工作区（.git隐藏目录下并非工作区）</p>\n</div>\n\n<h2 id=\"暂存区\"> 暂存区</h2>\n<p>Repository目录下有一个（.git隐藏目录），这个就是控制版本的版本控制库。</p>\n<div><p>提示</p>\n<p>（.git隐藏目录）存储了Git为我们创建的各种信息，包括版本信息，暂存区（这是最重要的），还有分支信息（Git已经为我们创建了一个master分支），还有一些配置信息等。</p>\n</div>\n<p>接下来在Repository目录下新建一个test.txt文件，在里面写入123456，然后进行下面的这些操作。</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_add_commit3.png\" alt=\"git_add_commit3\" /></p>\n<p>继续在test.txt中添加一行数据，然后使用git status查看信息。git会提示你有文件需要git add 并且git commit。</p>\n<p>继续下面的操作！---把同一个文件提交到同一个暂存区中，并且使用commit提交到一个分支中。</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_status_add_commit.png\" alt=\"git_status_add_commit\" /></p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_status_commit.png\" alt=\"git_status_commit\" /></p>\n<p>这次将所有文件提交到一个分支（master分支）中了，可以使用git log查看你提交的所有分支。</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_log4.png\" alt=\"git_log4\" /></p>\n<p>这样看起来很碍眼，而且版本较多的话，看起来的确不方便，所有推荐使用</p>\n<div><pre><code>git log --pretty=oneline\n</code></pre>\n<div><span>1</span><br></div></div><p>接下来，你可以使用<a href=\"https://finen.top/git-basic-command/#more\" target=\"_blank\" rel=\"noopener noreferrer\">上一篇git基础教程</a>讲过的方法对版本进行操作。基本命令请点击链接去查看...</p>\n<h1 id=\"撤销修改与删除文件操作\"> 撤销修改与删除文件操作</h1>\n<h2 id=\"撤销修改\"> 撤销修改</h2>\n<h3 id=\"最简单的方法-手动修改\"> 最简单的方法：手动修改</h3>\n<p>在你记得你修改了那些地方的情况下，直接手动撤销那些你不要的东西即可。</p>\n<h3 id=\"使用之前所使用的命令进行版本回滚\"> 使用之前所使用的命令进行版本回滚</h3>\n<p>具体命令如下：</p>\n<div><pre><code>git log --pretty=oneline\n\ngit reset --hard HEAD^\n\ngit reset --hard HEAD~*\n\ngit reflog\n\ngit reset --hard 版本号\n</code></pre>\n<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div><p>你可以使用这些办法进行你所需要的回滚。</p>\n<h3 id=\"使用git-checkout-test-txt-一点要带文件名-不然会创建分支\"> 使用git checkout -- test.txt <font color=\"red\">一点要带文件名</font>，不然会创建分支！</h3>\n<p>git checkout --test.txt 分为两种状态</p>\n<div><pre><code>git checkout --test.txt\n</code></pre>\n<div><span>1</span><br></div></div><blockquote>\n<ol>\n<li>test.txt文件修改后，你没有使用git add命令对其进行提交到暂存区。使用git checkout --test.txt会回退到之前的一个版本。<strong>相当于回滚到你最后提交的那个版本。而刚刚修改的内容也将全部丢失。</strong></li>\n</ol>\n</blockquote>\n<blockquote>\n<ol start=\"2\">\n<li>另一种情况就是你已经使用git add提交文件到暂存区了。那这样使用git checkout --test.txt 就会<strong>保存已经在暂存区的内容。而没有写入暂存区的内容则会全部丢失。</strong></li>\n</ol>\n</blockquote>\n<p>接下来使用git进行操作查看。</p>\n<p>首先在test.txt文件中添加一行数据 654321，然后使用git add命令提交到暂存区。</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_add2.png\" alt=\"git_add2\" /></p>\n<p>接着再在test.txt文件中添加一行数据 222222，然后我们不使用git add命令提交文件到暂存区。</p>\n<p>最后我们使用git checkout --test.txt命令撤销修改，在查看文件。</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_checkout.png\" alt=\"git_checkout\" /></p>\n<p>跟上面的结论是一样的。</p>\n<h2 id=\"删除文件\"> 删除文件</h2>\n<h3 id=\"rm-命令-linux下的软删除命令\"> rm 命令（linux下的软删除命令）</h3>\n<p>假如有人提交了tesxt02.txt的文件，但是这个文件缺失不需要的，我们可以使用rm test02.txt，然后在git commit就可以了。</p>\n<div><pre><code>新建一个test02.txt 文件\ngit add test02.txt\ngit commit -m &quot;提交test02文件&quot;\nrm test02.txt\ngit commit -m &quot;删除test02文件&quot;\n</code></pre>\n<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_add_commit4.png\" alt=\"git_commit4\" /></p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/rm.png\" alt=\"rm\" /></p>\n<p>说明已经删除了文件并且已经commit了，当然假如你删除错误的话，你也可以回滚版本。</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_reflog2.png\" alt=\"git_reflog\" /></p>\n<p>假如你已经使用rm test02.txt命令，但是却没有使用git commit命令呢？又改如何恢复文件？你可以使用下面的命令:</p>\n<div><pre><code>git checkout --test02.txt\n</code></pre>\n<div><span>1</span><br></div></div><p>rm之前：</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_rm.png\" alt=\"rm_before\" /></p>\n<p>rm 之后：</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_rm2.png\" alt=\"git_rm_after\" /></p>\n<p>然后我们不使用git commit命令，使用git checkout -- test02.txt</p>\n<p>使用git checkout -- test02.txt之后</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_rm_after.png\" alt=\"git_check_out\" /></p>\n<p>文件又恢复了，恢复多个文件也是同理。</p>\n<hr>\n<div><pre><code> 下面会涉及删除与撤销的操作!请继续浏览！\n</code></pre>\n</div><hr>\n",
+      "image": "https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_add_commit3.png",
+      "date_published": "2018-03-28T00:00:00.000Z",
+      "date_modified": "2022-01-14T10:01:55.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "Git"
+      ]
+    },
+    {
+      "title": "git 基本操作命令",
+      "url": "https://www.moremind.cn/md/tools/git/git-basic-command/",
+      "id": "https://www.moremind.cn/md/tools/git/git-basic-command/",
+      "content_html": "<h1 id=\"git基本命令\"> git基本命令</h1>\n<p>0.你必须安装了git才能继续往下看。\n1.新建一个目录(在你磁盘空闲较多的地方，新建一个目录(名称Repository))===&gt;这个Repository就是上面说的你的本地仓库，然后右键选择Git Bash(Git 命令行)，在目录下输入以下命令：</p>\n<div><pre><code>git config <span>-</span><span>-</span>global user.name \"username\"\n\ngit config <span>-</span><span>-</span>global user.email \"youremail\"\n</code></pre>\n<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><blockquote>\n<p>这里的<font color=\"red\">username</font>就是你刚刚注册的用户名，<font color=\"red\">email</font>就是刚刚注册邮箱。</p>\n</blockquote>\n<h2 id=\"git-init\"> git init</h2>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_init.png\" alt=\"git_init\" /></p>\n<p>此时，你就创建了一个本地仓库了。可以在你的本地查看一下：</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_intit2.png\" alt=\"git\" /></p>\n<h2 id=\"git-add-把项目提交到git仓库\"> git add （把项目提交到git仓库）</h2>\n<p>新建一个demo.txt的文件，并且在里面写入123456789</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_add.png\" alt=\"git_add\" /></p>\n<p>这样就说明你已经把文件提交到文件暂存区了，接下来使用下一个命令你就可以在本地仓库看到了。</p>\n<h2 id=\"git-commit\"> git commit</h2>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_commit.png\" alt=\"git_commit\" /></p>\n<blockquote>\n<p>这里的<font color=\"red\"> -m</font>就是你提交的注释，记得以后写一定要使用注释！这是一个好习惯！</p>\n</blockquote>\n<h2 id=\"git-status-查看状态\"> git status ---查看状态</h2>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_status.png\" alt=\"git_status\" /></p>\n<blockquote>\n<p>没有什么东西需要提交，别急，我们在刚刚的demo.txt中<font color =\"red\">追加一个0000</font>,记得保存文件。</p>\n</blockquote>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_status_1.png\" alt=\"git_status2\" /></p>\n<blockquote>\n<p>修改之后就已经有了文件修改的信息，并且git提示你需要commit！所以你需要使用上面的git commit 提交！</p>\n</blockquote>\n<h2 id=\"git-diff\"> git diff</h2>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_diff.png\" alt=\"git_diff\" /></p>\n<blockquote>\n<p>git diff就是比对文件，红色的是告诉你，那是原来的，绿色的就是告诉添加了信息。</p>\n</blockquote>\n<blockquote>\n<p>之后你就可以放心的提交你的版本了。</p>\n</blockquote>\n<p><strong>你需要执行git add， git commit -m &quot;xxxx&quot;</strong>，必须通过add提交到文件暂存区。</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_add_commit.png\" alt=\"git_add_commit1\" /></p>\n<h1 id=\"版本控制-回退\"> 版本控制---回退</h1>\n<h2 id=\"git-log\"> git log</h2>\n<p>在使用git的时候一定要会使用日志功能。</p>\n<p>首先我们在demo.txt中添加一行数据<font color=\"red\">0000123456789</font>,然后git add ，git commit.</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_add_commit2.png\" alt=\"git_diff_add_commit\" /></p>\n<p>接下来使用git log打印日志</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_log.png\" alt=\"git_log\" /></p>\n<h2 id=\"版本回滚-git-reset-hard-head\"> 版本回滚---git reset --hard HEAD^</h2>\n<p>上面提到使用git log打印所有版本，其实有更简单的办法。</p>\n<div><pre><code>git log --pretty=oneline\n</code></pre>\n<div><span>1</span><br></div></div><p>这个可以自己去尝试哟，这个只会提示你的<font color=\"red\">版本号</font>跟<font color=\"red\">提交的信息</font>。</p>\n<div><pre><code>git reset --hard HEAD^\n</code></pre>\n<div><span>1</span><br></div></div><p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_hard.png\" alt=\"git_hard\" /></p>\n<blockquote>\n<p>现在可以打开你的demo.txt看看里面还有什么内容了。是不是少了最后添加的一行数据，只有一行数据了。回滚到添加0000的版本了。</p>\n</blockquote>\n<p><strong>超级回滚：</strong></p>\n<p>你需要回滚50个版本，总不能输入50个^号，所以有下面这种更简单的办法。</p>\n<div><pre><code>git reset --hard HEAD~50\n</code></pre>\n<div><span>1</span><br></div></div><h2 id=\"cat命令\"> cat命令</h2>\n<p>使用cat查看内容。</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/cat.png\" alt=\"cat\" /></p>\n<p>然后你可以使用git log 查看一下存在的版本</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_log3.png\" alt=\"git_log3\" /></p>\n<p>加入你要回滚到添加了<font color=\"red\">0000123456789</font>的版本该怎么办呢？使用下一个命令+下下个命令！！！</p>\n<h2 id=\"git-reflog\"> git reflog</h2>\n<blockquote>\n<p>这个命令是告诉你所有操作的版本信息</p>\n</blockquote>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_reflog.png\" alt=\"git_reflog\" /></p>\n<p>看到版本号了---a0ca311，接下来就可以使用这个版本号进行回滚到添加<font color=\"red\">0000123456789</font>的那个版本了。</p>\n<h2 id=\"git-reset-hard-版本号\"> git reset --hard 版本号</h2>\n<p>下面是回滚到我的版本</p>\n<div><pre><code>git reset --hard a0ca311\n</code></pre>\n<div><span>1</span><br></div></div><p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_hard.png\" alt=\"git_hard\" /></p>\n<p>接下来，打开你的demo.txt文档看一下是否已经有<font color=\"red\">0000123456789</font>了。</p>\n<p>或者你可以使用以下命令</p>\n<div><pre><code>cat demo.txt\n</code></pre>\n<div><span>1</span><br></div></div><hr>\n<div><pre><code> 下面会涉及删除与撤销的操作!请继续浏览！\n</code></pre>\n</div><hr>\n",
+      "image": "https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_init.png",
+      "date_published": "2018-03-28T00:00:00.000Z",
+      "date_modified": "2022-01-14T10:01:55.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "Git"
+      ]
+    },
+    {
+      "title": "git 分支操作命令",
+      "url": "https://www.moremind.cn/md/tools/git/git-branch-command/",
+      "id": "https://www.moremind.cn/md/tools/git/git-branch-command/",
+      "content_html": "<h1 id=\"git分支操作\"> git分支操作</h1>\n<h2 id=\"创建与合并分支\"> 创建与合并分支</h2>\n<p>在版本回滚与更新中，git都是用master分支作为主线，通过时间顺序进行更新或者回滚。</p>\n<h3 id=\"创建分支\"> 创建分支</h3>\n<div><pre><code>git checkout -b dev \n==（相当于）\ngit branch dev\ngit checkout dev\n</code></pre>\n<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><p>查看分支信息：</p>\n<div><pre><code>git branch\n</code></pre>\n<div><span>1</span><br></div></div>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_branch.png\" alt=\"git_branch\" /></p>\n<p>现在已经在dev分支目录下，接下来可以在demo.txt中添加信息，我们添加一行数据：1111111111111</p>\n<p>此时，我们在dev目录下添加内容，并且提交到暂存区，然后commit。</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_branch3.png\" alt=\"git_branch\" /></p>\n<p>接着，我们将目前分支切换到master主分支，查看文件新添加的内容是否存在。使用以下命令：</p>\n<div><pre><code>git checkout master\n</code></pre>\n<div><span>1</span><br></div></div><p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_branch4.png\" alt=\"git_branch4\" /></p>\n<p>然后，发现master分支上并没有我们想要看到的内容，所以我们需要合并两个分支。</p>\n<h3 id=\"合并分支\"> 合并分支</h3>\n<div><pre><code>git merge 分支名\n</code></pre>\n<div><span>1</span><br></div></div><p>在master分之下合并分dev分支。使用以下命令：</p>\n<div><pre><code>git merger dev\n</code></pre>\n<div><span>1</span><br></div></div><p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_merge.png\" alt=\"git_merge\" /></p>\n<p>合并完成后即可删除没有用的额分支了，使用以下命令进行删除分支：</p>\n<div><pre><code>git branch -d dev\n</code></pre>\n<div><span>1</span><br></div></div><p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_delete.png\" alt=\"git_branch_delete\" /></p>\n<p>所有命令总结：</p>\n<div><pre><code>查看分支：git branch\n创建分支：git branch name\n切换分支：git checkout name\n创建+切换分支：git checkout -b name\n合并某个分支到当前分支：git merge name\n删除某个分支：git branch -d name\n</code></pre>\n<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h3 id=\"处理分支矛盾\"> 处理分支矛盾</h3>\n<p>新建一个分支，并且other中添加数据：2222222222222，并且检查文件。</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_branch_other.png\" alt=\"git_branch_other\" /></p>\n<p>切换分支到master之中，并且master分支中增加内容：3333333333333，在增加之前使用cat命令，查看master坟之中是否存在2222222222222，增加后是否存在3333333333333。</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_checkout1.png\" alt=\"git_checkout2\" /></p>\n<p>master分支数据如上，接下来我们继续合并分支。</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_merge2.png\" alt=\"git_merge\" /></p>\n<p>由于我之前在master分支写了一个2222222的信息，，所以这有一个2222222222222222222/33333333333333333这样的信息。不过这样的错误信息也不影响分支是错误。<font color=\"red\">Git用&lt;&lt;&lt;&lt;&lt;&lt;&lt;，=======，&gt;&gt;&gt;&gt;&gt;&gt;&gt;标记出不同分支的内容，其中&lt;&lt;&lt;HEAD是指主分支修改的内容，&gt;&gt;&gt;&gt;&gt;fenzhi1 是指fenzhi1上修改的内容，我们可以修改下如下后保存。修改后就是上面的最后一个图。</font></p>\n<p>然后我们就可以git log查看commit后的信息，在此我就截图了哈。</p>\n<h3 id=\"分支策略\"> 分支策略</h3>\n<div><pre><code>1.创建一个dev分支。\n2.修改demo.txt内容。\n3.添加到暂存区。\n4.切换回主分支(master)。\n5.合并dev分支，使用命令 git merge –no-ff -m &quot;注释&quot; dev\n6.查看历史记录\n</code></pre>\n<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><p>具体命令如下：</p>\n<div><pre><code>git checkout -b dev\n在demo.txt文件中添加数据4444444444444\ngit add demo.txt\ngit commit -m &quot;add merge&quot;\ngit merge --no-ff -m &quot;merge with no-ff&quot; dev\ngit log 或者git log --graph --pretty=oneline --abbrev-commit\n</code></pre>\n<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_dev.png\" alt=\"git_dev\" /></p>\n<p><strong>分支策略：首先master主分支应该是非常稳定的，也就是用来发布新版本，一般情况下不允许在上面干活，干活一般情况下在新建的dev分支上干活，干完后，比如上要发布，或者说dev分支代码稳定后可以合并到主分支master上来。</strong></p>\n<h2 id=\"bug分支\"> Bug分支</h2>\n<p>在开发中，会经常碰到bug问题，那么有了bug就需要修复，在Git中，分支是很强大的，每个bug都可以通过一个临时分支来修复，修复完成后，合并分支，然后将临时的分支删除掉。</p>\n<p>比如我在开发中接到一个404 bug时候，我们可以创建一个404分支来修复它，但是，当前的dev分支上的工作还没有提交。命令如下：</p>\n<div><pre><code>git checkout -b dev \n修改demo.txt文件添加数据：5555555555555\n</code></pre>\n<div><span>1</span><br><span>2</span><br></div></div><p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_branch5.png\" alt=\"git_branch5\" /></p>\n<p>并不是我不想提交，而是工作进行到一半时候，我们还无法提交，比如我这个分支bug要2天完成，但是我issue-404 bug需要5个小时内完成。怎么办呢？还好，Git还提供了一个stash功能，可以把当前工作现场 ”隐藏起来”，等以后恢复现场后继续工作。</p>\n<p>隐藏分支：</p>\n<div><pre><code>git stash\ngit status\n</code></pre>\n<div><span>1</span><br><span>2</span><br></div></div><p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_stash.png\" alt=\"git_stash\" /></p>\n<p>首先我们要确定在那个分支上修复bug，比如我现在是在主分支master上来修复的，现在我要在master分支上创建一个临时分支。</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_bug.png\" alt=\"git_bug\" /></p>\n<p>修改后合并分支，然后删除bug分支即可。</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_bug2.png\" alt=\"git_bug2\" /></p>\n<p>接着，我们继续回到dev分支下：</p>\n<div><pre><code>git checkout dev\ngit status\n</code></pre>\n<div><span>1</span><br><span>2</span><br></div></div><p>发现并没有文件，是因为stash隐藏了，所以我们需要从stash恢复。恢复命令如下：</p>\n<div><pre><code>git stash list\ngit stash apply\ngit stash drop\ncat demo.txt\n</code></pre>\n<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><p>或者：</p>\n<div><pre><code>git stash list\ngit stash pop\n</code></pre>\n<div><span>1</span><br><span>2</span><br></div></div><p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_stash3.png\" alt=\"git_stash\" /></p>\n",
+      "image": "https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_branch.png",
+      "date_published": "2018-03-28T00:00:00.000Z",
+      "date_modified": "2022-01-14T10:01:55.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "Git"
+      ]
+    },
+    {
+      "title": "git多人合作开发操作命令",
+      "url": "https://www.moremind.cn/md/tools/git/git-cooperate-develop-command/",
+      "id": "https://www.moremind.cn/md/tools/git/git-cooperate-develop-command/",
+      "content_html": "<h1 id=\"git远程分支操作\"> git远程分支操作</h1>\n<h2 id=\"查看远程仓库信息\"> 查看远程仓库信息</h2>\n<div><pre><code>git remote\ngit remote -v\n</code></pre>\n<div><span>1</span><br><span>2</span><br></div></div>\n<h2 id=\"推送分支\"> 推送分支</h2>\n<div><pre><code>git push origin master\n</code></pre>\n<div><span>1</span><br></div></div><p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_remote3.png\" alt=\"git_remote\" /></p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_push.png\" alt=\"git_push\" /></p>\n<p>也可以推送到其他分支：</p>\n<div><pre><code>git push origin dev\n</code></pre>\n<div><span>1</span><br></div></div><p>那么一般情况下，那些分支要推送呢？</p>\n<blockquote>\n<ol>\n<li>master分支是主分支，因此要时刻与远程同步。</li>\n</ol>\n</blockquote>\n<blockquote>\n<ol start=\"2\">\n<li>一些修复bug分支不需要推送到远程去，可以先合并到主分支上，然后把主分支master推送到远程去。</li>\n</ol>\n</blockquote>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_push2.png\" alt=\"git_push2\" /></p>\n<h2 id=\"抓取分支\"> 抓取分支</h2>\n<p>多人协作时，大家都会往master分支上推送各自的修改。新建一个目录名字叫testgit3。</p>\n<p>现在我们的伙伴要在dev分支上做开发，就必须把远程的origin的dev分支到本地来，于是可以使用命令创建本地dev分支：</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_clone2.png\" alt=\"git_clone2\" /></p>\n<div><pre><code>git checkout –b dev \ngit reset --hard origin/dev\n</code></pre>\n<div><span>1</span><br><span>2</span><br></div></div><p>在dev下重置起点，即可，git checkout -b dev origin/dev 错误的。</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_checkout3.png\" alt=\"git\" /></p>\n<p>接下来在demo.txt的文件中添加数据6666666666666数据，然后提交到分支即可。</p>\n<div><pre><code>git add demo.txt\ngit commit -m &quot;添加666的数据&quot;\ngit pusu origin dev\n</code></pre>\n<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_push4.png\" alt=\"git_push3\" /></p>\n<p>小伙伴们已经向origin/dev分支上推送了提交，而我在我的目录文件下也对同样的文件同个地方作了修改,添加了数据6666666666666，也试图推送到远程库:</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_push_dev.png\" alt=\"git_push_dev\" /></p>\n<p>由上面可知：推送失败，因为我的小伙伴最新提交的和我试图推送的有冲突，解决的办法也很简单，上面已经提示我们，先用git pull把最新的提交从origin/dev抓下来，然后在本地合并，解决冲突，再推送。</p>\n<div><pre><code>git pull\ngit branch --set-upstream dev origin/dev\ngit pull\n</code></pre>\n<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p>然后此时会出现冲突，所以需要解决冲突，使用前面讲过的分支策略进行解决。然后在执行：</p>\n<div><pre><code>git add demo.txt\ngit commit -m &quot;****&quot;\ngit push origin dev\n</code></pre>\n<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p>多人协作工作模式一般是这样的：</p>\n<ol>\n<li>\n<p>首先，可以试图用git push origin branch-name推送自己的修改.</p>\n</li>\n<li>\n<p>如果推送失败，则因为远程分支比你的本地更新早，需要先用git pull试图合并。</p>\n</li>\n<li>\n<p>如果合并有冲突，则需要解决冲突，并在本地提交。再用git push origin branch-name推送。</p>\n</li>\n</ol>\n<h2 id=\"推荐阅读\"> 推荐阅读</h2>\n<p><strong><a href=\"https://www.gitbook.com/book/bingohuang/progit2/details\" target=\"_blank\" rel=\"noopener noreferrer\">ProGit中文版</a></strong></p>\n",
+      "image": "https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_remote3.png",
+      "date_published": "2018-03-28T00:00:00.000Z",
+      "date_modified": "2022-01-14T10:01:55.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "Git"
+      ]
+    },
+    {
+      "title": "git 远端操作命令",
+      "url": "https://www.moremind.cn/md/tools/git/git-remote-command/",
+      "id": "https://www.moremind.cn/md/tools/git/git-remote-command/",
+      "content_html": "<h1 id=\"git远程仓库-github\"> git远程仓库-github</h1>\n<h2 id=\"配置远程仓库-创建ssh-key-检查用户目录\"> 配置远程仓库-创建SSH Key-检查用户目录</h2>\n<p>检查用户目录下有没有id_rsa 和 id_rsa.pub，如果没有这两个文件就使用下面的这个命令生成密钥。</p>\n<div><pre><code>ssh-keygen -t rsa –C &quot;youremail@example.com&quot;\n</code></pre>\n<div><span>1</span><br></div></div>\n<h2 id=\"在github中设置ssh\"> 在github中设置ssh</h2>\n<p>登录github，打开settings的SSH and GPG keys，选择New SSH key就可以填充SSH key的相关信息。</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/ssh.png\" alt=\"ssh\" /></p>\n<p>填写title，然后将id_rsa.pub里面的密钥复制到Key中，然后点击Add SSH key即可。</p>\n<h2 id=\"选择new-repository-添加仓库\"> 选择New Repository(添加仓库)</h2>\n<p>新建一个目录TestGit,将所有文件复制到TestGit目录下。</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_1.png\" alt=\"git_1\" /></p>\n<p>然年使用命令创建一个一个本地仓库</p>\n<div><pre><code>git init\ngit add demo.txt\ngit add test.txt\ngit test02.txt\n\ngit commit -m &quot;新建文件&quot;\n</code></pre>\n<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_remote.png\" alt=\"git_remote\" /></p>\n<p>现在把你的目录推送到TestGit远程仓库中</p>\n<div><pre><code>git remote add origin https://github.com/hirCodd/TestGit.git\n\ngit push -u origin master\n</code></pre>\n<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_upload.png\" alt=\"git_3\" /></p>\n<p>由于远程库是空的，我们第一次推送master分支时，加上了<font color=\"red\"> –u参数</font>，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。使用</p>\n<div><pre><code>git push origin master\n</code></pre>\n<div><span>1</span><br></div></div><p>现在查看远端仓库，如下，已经有相关的文件了。</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_2.png\" alt=\"git_3\" /></p>\n<p>以后你修改了bug，就可以使用git push origin master推送到github，这样你就拥有分布式版本仓库了。</p>\n<h1 id=\"从远端仓库克隆\"> 从远端仓库克隆</h1>\n<p>使用以下命令：</p>\n<div><pre><code>git clone url\n</code></pre>\n<div><span>1</span><br></div></div><p>首先现在远端创建一个仓库</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_clone.png\" alt=\"git_clone\" /></p>\n<p>使用命令即可从远端clone文件下来</p>\n<p><img src=\"https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/git_clone2.png\" alt=\"git_clone2\" /></p>\n<hr>\n<div><pre><code> 下面会涉及删除与撤销的操作!请继续浏览！\n</code></pre>\n</div><hr>\n",
+      "image": "https://finen-1251602255.cos.ap-shanghai.myqcloud.com/images/blog/ssh.png",
+      "date_published": "2018-03-28T00:00:00.000Z",
+      "date_modified": "2022-01-14T10:01:55.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "Git"
+      ]
+    },
+    {
+      "title": "算法",
+      "url": "https://www.moremind.cn/md/tools/k8s/",
+      "id": "https://www.moremind.cn/md/tools/k8s/",
+      "content_html": "<p>JVM 内存分析图</p>\n",
+      "date_published": "2022-01-14T10:01:55.000Z",
+      "date_modified": "2022-01-14T10:01:55.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    },
+    {
+      "title": "Blog Home",
+      "url": "https://www.moremind.cn/",
+      "id": "https://www.moremind.cn/",
+      "content_html": "\n",
+      "date_published": "2022-01-12T12:29:41.000Z",
+      "date_modified": "2022-01-15T16:53:13.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "算法",
+      "url": "https://www.moremind.cn/md/tools/linux/",
+      "id": "https://www.moremind.cn/md/tools/linux/",
+      "content_html": "<p>JVM 内存分析图</p>\n",
+      "date_published": "2022-01-14T10:01:55.000Z",
+      "date_modified": "2022-01-14T10:01:55.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": [
+        "jvm"
+      ]
+    }
+  ]
+}
