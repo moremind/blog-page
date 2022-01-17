@@ -23,12 +23,12 @@
       "tags": []
     },
     {
-      "title": "Project home",
-      "url": "https://www.moremind.cn/home/",
-      "id": "https://www.moremind.cn/home/",
-      "content_html": "<p>This is an example of a normal homepage. You can place your main content here.</p>\n<p>To use this layout, you need to set <code>home: true</code> in the page front matter.</p>\n<p>For related descriptions of configuration items, please see <a href=\"https://vuepress-theme-hope.github.io/guide/layout/home/\" target=\"_blank\" rel=\"noopener noreferrer\">Project HomePage Layout Config</a>.</p>\n",
+      "title": "Intro Page",
+      "url": "https://www.moremind.cn/intro/",
+      "id": "https://www.moremind.cn/intro/",
+      "content_html": "<h1 id=\"intro-page\"> Intro Page</h1>\n<p>Place your introducation and profile here.</p>\n",
       "date_published": "2022-01-12T12:29:41.000Z",
-      "date_modified": "2022-01-12T12:29:41.000Z",
+      "date_modified": "2022-01-14T09:08:36.000Z",
       "authors": [
         {
           "name": "Moremind"
@@ -37,12 +37,12 @@
       "tags": []
     },
     {
-      "title": "Intro Page",
-      "url": "https://www.moremind.cn/intro/",
-      "id": "https://www.moremind.cn/intro/",
-      "content_html": "<h1 id=\"intro-page\"> Intro Page</h1>\n<p>Place your introducation and profile here.</p>\n",
+      "title": "Project home",
+      "url": "https://www.moremind.cn/home/",
+      "id": "https://www.moremind.cn/home/",
+      "content_html": "<p>This is an example of a normal homepage. You can place your main content here.</p>\n<p>To use this layout, you need to set <code>home: true</code> in the page front matter.</p>\n<p>For related descriptions of configuration items, please see <a href=\"https://vuepress-theme-hope.github.io/guide/layout/home/\" target=\"_blank\" rel=\"noopener noreferrer\">Project HomePage Layout Config</a>.</p>\n",
       "date_published": "2022-01-12T12:29:41.000Z",
-      "date_modified": "2022-01-14T09:08:36.000Z",
+      "date_modified": "2022-01-12T12:29:41.000Z",
       "authors": [
         {
           "name": "Moremind"
@@ -616,6 +616,20 @@
       ]
     },
     {
+      "title": "Blog Home",
+      "url": "https://www.moremind.cn/",
+      "id": "https://www.moremind.cn/",
+      "content_html": "\n",
+      "date_published": "2022-01-12T12:29:41.000Z",
+      "date_modified": "2022-01-17T04:42:30.000Z",
+      "authors": [
+        {
+          "name": "Moremind"
+        }
+      ],
+      "tags": []
+    },
+    {
       "title": "算法",
       "url": "https://www.moremind.cn/md/tools/linux/",
       "id": "https://www.moremind.cn/md/tools/linux/",
@@ -630,20 +644,6 @@
       "tags": [
         "jvm"
       ]
-    },
-    {
-      "title": "Blog Home",
-      "url": "https://www.moremind.cn/",
-      "id": "https://www.moremind.cn/",
-      "content_html": "\n",
-      "date_published": "2022-01-12T12:29:41.000Z",
-      "date_modified": "2022-01-17T04:42:30.000Z",
-      "authors": [
-        {
-          "name": "Moremind"
-        }
-      ],
-      "tags": []
     }
   ]
 }

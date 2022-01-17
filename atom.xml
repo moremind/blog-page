@@ -6,7 +6,7 @@
   <author>
     <name>Moremind</name>
   </author>
-  <updated>2022-01-17T14:14:19.161Z</updated>
+  <updated>2022-01-17T14:21:05.307Z</updated>
   <generator>@mr-hope/vuepress-plugin-feed</generator>
   <link rel="self" href="https://www.moremind.cn/atom.xml"/>
   <link rel="alternate" href="https://www.moremind.cn/"/>
@@ -264,13 +264,12 @@
     <rights>Copyright by Moremind</rights>
   </entry>
   <entry>
-    <title type="html">Project home</title>
-    <id>https://www.moremind.cn/home/</id>
-    <link href="https://www.moremind.cn/home/"/>
-    <updated>2022-01-12T12:29:41.000Z</updated>
-    <content type="html"><![CDATA[<p>This is an example of a normal homepage. You can place your main content here.</p>
-<p>To use this layout, you need to set <code>home: true</code> in the page front matter.</p>
-<p>For related descriptions of configuration items, please see <a href="https://vuepress-theme-hope.github.io/guide/layout/home/" target="_blank" rel="noopener noreferrer">Project HomePage Layout Config</a>.</p>
+    <title type="html">Intro Page</title>
+    <id>https://www.moremind.cn/intro/</id>
+    <link href="https://www.moremind.cn/intro/"/>
+    <updated>2022-01-14T09:08:36.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="intro-page"> Intro Page</h1>
+<p>Place your introducation and profile here.</p>
 ]]></content>
     <author>
       <name>Moremind</name>
@@ -282,12 +281,13 @@
     <rights>Copyright by Moremind</rights>
   </entry>
   <entry>
-    <title type="html">Intro Page</title>
-    <id>https://www.moremind.cn/intro/</id>
-    <link href="https://www.moremind.cn/intro/"/>
-    <updated>2022-01-14T09:08:36.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="intro-page"> Intro Page</h1>
-<p>Place your introducation and profile here.</p>
+    <title type="html">Project home</title>
+    <id>https://www.moremind.cn/home/</id>
+    <link href="https://www.moremind.cn/home/"/>
+    <updated>2022-01-12T12:29:41.000Z</updated>
+    <content type="html"><![CDATA[<p>This is an example of a normal homepage. You can place your main content here.</p>
+<p>To use this layout, you need to set <code>home: true</code> in the page front matter.</p>
+<p>For related descriptions of configuration items, please see <a href="https://vuepress-theme-hope.github.io/guide/layout/home/" target="_blank" rel="noopener noreferrer">Project HomePage Layout Config</a>.</p>
 ]]></content>
     <author>
       <name>Moremind</name>
@@ -1368,6 +1368,22 @@ git push -u origin master
     <rights>Copyright by Moremind</rights>
   </entry>
   <entry>
+    <title type="html">Blog Home</title>
+    <id>https://www.moremind.cn/</id>
+    <link href="https://www.moremind.cn/"/>
+    <updated>2022-01-17T04:42:30.000Z</updated>
+    <content type="html"><![CDATA[
+]]></content>
+    <author>
+      <name>Moremind</name>
+    </author>
+    <contributor>
+      <name>Moremind</name>
+    </contributor>
+    <published>2022-01-12T12:29:41.000Z</published>
+    <rights>Copyright by Moremind</rights>
+  </entry>
+  <entry>
     <title type="html">算法</title>
     <id>https://www.moremind.cn/md/tools/linux/</id>
     <link href="https://www.moremind.cn/md/tools/linux/"/>
@@ -1382,22 +1398,6 @@ git push -u origin master
       <name>Moremind</name>
     </contributor>
     <published>2022-01-14T10:01:55.000Z</published>
-    <rights>Copyright by Moremind</rights>
-  </entry>
-  <entry>
-    <title type="html">Blog Home</title>
-    <id>https://www.moremind.cn/</id>
-    <link href="https://www.moremind.cn/"/>
-    <updated>2022-01-17T04:42:30.000Z</updated>
-    <content type="html"><![CDATA[
-]]></content>
-    <author>
-      <name>Moremind</name>
-    </author>
-    <contributor>
-      <name>Moremind</name>
-    </contributor>
-    <published>2022-01-12T12:29:41.000Z</published>
     <rights>Copyright by Moremind</rights>
   </entry>
 </feed>
