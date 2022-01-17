@@ -6,7 +6,7 @@
   <author>
     <name>Moremind</name>
   </author>
-  <updated>2022-01-16T17:24:11.155Z</updated>
+  <updated>2022-01-17T04:42:53.759Z</updated>
   <generator>@mr-hope/vuepress-plugin-feed</generator>
   <link rel="self" href="https://www.moremind.cn/atom.xml"/>
   <link rel="alternate" href="https://www.moremind.cn/"/>
@@ -1388,7 +1388,7 @@ git push -u origin master
     <title type="html">Blog Home</title>
     <id>https://www.moremind.cn/</id>
     <link href="https://www.moremind.cn/"/>
-    <updated>2022-01-16T17:23:07.000Z</updated>
+    <updated>2022-01-17T04:42:30.000Z</updated>
     <content type="html"><![CDATA[
 ]]></content>
     <author>
