@@ -6,8 +6,8 @@
     <link>https://www.moremind.cn/</link>
     <description>Stay Hungry, Stay Foolish!</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 17 Jan 2022 15:21:06 GMT</pubDate>
-    <lastBuildDate>Mon, 17 Jan 2022 15:21:06 GMT</lastBuildDate>
+    <pubDate>Tue, 18 Jan 2022 16:49:47 GMT</pubDate>
+    <lastBuildDate>Tue, 18 Jan 2022 16:49:47 GMT</lastBuildDate>
     <generator>@mr-hope/vuepress-plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>Copyright © 2017-present By Finen | Vuepress Theme By vuepress-theme-hope</copyright>
@@ -17,6 +17,20 @@
     <category>Java-Thread</category>
     <category>Spring</category>
     <category>Git</category>
+    <item>
+      <title>My Book For 2022</title>
+      <link>https://www.moremind.cn/book/</link>
+      <guid>https://www.moremind.cn/book/</guid>
+      <source url="https://www.moremind.cn/rss.xml">My Book For 2022</source>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="_2022-阅读书籍"> 2022 阅读书籍</h2>
+<h3 id="专业书籍"> 专业书籍</h3>
+<ul>
+<li><input type="checkbox"  disabled="disabled" id="task-item-0"><label for="task-item-0"> Plan A</label></li>
+<li><input type="checkbox" checked="checked" disabled="disabled" id="task-item-1"><label for="task-item-1"> Plan B</label></li>
+</ul>
+]]></content:encoded>
+    </item>
     <item>
       <title>友链</title>
       <link>https://www.moremind.cn/friends/</link>
@@ -44,16 +58,6 @@
 <td style="text-align:center">分享资源</td>
 </tr>
 <tr>
-<td>Yorushika Shi</td>
-<td style="text-align:left"><a href="https://sh.yorushika.live/" target="_blank" rel="noopener noreferrer">Yorushika Shi</a></td>
-<td style="text-align:center">杂谈与技术</td>
-</tr>
-<tr>
-<td>董沅鑫</td>
-<td style="text-align:left"><a href="https://godbmw.com/" target="_blank" rel="noopener noreferrer">董沅鑫的个人网站</a></td>
-<td style="text-align:center">有干货 有态度 亦有你</td>
-</tr>
-<tr>
 <td>随遇而安</td>
 <td style="text-align:left"><a href="https://www.iszy.cc/" target="_blank" rel="noopener noreferrer">随遇而安</a></td>
 <td style="text-align:center">技术分享&amp;生活吐槽</td>
@@ -64,16 +68,6 @@
 <td style="text-align:center">Talk is cheap,show me the code.</td>
 </tr>
 <tr>
-<td>嘉美伯爵</td>
-<td style="text-align:left"><a href="https://blog.gaozhe.top" target="_blank" rel="noopener noreferrer">嘉美伯爵</a></td>
-<td style="text-align:center">Like author，like book.</td>
-</tr>
-<tr>
-<td>隔壁老王的随笔</td>
-<td style="text-align:left"><a href="https://dojay.cn/" target="_blank" rel="noopener noreferrer">隔壁老王的随笔</a></td>
-<td style="text-align:center">一个喜欢撸猫的前端码农的YY天地</td>
-</tr>
-<tr>
 <td>谭升的博客</td>
 <td style="text-align:left"><a href="https://face2ai.com" target="_blank" rel="noopener noreferrer">谭升的博客</a></td>
 <td style="text-align:center">人工智能算法，数学基础类原创博客</td>
@@ -82,11 +76,6 @@
 <td>冰水鉴心的博客</td>
 <td style="text-align:left"><a href="https://xq773939719.github.io/" target="_blank" rel="noopener noreferrer">冰水鉴心的博客</a></td>
 <td style="text-align:center">.软工渣.编程痴.开发宅.系统迷.强迫症</td>
-</tr>
-<tr>
-<td>Mulander</td>
-<td style="text-align:left"><a href="https://mulander-j.github.io/Wiki1001Pro/" target="_blank" rel="noopener noreferrer">Mulander</a></td>
-<td style="text-align:center">Meet 1000 Books &amp; Unit Them Into 1 Wiki</td>
 </tr>
 <tr>
 <td>LmCjl在线工具</td>
@@ -129,19 +118,9 @@
 <td style="text-align:center">羽叶丶的个人博客</td>
 </tr>
 <tr>
-<td>阿业战记</td>
-<td style="text-align:left"><a href="https://eeee.im/" target="_blank" rel="noopener noreferrer">阿业战记</a></td>
-<td style="text-align:center">提升码农亩产，掰直码农方向</td>
-</tr>
-<tr>
 <td>飞跃高山和大洋的🐟</td>
-<td style="text-align:left"><a href="https://timspan.github.io/documents/" target="_blank" rel="noopener noreferrer">飞跃高山和大洋的🐟</a></td>
+<td style="text-align:left"><a href="https://timspan.github.io/" target="_blank" rel="noopener noreferrer">飞跃高山和大洋的🐟</a></td>
 <td style="text-align:center">前端</td>
-</tr>
-<tr>
-<td>Forex Trading</td>
-<td style="text-align:left"><a href="https://www.fi-forex.com/" target="_blank" rel="noopener noreferrer">Forex Trading</a></td>
-<td style="text-align:center">外汇交易教程博客</td>
 </tr>
 </tbody>
 </table>
@@ -161,19 +140,9 @@
 <td style="text-align:center">美团技术团队相关文档</td>
 </tr>
 <tr>
-<td>前端技术总汇</td>
-<td style="text-align:left"><a href="http://html5ify.com/fks/fks_chart/" target="_blank" rel="noopener noreferrer">前端技术总汇</a></td>
-<td style="text-align:center">前端各项技术汇总</td>
-</tr>
-<tr>
 <td>FEX技术周刊</td>
 <td style="text-align:left"><a href="http://fex.baidu.com/" target="_blank" rel="noopener noreferrer">FEX技术周刊</a></td>
 <td style="text-align:center">FEX技术周刊</td>
-</tr>
-<tr>
-<td>奇舞周刊</td>
-<td style="text-align:left"><a href="https://weekly.75team.com/" target="_blank" rel="noopener noreferrer">奇舞周刊</a></td>
-<td style="text-align:center">奇舞周刊</td>
 </tr>
 <tr>
 <td>前端精读周刊</td>
