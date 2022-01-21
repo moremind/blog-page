@@ -6,17 +6,36 @@
   <author>
     <name>Moremind</name>
   </author>
-  <updated>2022-01-18T16:49:47.066Z</updated>
+  <updated>2022-01-21T15:41:27.590Z</updated>
   <generator>@mr-hope/vuepress-plugin-feed</generator>
   <link rel="self" href="https://www.moremind.cn/atom.xml"/>
   <link rel="alternate" href="https://www.moremind.cn/"/>
   <rights>Copyright © 2017-present By Finen | Vuepress Theme By vuepress-theme-hope</rights>
   <category term="jvm"/>
+  <category term="Hibernate"/>
+  <category term="JPA"/>
+  <category term="Mybaits"/>
+  <category term="Relation-Database"/>
+  <category term="MySQL"/>
+  <category term="Elasticsearch"/>
+  <category term="Redis"/>
+  <category term="Java-Basic"/>
   <category term="Java-Collection"/>
   <category term="Java-IO"/>
+  <category term="Java-New-Feature"/>
   <category term="Java-Thread"/>
+  <category term="Memcache"/>
+  <category term="Kafka"/>
+  <category term="RabbitMQ"/>
+  <category term="RocketMQ"/>
   <category term="Spring"/>
+  <category term="SpringBoot"/>
+  <category term="SpringCloud"/>
+  <category term="Docker"/>
   <category term="Git"/>
+  <category term="Kubernates"/>
+  <category term="Linux"/>
+  <category term="Maven"/>
   <contributor>
     <name>Moremind</name>
   </contributor>
@@ -388,13 +407,13 @@ JVM 内存分析图</p>
     <title type="html">hibernate</title>
     <id>https://www.moremind.cn/md/data-persistence/hibernate/</id>
     <link href="https://www.moremind.cn/md/data-persistence/hibernate/"/>
-    <updated>2022-01-14T09:08:36.000Z</updated>
+    <updated>2022-01-21T15:41:02.000Z</updated>
     <content type="html"><![CDATA[<p>JVM 内存分析图</p>
 ]]></content>
     <author>
       <name>Moremind</name>
     </author>
-    <category term="jvm"/>
+    <category term="Hibernate"/>
     <contributor>
       <name>Moremind</name>
     </contributor>
@@ -405,30 +424,47 @@ JVM 内存分析图</p>
     <title type="html">jpa</title>
     <id>https://www.moremind.cn/md/data-persistence/jpa/</id>
     <link href="https://www.moremind.cn/md/data-persistence/jpa/"/>
-    <updated>2022-01-14T09:08:36.000Z</updated>
+    <updated>2022-01-21T15:41:02.000Z</updated>
     <content type="html"><![CDATA[<p>JVM 内存分析图</p>
 ]]></content>
     <author>
       <name>Moremind</name>
     </author>
-    <category term="jvm"/>
+    <category term="JPA"/>
     <contributor>
       <name>Moremind</name>
     </contributor>
     <published>2022-01-13T09:49:12.000Z</published>
+    <rights>Copyright by Moremind</rights>
+  </entry>
+  <entry>
+    <title type="html">mybatis-进阶</title>
+    <id>https://www.moremind.cn/md/data-persistence/mybatis-advance/</id>
+    <link href="https://www.moremind.cn/md/data-persistence/mybatis-advance/"/>
+    <updated>2022-01-21T15:41:02.000Z</updated>
+    <content type="html"><![CDATA[<p>JVM 内存分析图</p>
+]]></content>
+    <author>
+      <name>Moremind</name>
+    </author>
+    <category term="Mybaits"/>
+    <contributor>
+      <name>Moremind</name>
+    </contributor>
+    <published>2022-01-21T15:41:02.000Z</published>
     <rights>Copyright by Moremind</rights>
   </entry>
   <entry>
     <title type="html">mybatis</title>
     <id>https://www.moremind.cn/md/data-persistence/mybatis/</id>
     <link href="https://www.moremind.cn/md/data-persistence/mybatis/"/>
-    <updated>2022-01-14T09:08:36.000Z</updated>
+    <updated>2022-01-21T15:41:02.000Z</updated>
     <content type="html"><![CDATA[<p>JVM 内存分析图</p>
 ]]></content>
     <author>
       <name>Moremind</name>
     </author>
-    <category term="jvm"/>
+    <category term="Mybaits"/>
     <contributor>
       <name>Moremind</name>
     </contributor>
@@ -436,16 +472,16 @@ JVM 内存分析图</p>
     <rights>Copyright by Moremind</rights>
   </entry>
   <entry>
-    <title type="html">java基础</title>
+    <title type="html">数据库进阶</title>
     <id>https://www.moremind.cn/md/db/db-advance/</id>
     <link href="https://www.moremind.cn/md/db/db-advance/"/>
-    <updated>2022-01-14T17:15:37.000Z</updated>
+    <updated>2022-01-21T15:41:02.000Z</updated>
     <content type="html"><![CDATA[<p>JVM 内存分析图</p>
 ]]></content>
     <author>
       <name>Moremind</name>
     </author>
-    <category term="jvm"/>
+    <category term="Relation-Database"/>
     <contributor>
       <name>Moremind</name>
     </contributor>
@@ -453,33 +489,84 @@ JVM 内存分析图</p>
     <rights>Copyright by Moremind</rights>
   </entry>
   <entry>
-    <title type="html">java基础</title>
+    <title type="html">数据库知识体系</title>
     <id>https://www.moremind.cn/md/db/db-basic/</id>
     <link href="https://www.moremind.cn/md/db/db-basic/"/>
-    <updated>2022-01-14T17:15:37.000Z</updated>
+    <updated>2022-01-21T15:41:02.000Z</updated>
+    <content type="html"><![CDATA[<p>数据库基础知识体系</p>
+]]></content>
+    <author>
+      <name>Moremind</name>
+    </author>
+    <category term="Relation-Database"/>
+    <contributor>
+      <name>Moremind</name>
+    </contributor>
+    <published>2022-01-14T17:15:37.000Z</published>
+    <rights>Copyright by Moremind</rights>
+  </entry>
+  <entry>
+    <title type="html">MySQL知识体系</title>
+    <id>https://www.moremind.cn/md/db/db-mysql/</id>
+    <link href="https://www.moremind.cn/md/db/db-mysql/"/>
+    <updated>2022-01-21T15:41:02.000Z</updated>
     <content type="html"><![CDATA[<p>JVM 内存分析图</p>
 ]]></content>
     <author>
       <name>Moremind</name>
     </author>
-    <category term="jvm"/>
+    <category term="MySQL"/>
     <contributor>
       <name>Moremind</name>
     </contributor>
-    <published>2022-01-14T17:15:37.000Z</published>
+    <published>2022-01-21T15:41:02.000Z</published>
+    <rights>Copyright by Moremind</rights>
+  </entry>
+  <entry>
+    <title type="html">Elasticsearch知识体系</title>
+    <id>https://www.moremind.cn/md/db/db-nosql-elasticsearch/</id>
+    <link href="https://www.moremind.cn/md/db/db-nosql-elasticsearch/"/>
+    <updated>2022-01-21T15:41:02.000Z</updated>
+    <content type="html"><![CDATA[<p>JVM 内存分析图</p>
+]]></content>
+    <author>
+      <name>Moremind</name>
+    </author>
+    <category term="Elasticsearch"/>
+    <contributor>
+      <name>Moremind</name>
+    </contributor>
+    <published>2022-01-21T15:41:02.000Z</published>
+    <rights>Copyright by Moremind</rights>
+  </entry>
+  <entry>
+    <title type="html">Redis知识体系</title>
+    <id>https://www.moremind.cn/md/db/db-nosql-redis/</id>
+    <link href="https://www.moremind.cn/md/db/db-nosql-redis/"/>
+    <updated>2022-01-21T15:41:02.000Z</updated>
+    <content type="html"><![CDATA[<p>JVM 内存分析图</p>
+]]></content>
+    <author>
+      <name>Moremind</name>
+    </author>
+    <category term="Redis"/>
+    <contributor>
+      <name>Moremind</name>
+    </contributor>
+    <published>2022-01-21T15:41:02.000Z</published>
     <rights>Copyright by Moremind</rights>
   </entry>
   <entry>
     <title type="html">java基础</title>
     <id>https://www.moremind.cn/md/java/basic/</id>
     <link href="https://www.moremind.cn/md/java/basic/"/>
-    <updated>2022-01-14T09:08:36.000Z</updated>
+    <updated>2022-01-21T15:41:02.000Z</updated>
     <content type="html"><![CDATA[<p>JVM 内存分析图</p>
 ]]></content>
     <author>
       <name>Moremind</name>
     </author>
-    <category term="jvm"/>
+    <category term="Java-Basic"/>
     <contributor>
       <name>Moremind</name>
     </contributor>
@@ -628,16 +715,16 @@ gradlew clean build run
     <rights>Copyright by finen</rights>
   </entry>
   <entry>
-    <title type="html">java基础</title>
+    <title type="html">Java新特性</title>
     <id>https://www.moremind.cn/md/java/new-feature/</id>
     <link href="https://www.moremind.cn/md/java/new-feature/"/>
-    <updated>2022-01-14T09:08:36.000Z</updated>
+    <updated>2022-01-21T15:41:02.000Z</updated>
     <content type="html"><![CDATA[<p>JVM 内存分析图</p>
 ]]></content>
     <author>
       <name>Moremind</name>
     </author>
-    <category term="jvm"/>
+    <category term="Java-New-Feature"/>
     <contributor>
       <name>Moremind</name>
     </contributor>
@@ -648,13 +735,13 @@ gradlew clean build run
     <title type="html">java基础</title>
     <id>https://www.moremind.cn/md/java/thread/</id>
     <link href="https://www.moremind.cn/md/java/thread/"/>
-    <updated>2022-01-14T09:08:36.000Z</updated>
+    <updated>2022-01-21T15:41:02.000Z</updated>
     <content type="html"><![CDATA[<p>JVM 内存分析图</p>
 ]]></content>
     <author>
       <name>Moremind</name>
     </author>
-    <category term="jvm"/>
+    <category term="Java-Thread"/>
     <contributor>
       <name>Moremind</name>
     </contributor>
@@ -932,16 +1019,16 @@ concurrentMap.put(&quot;3&quot;, &quot;three&quot;);
     <rights>Copyright by moremind</rights>
   </entry>
   <entry>
-    <title type="html">算法</title>
+    <title type="html">Memecache</title>
     <id>https://www.moremind.cn/md/middleware/cache/memcache/</id>
     <link href="https://www.moremind.cn/md/middleware/cache/memcache/"/>
-    <updated>2022-01-13T16:50:45.000Z</updated>
+    <updated>2022-01-21T15:41:02.000Z</updated>
     <content type="html"><![CDATA[<p>JVM 内存分析图</p>
 ]]></content>
     <author>
       <name>Moremind</name>
     </author>
-    <category term="jvm"/>
+    <category term="Memcache"/>
     <contributor>
       <name>Moremind</name>
     </contributor>
@@ -949,16 +1036,16 @@ concurrentMap.put(&quot;3&quot;, &quot;three&quot;);
     <rights>Copyright by Moremind</rights>
   </entry>
   <entry>
-    <title type="html">算法</title>
+    <title type="html">Redis</title>
     <id>https://www.moremind.cn/md/middleware/cache/redis/</id>
     <link href="https://www.moremind.cn/md/middleware/cache/redis/"/>
-    <updated>2022-01-13T16:50:45.000Z</updated>
+    <updated>2022-01-21T15:41:02.000Z</updated>
     <content type="html"><![CDATA[<p>JVM 内存分析图</p>
 ]]></content>
     <author>
       <name>Moremind</name>
     </author>
-    <category term="jvm"/>
+    <category term="Redis"/>
     <contributor>
       <name>Moremind</name>
     </contributor>
@@ -966,16 +1053,16 @@ concurrentMap.put(&quot;3&quot;, &quot;three&quot;);
     <rights>Copyright by Moremind</rights>
   </entry>
   <entry>
-    <title type="html">算法</title>
+    <title type="html">Kafka</title>
     <id>https://www.moremind.cn/md/middleware/message/kafka/</id>
     <link href="https://www.moremind.cn/md/middleware/message/kafka/"/>
-    <updated>2022-01-13T16:50:45.000Z</updated>
+    <updated>2022-01-21T15:41:02.000Z</updated>
     <content type="html"><![CDATA[<p>JVM 内存分析图</p>
 ]]></content>
     <author>
       <name>Moremind</name>
     </author>
-    <category term="jvm"/>
+    <category term="Kafka"/>
     <contributor>
       <name>Moremind</name>
     </contributor>
@@ -983,16 +1070,16 @@ concurrentMap.put(&quot;3&quot;, &quot;three&quot;);
     <rights>Copyright by Moremind</rights>
   </entry>
   <entry>
-    <title type="html">算法</title>
+    <title type="html">RabbitMQ</title>
     <id>https://www.moremind.cn/md/middleware/message/rabbitmq/</id>
     <link href="https://www.moremind.cn/md/middleware/message/rabbitmq/"/>
-    <updated>2022-01-13T16:50:45.000Z</updated>
+    <updated>2022-01-21T15:41:02.000Z</updated>
     <content type="html"><![CDATA[<p>JVM 内存分析图</p>
 ]]></content>
     <author>
       <name>Moremind</name>
     </author>
-    <category term="jvm"/>
+    <category term="RabbitMQ"/>
     <contributor>
       <name>Moremind</name>
     </contributor>
@@ -1000,16 +1087,16 @@ concurrentMap.put(&quot;3&quot;, &quot;three&quot;);
     <rights>Copyright by Moremind</rights>
   </entry>
   <entry>
-    <title type="html">算法</title>
+    <title type="html">RocketMQ</title>
     <id>https://www.moremind.cn/md/middleware/message/rocketmq/</id>
     <link href="https://www.moremind.cn/md/middleware/message/rocketmq/"/>
-    <updated>2022-01-13T16:50:45.000Z</updated>
+    <updated>2022-01-21T15:41:02.000Z</updated>
     <content type="html"><![CDATA[<p>JVM 内存分析图</p>
 ]]></content>
     <author>
       <name>Moremind</name>
     </author>
-    <category term="jvm"/>
+    <category term="RocketMQ"/>
     <contributor>
       <name>Moremind</name>
     </contributor>
@@ -1020,13 +1107,13 @@ concurrentMap.put(&quot;3&quot;, &quot;three&quot;);
     <title type="html">spring 知识图谱</title>
     <id>https://www.moremind.cn/md/spring/spring-framework/</id>
     <link href="https://www.moremind.cn/md/spring/spring-framework/"/>
-    <updated>2022-01-17T14:28:59.000Z</updated>
+    <updated>2022-01-21T15:41:02.000Z</updated>
     <content type="html"><![CDATA[<p>JVM 内存分析图</p>
 ]]></content>
     <author>
       <name>Moremind</name>
     </author>
-    <category term="jvm"/>
+    <category term="Spring"/>
     <contributor>
       <name>Moremind</name>
     </contributor>
@@ -1082,13 +1169,13 @@ concurrentMap.put(&quot;3&quot;, &quot;three&quot;);
     <title type="html">springboot</title>
     <id>https://www.moremind.cn/md/spring/springboot/</id>
     <link href="https://www.moremind.cn/md/spring/springboot/"/>
-    <updated>2022-01-14T09:08:36.000Z</updated>
+    <updated>2022-01-21T15:41:02.000Z</updated>
     <content type="html"><![CDATA[<p>JVM 内存分析图</p>
 ]]></content>
     <author>
       <name>Moremind</name>
     </author>
-    <category term="jvm"/>
+    <category term="SpringBoot"/>
     <contributor>
       <name>Moremind</name>
     </contributor>
@@ -1099,13 +1186,13 @@ concurrentMap.put(&quot;3&quot;, &quot;three&quot;);
     <title type="html">springcloud</title>
     <id>https://www.moremind.cn/md/spring/springcloud/</id>
     <link href="https://www.moremind.cn/md/spring/springcloud/"/>
-    <updated>2022-01-14T09:08:36.000Z</updated>
+    <updated>2022-01-21T15:41:02.000Z</updated>
     <content type="html"><![CDATA[<p>JVM 内存分析图</p>
 ]]></content>
     <author>
       <name>Moremind</name>
     </author>
-    <category term="jvm"/>
+    <category term="SpringCloud"/>
     <contributor>
       <name>Moremind</name>
     </contributor>
@@ -1133,13 +1220,13 @@ concurrentMap.put(&quot;3&quot;, &quot;three&quot;);
     <title type="html">算法</title>
     <id>https://www.moremind.cn/md/tools/docker/</id>
     <link href="https://www.moremind.cn/md/tools/docker/"/>
-    <updated>2022-01-14T10:01:55.000Z</updated>
+    <updated>2022-01-21T15:41:02.000Z</updated>
     <content type="html"><![CDATA[<p>JVM 内存分析图</p>
 ]]></content>
     <author>
       <name>Moremind</name>
     </author>
-    <category term="jvm"/>
+    <category term="Docker"/>
     <contributor>
       <name>Moremind</name>
     </contributor>
@@ -1150,7 +1237,7 @@ concurrentMap.put(&quot;3&quot;, &quot;three&quot;);
     <title type="html">Git基本简介</title>
     <id>https://www.moremind.cn/md/tools/git/</id>
     <link href="https://www.moremind.cn/md/tools/git/"/>
-    <updated>2022-01-14T10:01:55.000Z</updated>
+    <updated>2022-01-21T15:41:02.000Z</updated>
     <content type="html"><![CDATA[
 <h1 id="git与svn的基本介绍"> git与svn的基本介绍</h1>
 <h2 id="git与svn"> git与svn</h2>
@@ -1170,7 +1257,7 @@ concurrentMap.put(&quot;3&quot;, &quot;three&quot;);
     <author>
       <name>Moremind</name>
     </author>
-    <category term="jvm"/>
+    <category term="Git"/>
     <contributor>
       <name>Moremind</name>
     </contributor>
@@ -1652,13 +1739,13 @@ git push -u origin master
     <title type="html">算法</title>
     <id>https://www.moremind.cn/md/tools/k8s/</id>
     <link href="https://www.moremind.cn/md/tools/k8s/"/>
-    <updated>2022-01-14T10:01:55.000Z</updated>
+    <updated>2022-01-21T15:41:02.000Z</updated>
     <content type="html"><![CDATA[<p>JVM 内存分析图</p>
 ]]></content>
     <author>
       <name>Moremind</name>
     </author>
-    <category term="jvm"/>
+    <category term="Kubernates"/>
     <contributor>
       <name>Moremind</name>
     </contributor>
@@ -1669,17 +1756,34 @@ git push -u origin master
     <title type="html">算法</title>
     <id>https://www.moremind.cn/md/tools/linux/</id>
     <link href="https://www.moremind.cn/md/tools/linux/"/>
-    <updated>2022-01-14T10:01:55.000Z</updated>
+    <updated>2022-01-21T15:41:02.000Z</updated>
     <content type="html"><![CDATA[<p>JVM 内存分析图</p>
 ]]></content>
     <author>
       <name>Moremind</name>
     </author>
-    <category term="jvm"/>
+    <category term="Linux"/>
     <contributor>
       <name>Moremind</name>
     </contributor>
     <published>2022-01-14T10:01:55.000Z</published>
+    <rights>Copyright by Moremind</rights>
+  </entry>
+  <entry>
+    <title type="html">Maven</title>
+    <id>https://www.moremind.cn/md/tools/maven/</id>
+    <link href="https://www.moremind.cn/md/tools/maven/"/>
+    <updated>2022-01-21T15:41:02.000Z</updated>
+    <content type="html"><![CDATA[<p>JVM 内存分析图</p>
+]]></content>
+    <author>
+      <name>Moremind</name>
+    </author>
+    <category term="Maven"/>
+    <contributor>
+      <name>Moremind</name>
+    </contributor>
+    <published>2022-01-21T15:41:02.000Z</published>
     <rights>Copyright by Moremind</rights>
   </entry>
   <entry>

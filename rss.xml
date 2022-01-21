@@ -6,17 +6,36 @@
     <link>https://www.moremind.cn/</link>
     <description>Stay Hungry, Stay Foolish!</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 18 Jan 2022 16:49:47 GMT</pubDate>
-    <lastBuildDate>Tue, 18 Jan 2022 16:49:47 GMT</lastBuildDate>
+    <pubDate>Fri, 21 Jan 2022 15:41:27 GMT</pubDate>
+    <lastBuildDate>Fri, 21 Jan 2022 15:41:27 GMT</lastBuildDate>
     <generator>@mr-hope/vuepress-plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>Copyright © 2017-present By Finen | Vuepress Theme By vuepress-theme-hope</copyright>
     <category>jvm</category>
+    <category>Hibernate</category>
+    <category>JPA</category>
+    <category>Mybaits</category>
+    <category>Relation-Database</category>
+    <category>MySQL</category>
+    <category>Elasticsearch</category>
+    <category>Redis</category>
+    <category>Java-Basic</category>
     <category>Java-Collection</category>
     <category>Java-IO</category>
+    <category>Java-New-Feature</category>
     <category>Java-Thread</category>
+    <category>Memcache</category>
+    <category>Kafka</category>
+    <category>RabbitMQ</category>
+    <category>RocketMQ</category>
     <category>Spring</category>
+    <category>SpringBoot</category>
+    <category>SpringCloud</category>
+    <category>Docker</category>
     <category>Git</category>
+    <category>Kubernates</category>
+    <category>Linux</category>
+    <category>Maven</category>
     <item>
       <title>My Book For 2022</title>
       <link>https://www.moremind.cn/book/</link>
@@ -310,7 +329,7 @@ JVM 内存分析图</p>
       <link>https://www.moremind.cn/md/data-persistence/hibernate/</link>
       <guid>https://www.moremind.cn/md/data-persistence/hibernate/</guid>
       <source url="https://www.moremind.cn/rss.xml">hibernate</source>
-      <category>jvm</category>
+      <category>Hibernate</category>
       <pubDate>Thu, 13 Jan 2022 09:49:12 GMT</pubDate>
       <content:encoded><![CDATA[<p>JVM 内存分析图</p>
 ]]></content:encoded>
@@ -320,8 +339,18 @@ JVM 内存分析图</p>
       <link>https://www.moremind.cn/md/data-persistence/jpa/</link>
       <guid>https://www.moremind.cn/md/data-persistence/jpa/</guid>
       <source url="https://www.moremind.cn/rss.xml">jpa</source>
-      <category>jvm</category>
+      <category>JPA</category>
       <pubDate>Thu, 13 Jan 2022 09:49:12 GMT</pubDate>
+      <content:encoded><![CDATA[<p>JVM 内存分析图</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>mybatis-进阶</title>
+      <link>https://www.moremind.cn/md/data-persistence/mybatis-advance/</link>
+      <guid>https://www.moremind.cn/md/data-persistence/mybatis-advance/</guid>
+      <source url="https://www.moremind.cn/rss.xml">mybatis-进阶</source>
+      <category>Mybaits</category>
+      <pubDate>Fri, 21 Jan 2022 15:41:02 GMT</pubDate>
       <content:encoded><![CDATA[<p>JVM 内存分析图</p>
 ]]></content:encoded>
     </item>
@@ -330,28 +359,58 @@ JVM 内存分析图</p>
       <link>https://www.moremind.cn/md/data-persistence/mybatis/</link>
       <guid>https://www.moremind.cn/md/data-persistence/mybatis/</guid>
       <source url="https://www.moremind.cn/rss.xml">mybatis</source>
-      <category>jvm</category>
+      <category>Mybaits</category>
       <pubDate>Thu, 13 Jan 2022 09:49:12 GMT</pubDate>
       <content:encoded><![CDATA[<p>JVM 内存分析图</p>
 ]]></content:encoded>
     </item>
     <item>
-      <title>java基础</title>
+      <title>数据库进阶</title>
       <link>https://www.moremind.cn/md/db/db-advance/</link>
       <guid>https://www.moremind.cn/md/db/db-advance/</guid>
-      <source url="https://www.moremind.cn/rss.xml">java基础</source>
-      <category>jvm</category>
+      <source url="https://www.moremind.cn/rss.xml">数据库进阶</source>
+      <category>Relation-Database</category>
       <pubDate>Fri, 14 Jan 2022 17:15:37 GMT</pubDate>
       <content:encoded><![CDATA[<p>JVM 内存分析图</p>
 ]]></content:encoded>
     </item>
     <item>
-      <title>java基础</title>
+      <title>数据库知识体系</title>
       <link>https://www.moremind.cn/md/db/db-basic/</link>
       <guid>https://www.moremind.cn/md/db/db-basic/</guid>
-      <source url="https://www.moremind.cn/rss.xml">java基础</source>
-      <category>jvm</category>
+      <source url="https://www.moremind.cn/rss.xml">数据库知识体系</source>
+      <category>Relation-Database</category>
       <pubDate>Fri, 14 Jan 2022 17:15:37 GMT</pubDate>
+      <content:encoded><![CDATA[<p>数据库基础知识体系</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>MySQL知识体系</title>
+      <link>https://www.moremind.cn/md/db/db-mysql/</link>
+      <guid>https://www.moremind.cn/md/db/db-mysql/</guid>
+      <source url="https://www.moremind.cn/rss.xml">MySQL知识体系</source>
+      <category>MySQL</category>
+      <pubDate>Fri, 21 Jan 2022 15:41:02 GMT</pubDate>
+      <content:encoded><![CDATA[<p>JVM 内存分析图</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Elasticsearch知识体系</title>
+      <link>https://www.moremind.cn/md/db/db-nosql-elasticsearch/</link>
+      <guid>https://www.moremind.cn/md/db/db-nosql-elasticsearch/</guid>
+      <source url="https://www.moremind.cn/rss.xml">Elasticsearch知识体系</source>
+      <category>Elasticsearch</category>
+      <pubDate>Fri, 21 Jan 2022 15:41:02 GMT</pubDate>
+      <content:encoded><![CDATA[<p>JVM 内存分析图</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Redis知识体系</title>
+      <link>https://www.moremind.cn/md/db/db-nosql-redis/</link>
+      <guid>https://www.moremind.cn/md/db/db-nosql-redis/</guid>
+      <source url="https://www.moremind.cn/rss.xml">Redis知识体系</source>
+      <category>Redis</category>
+      <pubDate>Fri, 21 Jan 2022 15:41:02 GMT</pubDate>
       <content:encoded><![CDATA[<p>JVM 内存分析图</p>
 ]]></content:encoded>
     </item>
@@ -360,7 +419,7 @@ JVM 内存分析图</p>
       <link>https://www.moremind.cn/md/java/basic/</link>
       <guid>https://www.moremind.cn/md/java/basic/</guid>
       <source url="https://www.moremind.cn/rss.xml">java基础</source>
-      <category>jvm</category>
+      <category>Java-Basic</category>
       <pubDate>Thu, 13 Jan 2022 09:49:12 GMT</pubDate>
       <content:encoded><![CDATA[<p>JVM 内存分析图</p>
 ]]></content:encoded>
@@ -480,11 +539,11 @@ gradlew clean build run
       <enclosure url="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20210414230849483.png" type="image/png"/>
     </item>
     <item>
-      <title>java基础</title>
+      <title>Java新特性</title>
       <link>https://www.moremind.cn/md/java/new-feature/</link>
       <guid>https://www.moremind.cn/md/java/new-feature/</guid>
-      <source url="https://www.moremind.cn/rss.xml">java基础</source>
-      <category>jvm</category>
+      <source url="https://www.moremind.cn/rss.xml">Java新特性</source>
+      <category>Java-New-Feature</category>
       <pubDate>Thu, 13 Jan 2022 09:49:12 GMT</pubDate>
       <content:encoded><![CDATA[<p>JVM 内存分析图</p>
 ]]></content:encoded>
@@ -494,7 +553,7 @@ gradlew clean build run
       <link>https://www.moremind.cn/md/java/thread/</link>
       <guid>https://www.moremind.cn/md/java/thread/</guid>
       <source url="https://www.moremind.cn/rss.xml">java基础</source>
-      <category>jvm</category>
+      <category>Java-Thread</category>
       <pubDate>Thu, 13 Jan 2022 09:49:12 GMT</pubDate>
       <content:encoded><![CDATA[<p>JVM 内存分析图</p>
 ]]></content:encoded>
@@ -764,51 +823,51 @@ concurrentMap.put(&quot;3&quot;, &quot;three&quot;);
       <enclosure url="https://gitee.com/forge-logic/images-lib/raw/master/img/16bf62d8c174d776.jpg" type="image/jpeg"/>
     </item>
     <item>
-      <title>算法</title>
+      <title>Memecache</title>
       <link>https://www.moremind.cn/md/middleware/cache/memcache/</link>
       <guid>https://www.moremind.cn/md/middleware/cache/memcache/</guid>
-      <source url="https://www.moremind.cn/rss.xml">算法</source>
-      <category>jvm</category>
+      <source url="https://www.moremind.cn/rss.xml">Memecache</source>
+      <category>Memcache</category>
       <pubDate>Thu, 13 Jan 2022 16:50:45 GMT</pubDate>
       <content:encoded><![CDATA[<p>JVM 内存分析图</p>
 ]]></content:encoded>
     </item>
     <item>
-      <title>算法</title>
+      <title>Redis</title>
       <link>https://www.moremind.cn/md/middleware/cache/redis/</link>
       <guid>https://www.moremind.cn/md/middleware/cache/redis/</guid>
-      <source url="https://www.moremind.cn/rss.xml">算法</source>
-      <category>jvm</category>
+      <source url="https://www.moremind.cn/rss.xml">Redis</source>
+      <category>Redis</category>
       <pubDate>Thu, 13 Jan 2022 16:50:45 GMT</pubDate>
       <content:encoded><![CDATA[<p>JVM 内存分析图</p>
 ]]></content:encoded>
     </item>
     <item>
-      <title>算法</title>
+      <title>Kafka</title>
       <link>https://www.moremind.cn/md/middleware/message/kafka/</link>
       <guid>https://www.moremind.cn/md/middleware/message/kafka/</guid>
-      <source url="https://www.moremind.cn/rss.xml">算法</source>
-      <category>jvm</category>
+      <source url="https://www.moremind.cn/rss.xml">Kafka</source>
+      <category>Kafka</category>
       <pubDate>Thu, 13 Jan 2022 16:50:45 GMT</pubDate>
       <content:encoded><![CDATA[<p>JVM 内存分析图</p>
 ]]></content:encoded>
     </item>
     <item>
-      <title>算法</title>
+      <title>RabbitMQ</title>
       <link>https://www.moremind.cn/md/middleware/message/rabbitmq/</link>
       <guid>https://www.moremind.cn/md/middleware/message/rabbitmq/</guid>
-      <source url="https://www.moremind.cn/rss.xml">算法</source>
-      <category>jvm</category>
+      <source url="https://www.moremind.cn/rss.xml">RabbitMQ</source>
+      <category>RabbitMQ</category>
       <pubDate>Thu, 13 Jan 2022 16:50:45 GMT</pubDate>
       <content:encoded><![CDATA[<p>JVM 内存分析图</p>
 ]]></content:encoded>
     </item>
     <item>
-      <title>算法</title>
+      <title>RocketMQ</title>
       <link>https://www.moremind.cn/md/middleware/message/rocketmq/</link>
       <guid>https://www.moremind.cn/md/middleware/message/rocketmq/</guid>
-      <source url="https://www.moremind.cn/rss.xml">算法</source>
-      <category>jvm</category>
+      <source url="https://www.moremind.cn/rss.xml">RocketMQ</source>
+      <category>RocketMQ</category>
       <pubDate>Thu, 13 Jan 2022 16:50:45 GMT</pubDate>
       <content:encoded><![CDATA[<p>JVM 内存分析图</p>
 ]]></content:encoded>
@@ -818,7 +877,7 @@ concurrentMap.put(&quot;3&quot;, &quot;three&quot;);
       <link>https://www.moremind.cn/md/spring/spring-framework/</link>
       <guid>https://www.moremind.cn/md/spring/spring-framework/</guid>
       <source url="https://www.moremind.cn/rss.xml">spring 知识图谱</source>
-      <category>jvm</category>
+      <category>Spring</category>
       <pubDate>Thu, 13 Jan 2022 09:49:12 GMT</pubDate>
       <content:encoded><![CDATA[<p>JVM 内存分析图</p>
 ]]></content:encoded>
@@ -852,7 +911,7 @@ concurrentMap.put(&quot;3&quot;, &quot;three&quot;);
       <link>https://www.moremind.cn/md/spring/springboot/</link>
       <guid>https://www.moremind.cn/md/spring/springboot/</guid>
       <source url="https://www.moremind.cn/rss.xml">springboot</source>
-      <category>jvm</category>
+      <category>SpringBoot</category>
       <pubDate>Thu, 13 Jan 2022 09:49:12 GMT</pubDate>
       <content:encoded><![CDATA[<p>JVM 内存分析图</p>
 ]]></content:encoded>
@@ -862,7 +921,7 @@ concurrentMap.put(&quot;3&quot;, &quot;three&quot;);
       <link>https://www.moremind.cn/md/spring/springcloud/</link>
       <guid>https://www.moremind.cn/md/spring/springcloud/</guid>
       <source url="https://www.moremind.cn/rss.xml">springcloud</source>
-      <category>jvm</category>
+      <category>SpringCloud</category>
       <pubDate>Thu, 13 Jan 2022 09:49:12 GMT</pubDate>
       <content:encoded><![CDATA[<p>JVM 内存分析图</p>
 ]]></content:encoded>
@@ -882,7 +941,7 @@ concurrentMap.put(&quot;3&quot;, &quot;three&quot;);
       <link>https://www.moremind.cn/md/tools/docker/</link>
       <guid>https://www.moremind.cn/md/tools/docker/</guid>
       <source url="https://www.moremind.cn/rss.xml">算法</source>
-      <category>jvm</category>
+      <category>Docker</category>
       <pubDate>Fri, 14 Jan 2022 10:01:55 GMT</pubDate>
       <content:encoded><![CDATA[<p>JVM 内存分析图</p>
 ]]></content:encoded>
@@ -892,7 +951,7 @@ concurrentMap.put(&quot;3&quot;, &quot;three&quot;);
       <link>https://www.moremind.cn/md/tools/git/</link>
       <guid>https://www.moremind.cn/md/tools/git/</guid>
       <source url="https://www.moremind.cn/rss.xml">Git基本简介</source>
-      <category>jvm</category>
+      <category>Git</category>
       <pubDate>Fri, 14 Jan 2022 10:01:55 GMT</pubDate>
       <content:encoded><![CDATA[
 <h1 id="git与svn的基本介绍"> git与svn的基本介绍</h1>
@@ -1358,7 +1417,7 @@ git push -u origin master
       <link>https://www.moremind.cn/md/tools/k8s/</link>
       <guid>https://www.moremind.cn/md/tools/k8s/</guid>
       <source url="https://www.moremind.cn/rss.xml">算法</source>
-      <category>jvm</category>
+      <category>Kubernates</category>
       <pubDate>Fri, 14 Jan 2022 10:01:55 GMT</pubDate>
       <content:encoded><![CDATA[<p>JVM 内存分析图</p>
 ]]></content:encoded>
@@ -1368,8 +1427,18 @@ git push -u origin master
       <link>https://www.moremind.cn/md/tools/linux/</link>
       <guid>https://www.moremind.cn/md/tools/linux/</guid>
       <source url="https://www.moremind.cn/rss.xml">算法</source>
-      <category>jvm</category>
+      <category>Linux</category>
       <pubDate>Fri, 14 Jan 2022 10:01:55 GMT</pubDate>
+      <content:encoded><![CDATA[<p>JVM 内存分析图</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Maven</title>
+      <link>https://www.moremind.cn/md/tools/maven/</link>
+      <guid>https://www.moremind.cn/md/tools/maven/</guid>
+      <source url="https://www.moremind.cn/rss.xml">Maven</source>
+      <category>Maven</category>
+      <pubDate>Fri, 21 Jan 2022 15:41:02 GMT</pubDate>
       <content:encoded><![CDATA[<p>JVM 内存分析图</p>
 ]]></content:encoded>
     </item>
