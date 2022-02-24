@@ -6,7 +6,7 @@
   <author>
     <name>Moremind</name>
   </author>
-  <updated>2022-02-12T07:21:11.774Z</updated>
+  <updated>2022-02-24T09:46:57.241Z</updated>
   <generator>@mr-hope/vuepress-plugin-feed</generator>
   <link rel="self" href="https://www.moremind.cn/atom.xml"/>
   <link rel="alternate" href="https://www.moremind.cn/"/>
@@ -574,11 +574,24 @@ JVM 内存分析图</p>
     <rights>Copyright by Moremind</rights>
   </entry>
   <entry>
-    <title type="html">Java 集合框架</title>
+    <title type="html">Java 集合框架知识图谱</title>
     <id>https://www.moremind.cn/md/java/collection/</id>
     <link href="https://www.moremind.cn/md/java/collection/"/>
-    <updated>2022-01-17T14:28:59.000Z</updated>
-    <content type="html"><![CDATA[<p>JVM 内存分析图</p>
+    <updated>2022-02-24T09:43:06.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="集合关系图谱"> 集合关系图谱</h2>
+<blockquote>
+<p>Java集合框架包括Collection和Map，Collection主要用于存储对象，Map主要用用于存储键值对数据。</p>
+</blockquote>
+<h2 id="collection"> Collection</h2>
+<h3 id="list"> List</h3>
+<h4 id="arraylist"> ArrayList</h4>
+<h4 id="linkedlist"> LinkedList</h4>
+<h3 id="set"> Set</h3>
+<h4 id="hashset"> Hashset</h4>
+<h4 id="linkedhashset"> LinkedHashSet</h4>
+<h3 id="queue"> Queue</h3>
+<h4 id="deque"> Deque</h4>
+<h4 id="arraydeque"> ArrayDeque</h4>
 ]]></content>
     <author>
       <name>Moremind</name>
