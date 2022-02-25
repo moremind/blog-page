@@ -324,9 +324,10 @@
       "title": "ArrayList源码解析",
       "url": "https://www.moremind.cn/md/java/collection/ArrayList-Source/",
       "id": "https://www.moremind.cn/md/java/collection/ArrayList-Source/",
-      "content_html": "<h2 id=\"集合关系图谱\"> 集合关系图谱</h2>\n<blockquote>\n<p>Java集合框架包括Collection和Map，Collection主要用于存储对象，Map主要用用于存储键值对数据。</p>\n</blockquote>\n<h2 id=\"collection\"> Collection</h2>\n<h3 id=\"list\"> List</h3>\n<h4 id=\"arraylist\"> ArrayList</h4>\n<h4 id=\"linkedlist\"> LinkedList</h4>\n<h3 id=\"set\"> Set</h3>\n<h4 id=\"hashset\"> Hashset</h4>\n<h4 id=\"linkedhashset\"> LinkedHashSet</h4>\n<h3 id=\"queue\"> Queue</h3>\n<h4 id=\"deque\"> Deque</h4>\n<h4 id=\"arraydeque\"> ArrayDeque</h4>\n",
+      "content_html": "<h2 id=\"集合关系图谱\"> 集合关系图谱</h2>\n<blockquote>\n<p>Java集合框架包括Collection和Map，Collection主要用于存储对象，Map主要用用于存储键值对数据。\n<img src=\"https://gitee.com/forge-logic/images-lib/raw/master/img/Java-collection-cheat-sheet.PNG\" alt=\"Java-Collection\" /></p>\n</blockquote>\n<h2 id=\"介绍\"> 介绍</h2>\n<p>容器，就是可以容纳其他Java对象的对象。*Java Collections Framework(JCF)*为Java开发者提供了通用的容器，其始于JDK 1.2，优点是:</p>\n<ul>\n<li>降低编程难度</li>\n<li>提高程序性能</li>\n<li>提高API间的互操作性</li>\n<li>降低学习难度</li>\n<li>降低设计和实现相关API的难度</li>\n<li>增加程序的重用性\nJava容器里只能放对象，对于基本类型(int, long, float, double等)，需要将其包装成对象类型后(Integer, Long, Float, Double等)才能放到容器里。很多时候拆包装和解包装能够自动完成。这虽然会导致额外的性能和空间开销，但简化了设计和编程。</li>\n</ul>\n<h2 id=\"collection\"> Collection</h2>\n<h3 id=\"list\"> List</h3>\n<h4 id=\"arraylist简介\"> ArrayList简介</h4>\n<p>ArrayList继承自<code>AbstractList</code>，实现了 List 接口。底层基于数组实现容量大小动态变化。允许 null 的存在。同时还实现了<code>RandomAccess</code>、<code>Cloneable</code>、<code>Serializable</code> 接口，所以ArrayList 是支持快速访问、复制、序列化的。基于动态数组实现，支持随机访问。</p>\n<h4 id=\"linkedlist\"> LinkedList</h4>\n<h3 id=\"set\"> Set</h3>\n<h4 id=\"hashset\"> Hashset</h4>\n<h4 id=\"linkedhashset\"> LinkedHashSet</h4>\n<h3 id=\"queue\"> Queue</h3>\n<h4 id=\"deque\"> Deque</h4>\n<h4 id=\"arraydeque\"> ArrayDeque</h4>\n",
+      "image": "https://gitee.com/forge-logic/images-lib/raw/master/img/Java-collection-cheat-sheet.PNG",
       "date_published": "2022-02-24T09:46:27.000Z",
-      "date_modified": "2022-02-24T09:46:27.000Z",
+      "date_modified": "2022-02-25T04:20:32.000Z",
       "authors": [
         {
           "name": "Moremind"
@@ -342,7 +343,7 @@
       "id": "https://www.moremind.cn/md/java/collection/LinkedList-Source/",
       "content_html": "<h2 id=\"集合关系图谱\"> 集合关系图谱</h2>\n<blockquote>\n<p>Java集合框架包括Collection和Map，Collection主要用于存储对象，Map主要用用于存储键值对数据。</p>\n</blockquote>\n<h2 id=\"collection\"> Collection</h2>\n<h3 id=\"list\"> List</h3>\n<h4 id=\"arraylist\"> ArrayList</h4>\n<h4 id=\"linkedlist\"> LinkedList</h4>\n<h3 id=\"set\"> Set</h3>\n<h4 id=\"hashset\"> Hashset</h4>\n<h4 id=\"linkedhashset\"> LinkedHashSet</h4>\n<h3 id=\"queue\"> Queue</h3>\n<h4 id=\"deque\"> Deque</h4>\n<h4 id=\"arraydeque\"> ArrayDeque</h4>\n",
       "date_published": "2022-02-24T09:46:27.000Z",
-      "date_modified": "2022-02-24T09:46:27.000Z",
+      "date_modified": "2022-02-25T04:20:32.000Z",
       "authors": [
         {
           "name": "Moremind"
@@ -353,12 +354,13 @@
       ]
     },
     {
-      "title": "Java 集合框架知识图谱",
+      "title": "ArrayList源码解析",
       "url": "https://www.moremind.cn/md/java/collection/",
       "id": "https://www.moremind.cn/md/java/collection/",
-      "content_html": "<h2 id=\"集合关系图谱\"> 集合关系图谱</h2>\n<blockquote>\n<p>Java集合框架包括Collection和Map，Collection主要用于存储对象，Map主要用用于存储键值对数据。</p>\n</blockquote>\n<h2 id=\"collection\"> Collection</h2>\n<h3 id=\"list\"> List</h3>\n<h4 id=\"arraylist\"> ArrayList</h4>\n<h4 id=\"linkedlist\"> LinkedList</h4>\n<h3 id=\"set\"> Set</h3>\n<h4 id=\"hashset\"> Hashset</h4>\n<h4 id=\"linkedhashset\"> LinkedHashSet</h4>\n<h3 id=\"queue\"> Queue</h3>\n<h4 id=\"deque\"> Deque</h4>\n<h4 id=\"arraydeque\"> ArrayDeque</h4>\n",
+      "content_html": "<h2 id=\"集合关系图谱\"> 集合关系图谱</h2>\n<blockquote>\n<p>Java集合框架包括Collection和Map，Collection主要用于存储对象，Map主要用用于存储键值对数据。\n<img src=\"https://gitee.com/forge-logic/images-lib/raw/master/img/Java-collection-cheat-sheet.PNG\" alt=\"Java-Collection\" /></p>\n</blockquote>\n<h2 id=\"介绍\"> 介绍</h2>\n<p>容器，就是可以容纳其他Java对象的对象。*Java Collections Framework(JCF)*为Java开发者提供了通用的容器，其始于JDK 1.2，优点是:</p>\n<ul>\n<li>降低编程难度</li>\n<li>提高程序性能</li>\n<li>提高API间的互操作性</li>\n<li>降低学习难度</li>\n<li>降低设计和实现相关API的难度</li>\n<li>增加程序的重用性\nJava容器里只能放对象，对于基本类型(int, long, float, double等)，需要将其包装成对象类型后(Integer, Long, Float, Double等)才能放到容器里。很多时候拆包装和解包装能够自动完成。这虽然会导致额外的性能和空间开销，但简化了设计和编程。</li>\n</ul>\n<h2 id=\"collection\"> Collection</h2>\n<h3 id=\"list\"> List</h3>\n<h4 id=\"arraylist简介\"> ArrayList简介</h4>\n<p>ArrayList继承自<code>AbstractList</code>，实现了<code>List</code>、<code>RandomAccess</code>、<code>Cloneable</code>、<code>Serializable</code>接口。底层基于数组实现容量大小动态变化。允许<code>null</code>的存在。所以ArrayList是支持快速访问、复制、序列化的。基于动态数组实现，支持随机访问。</p>\n<h4 id=\"linkedlist\"> LinkedList</h4>\n<p>LinkedList继承自<code>AbstractSequentialList</code>，实现了<code>List</code>、<code>Deque</code>、<code>Cloneable</code>、<code>Serializable</code>，LinkedList是基于链表实现的，<code>LinkedList</code>插入和删除方面要优于<code>ArrayList</code>,只能顺序访问。</p>\n<h3 id=\"set\"> Set</h3>\n<h4 id=\"hashset\"> Hashset</h4>\n<h4 id=\"linkedhashset\"> LinkedHashSet</h4>\n<h4 id=\"treeset\"> TreeSet</h4>\n<h3 id=\"queue\"> Queue</h3>\n<h4 id=\"deque\"> Deque</h4>\n<h4 id=\"arraydeque\"> ArrayDeque</h4>\n<h2 id=\"map\"> Map</h2>\n<h3 id=\"hashmap\"> HashMap</h3>\n",
+      "image": "https://gitee.com/forge-logic/images-lib/raw/master/img/Java-collection-cheat-sheet.PNG",
       "date_published": "2022-01-13T09:49:12.000Z",
-      "date_modified": "2022-02-24T09:43:06.000Z",
+      "date_modified": "2022-02-25T04:20:32.000Z",
       "authors": [
         {
           "name": "Moremind"
