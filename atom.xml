@@ -6,7 +6,7 @@
   <author>
     <name>Moremind</name>
   </author>
-  <updated>2022-02-25T06:53:57.228Z</updated>
+  <updated>2022-02-25T09:39:51.392Z</updated>
   <generator>@mr-hope/vuepress-plugin-feed</generator>
   <link rel="self" href="https://www.moremind.cn/atom.xml"/>
   <link rel="alternate" href="https://www.moremind.cn/"/>
@@ -650,7 +650,7 @@ Java容器里只能放对象，对于基本类型(int, long, float, double等)�
     <title type="html">java集合框架知识图谱</title>
     <id>https://www.moremind.cn/md/java/collection/</id>
     <link href="https://www.moremind.cn/md/java/collection/"/>
-    <updated>2022-02-25T06:53:23.000Z</updated>
+    <updated>2022-02-25T09:39:24.000Z</updated>
     <content type="html"><![CDATA[<h2 id="集合关系图谱"> 集合关系图谱</h2>
 <blockquote>
 <p>Java集合框架包括Collection和Map，Collection主要用于存储对象，Map主要用用于存储键值对数据。
@@ -695,16 +695,49 @@ Java容器里只能放对象，对于基本类型(int, long, float, double等)�
 <p>3.不允许重复的元素插入，可以插入null。</p>
 <p>4.HashSet的iterator方法返回的迭代器是fail-fast的。</p>
 <h4 id="treeset"> TreeSet</h4>
+<p>1.TreeSet继承自<code>AbstractSet</code>，实现了NavigableSet、Cloneable、Serializable接口。</p>
+<p>2.一种基于<code>TreeMap</code>的<code>NavigableSet</code>实现,意味着它支持一系列的导航方法。</p>
+<p>3.TreeSet是有序的Set集合,通过<code>TreeMap</code>实现的一个有序的、不可重复的集合，底层维护的是红黑树结构。</p>
+<p>4.TreeSet的iterator方法返回的迭代器是fail-fast的。</p>
 <h3 id="queue"> Queue</h3>
-<h4 id="deque"> Deque</h4>
 <h4 id="arraydeque"> ArrayDeque</h4>
+<p>1.ArrayDeque是Deque接口的一个实现，使用了可变数组，所以没有容量上的限制。</p>
+<p>2.ArrayDeque是线程不安全的，在没有外部同步的情况下，不能再多线程环境下使用。</p>
+<p>3.ArrayDeque是Deque的实现类，可以作为栈来使用，效率高于Stack；
+也可以作为队列来使用，效率高于LinkedList。</p>
+<p>4.ArrayDeque不支持null值。</p>
+<p>5.ArrayDeque的iterator方法返回的迭代器是fail-fast的。</p>
+<p>6.ArrayDeque两端都可以操作,支持双向迭代器遍历。</p>
+<h4 id="priorityqueue"> PriorityQueue</h4>
+<p>1.PriorityQueue继承自<code>AbstractQueue</code>，实现了<code>Serializable</code>接口。</p>
+<p>2.PriorityQueue队列元素根据自然排序或者根据具体的比较器排序。</p>
+<p>3.PriorityQueue实例化时若未指定初始容量，默认容量为11。</p>
+<p>4.PriorityQueue自动扩容。如果容量小于64，两倍增长扩容；否则增长50%,PriorityQueue是无边界容器。</p>
+<p>5.PriorityQueue的迭代器不具有以特定顺序访问队列元素。</p>
+<p>6.PriorityQueue不支持<code>null</code>元素。</p>
+<p>7.PriorityQueue入队出队的时间复杂度O(log(n))</p>
 <h2 id="map"> Map</h2>
 <h3 id="hashmap"> HashMap</h3>
-<p>1.HashMap 基于哈希表的Map接口实现，是以 key-value 存储形式存在，即主要用来存放键值对</p>
-<p>2.HashMap 的实现不是同步的，这意味着它不是线程安全的</p>
-<p>3.HashMap 中的映射不是有序的(即存取顺序不一致)</p>
-<p>4.实现结构是 数组+链表+红黑树</p>
+<p>1.HashMap继承自<code>AbstractMap</code>,实现<code>Map</code>、<code>Cloneable</code>、<code>Serializable</code>接口。</p>
+<p>2.HashMap 基于哈希表的Map接口实现，是以 key-value 存储形式存在，即主要用来存放键值对。</p>
+<p>3.HashMap 的实现不是同步的，这意味着它不是线程安全的。</p>
+<p>4.HashMap 中的映射不是有序的(即存取顺序不一致)。</p>
+<p>5.JDK1.5-JDK1.7实现的结果是数组+链表，JDK1.8实现结构是数组+链表+红黑树。</p>
+<p>6.HashMap key值能为null,value值可以为null，且key值不允许重复。</p>
+<p>7.HashMap的iterator方法返回的迭代器是fail-fastl的。</p>
 <h3 id="linkedhashmap"> LinkedHashMap</h3>
+<p>1.LinkedHashMap继承自<code>HashMap</code>,实现了<code>Map</code>接口。</p>
+<p>2.LinkedHashMap维护了一个Entry的双向链表，保证了插入的Entry中的顺序。</p>
+<p>3.使用双向链表来维护元素的顺序，顺序为插入顺序或者最近最少使用(LRU)顺序。</p>
+<p>4.LinkedHashMap的iterator方法返回的迭代器是fail-fastl的。</p>
+<h3 id="treemap"> TreeMap</h3>
+<p>1.TreeMap 继承自AbstractMap，实现了<code>NavigableMap</code>、<code>Cloneable</code>、<code>Serializable接口</code>。</p>
+<p>2.TreeMap不允许出现重复的key。</p>
+<p>3.TreeMap可以插入null键，null值。</p>
+<p>4.TreeMap可以对元素进行排序。</p>
+<p>5.TreeMap无序集合（插入和遍历顺序不一致）。</p>
+<p>6.TreeMap基于红黑树（Red-Black tree）实现。该映射根据其键的自然顺序进行排序，或者根据创建映射时提供的Comparator进行排序，具体取决于使用的构造方法。</p>
+<p>7.TreeMap的iterator方法返回的迭代器是fail-fastl的。</p>
 <h3 id="hashtable"> HashTable</h3>
 <p>1.与HashMap一样，Hashtable也是一个散列表，是以key-value存储形式存在，即主要用来存放键值对；</p>
 <p>2.与HashMap不同，Hashtable的函数都是同步的，这意味着它是线程安全的；</p>
