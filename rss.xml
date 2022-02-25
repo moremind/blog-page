@@ -6,8 +6,8 @@
     <link>https://www.moremind.cn/</link>
     <description>Stay Hungry, Stay Foolish!</description>
     <language>zh-CN</language>
-    <pubDate>Fri, 25 Feb 2022 04:20:58 GMT</pubDate>
-    <lastBuildDate>Fri, 25 Feb 2022 04:20:58 GMT</lastBuildDate>
+    <pubDate>Fri, 25 Feb 2022 06:53:57 GMT</pubDate>
+    <lastBuildDate>Fri, 25 Feb 2022 06:53:57 GMT</lastBuildDate>
     <generator>@mr-hope/vuepress-plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>Copyright © 2017-present By Finen | Vuepress Theme By vuepress-theme-hope</copyright>
@@ -462,10 +462,10 @@ Java容器里只能放对象，对于基本类型(int, long, float, double等)�
       <enclosure url="https://gitee.com/forge-logic/images-lib/raw/master/img/Java-collection-cheat-sheet.PNG" type="image/"/>
     </item>
     <item>
-      <title>ArrayList源码解析</title>
+      <title>LinkedList源码解析</title>
       <link>https://www.moremind.cn/md/java/collection/LinkedList-Source/</link>
       <guid>https://www.moremind.cn/md/java/collection/LinkedList-Source/</guid>
-      <source url="https://www.moremind.cn/rss.xml">ArrayList源码解析</source>
+      <source url="https://www.moremind.cn/rss.xml">LinkedList源码解析</source>
       <category>Java-Collection</category>
       <pubDate>Thu, 24 Feb 2022 09:46:27 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="集合关系图谱"> 集合关系图谱</h2>
@@ -485,10 +485,10 @@ Java容器里只能放对象，对于基本类型(int, long, float, double等)�
 ]]></content:encoded>
     </item>
     <item>
-      <title>ArrayList源码解析</title>
+      <title>java集合框架知识图谱</title>
       <link>https://www.moremind.cn/md/java/collection/</link>
       <guid>https://www.moremind.cn/md/java/collection/</guid>
-      <source url="https://www.moremind.cn/rss.xml">ArrayList源码解析</source>
+      <source url="https://www.moremind.cn/rss.xml">java集合框架知识图谱</source>
       <category>Java-Collection</category>
       <pubDate>Thu, 13 Jan 2022 09:49:12 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="集合关系图谱"> 集合关系图谱</h2>
@@ -510,18 +510,46 @@ Java容器里只能放对象，对于基本类型(int, long, float, double等)�
 <h2 id="collection"> Collection</h2>
 <h3 id="list"> List</h3>
 <h4 id="arraylist简介"> ArrayList简介</h4>
-<p>ArrayList继承自<code>AbstractList</code>，实现了<code>List</code>、<code>RandomAccess</code>、<code>Cloneable</code>、<code>Serializable</code>接口。底层基于数组实现容量大小动态变化。允许<code>null</code>的存在。所以ArrayList是支持快速访问、复制、序列化的。基于动态数组实现，支持随机访问。</p>
+<p>1.ArrayList继承自<code>AbstractList</code>，实现了<code>List</code>、<code>RandomAccess</code>、<code>Cloneable</code>、<code>Serializable</code>接口。</p>
+<p>2.底层基于动态数组实现容量大小动态变化（容量可自动增长）。</p>
+<p>3.允许<code>null</code>的存在。</p>
+<p>4.ArrayList是支持快速访问、复制、序列化的。基于动态数组实现，支持。</p>
+<p>5.ArrayList是非同步的。</p>
+<p>6.ArrayList的iterator和listIterator方法返回的迭代器是fail-fast的。</p>
 <h4 id="linkedlist"> LinkedList</h4>
-<p>LinkedList继承自<code>AbstractSequentialList</code>，实现了<code>List</code>、<code>Deque</code>、<code>Cloneable</code>、<code>Serializable</code>，LinkedList是基于链表实现的，<code>LinkedList</code>插入和删除方面要优于<code>ArrayList</code>,只能顺序访问。</p>
+<p>1.LinkedList继承自<code>AbstractSequentialList</code>，实现了<code>List</code>、<code>Deque</code>、<code>Cloneable</code>、<code>Serializable</code>接口，LinkedList是基于链表实现的，只能顺序访问。</p>
+<p>2.<code>LinkedList</code>插入和删除方面要优于<code>ArrayList</code>。</p>
+<p>3.LinkedList是非同步的。</p>
+<p>4.LinkedList的iterator和listIterator方法返回的迭代器是fail-fast的。</p>
 <h3 id="set"> Set</h3>
 <h4 id="hashset"> Hashset</h4>
+<p>1.HashSet继承自<code>AbstractSet</code>,实现了<code>Set</code>、<code>Cloneable</code>、<code>Serializable</code>接口,底层是一个HashMap。</p>
+<p>2.HashSet是根据对象的哈希值来确定元素在集合中的存储位置，因此具有良好的存取和查找性能。保证元素唯一性的方式依赖于：hashCode与equals方法。</p>
+<p>3.HashSet中元素都是无序的(即存取顺序不一致)；</p>
+<p>4.HashSet没有下标选取，只能通过增强for循环或者迭代器取出元素；</p>
+<p>5.HashSet是非同步的；</p>
+<p>6.HashSet的iterator方法返回的迭代器是fail-fast的。</p>
 <h4 id="linkedhashset"> LinkedHashSet</h4>
+<p>1.LinkedHashSet继承自<code>HashSet</code>，实现了<code>Set</code>、<code>Cloneable</code>接口，底层其实是一个LinkedHashMap。</p>
+<p>2.不能保证插入和输出的顺序一致。</p>
+<p>3.不允许重复的元素插入，可以插入null。</p>
+<p>4.HashSet的iterator方法返回的迭代器是fail-fast的。</p>
 <h4 id="treeset"> TreeSet</h4>
 <h3 id="queue"> Queue</h3>
 <h4 id="deque"> Deque</h4>
 <h4 id="arraydeque"> ArrayDeque</h4>
 <h2 id="map"> Map</h2>
 <h3 id="hashmap"> HashMap</h3>
+<p>1.HashMap 基于哈希表的Map接口实现，是以 key-value 存储形式存在，即主要用来存放键值对</p>
+<p>2.HashMap 的实现不是同步的，这意味着它不是线程安全的</p>
+<p>3.HashMap 中的映射不是有序的(即存取顺序不一致)</p>
+<p>4.实现结构是 数组+链表+红黑树</p>
+<h3 id="linkedhashmap"> LinkedHashMap</h3>
+<h3 id="hashtable"> HashTable</h3>
+<p>1.与HashMap一样，Hashtable也是一个散列表，是以key-value存储形式存在，即主要用来存放键值对；</p>
+<p>2.与HashMap不同，Hashtable的函数都是同步的，这意味着它是线程安全的；</p>
+<p>3.Hashtable的key、value都不可以为null，并且，Hashtable中的映射不是有序的；</p>
+<p>4.实现结构是数组+单向链表。</p>
 ]]></content:encoded>
       <enclosure url="https://gitee.com/forge-logic/images-lib/raw/master/img/Java-collection-cheat-sheet.PNG" type="image/"/>
     </item>
