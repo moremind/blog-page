@@ -6,8 +6,8 @@
     <link>https://www.moremind.cn/</link>
     <description>Stay Hungry, Stay Foolish!</description>
     <language>zh-CN</language>
-    <pubDate>Fri, 25 Feb 2022 09:39:51 GMT</pubDate>
-    <lastBuildDate>Fri, 25 Feb 2022 09:39:51 GMT</lastBuildDate>
+    <pubDate>Wed, 06 Apr 2022 13:46:31 GMT</pubDate>
+    <lastBuildDate>Wed, 06 Apr 2022 13:46:31 GMT</lastBuildDate>
     <generator>@mr-hope/vuepress-plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>Copyright © 2017-present By Finen | Vuepress Theme By vuepress-theme-hope</copyright>
@@ -46,7 +46,11 @@
 <h3 id="专业书籍"> 专业书籍</h3>
 <ul>
 <li><input type="checkbox"  disabled="disabled" id="task-item-0"><label for="task-item-0"> Plan A</label></li>
-<li><input type="checkbox" checked="checked" disabled="disabled" id="task-item-1"><label for="task-item-1"> Plan B</label></li>
+<li><input type="checkbox"  disabled="disabled" id="task-item-1"><label for="task-item-1"> Plan B</label></li>
+</ul>
+<h3 id="非专业书籍"> 非专业书籍</h3>
+<ul>
+<li><input type="checkbox"  disabled="disabled" id="task-item-2"><label for="task-item-2"> 结构性改革-中国经济的问题与对策</label></li>
 </ul>
 ]]></content:encoded>
     </item>
@@ -462,6 +466,29 @@ Java容器里只能放对象，对于基本类型(int, long, float, double等)�
       <enclosure url="https://gitee.com/forge-logic/images-lib/raw/master/img/Java-collection-cheat-sheet.PNG" type="image/"/>
     </item>
     <item>
+      <title>HashSet源码解析</title>
+      <link>https://www.moremind.cn/md/java/collection/HashMap&amp;HashSet-Source/</link>
+      <guid>https://www.moremind.cn/md/java/collection/HashMap&amp;HashSet-Source/</guid>
+      <source url="https://www.moremind.cn/rss.xml">HashSet源码解析</source>
+      <category>Java-Collection</category>
+      <pubDate>Wed, 06 Apr 2022 13:44:30 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="集合关系图谱"> 集合关系图谱</h2>
+<blockquote>
+<p>Java集合框架包括Collection和Map，Collection主要用于存储对象，Map主要用用于存储键值对数据。</p>
+</blockquote>
+<h2 id="collection"> Collection</h2>
+<h3 id="list"> List</h3>
+<h4 id="arraylist"> ArrayList</h4>
+<h4 id="linkedlist"> LinkedList</h4>
+<h3 id="set"> Set</h3>
+<h4 id="hashset"> Hashset</h4>
+<h4 id="linkedhashset"> LinkedHashSet</h4>
+<h3 id="queue"> Queue</h3>
+<h4 id="deque"> Deque</h4>
+<h4 id="arraydeque"> ArrayDeque</h4>
+]]></content:encoded>
+    </item>
+    <item>
       <title>LinkedList源码解析</title>
       <link>https://www.moremind.cn/md/java/collection/LinkedList-Source/</link>
       <guid>https://www.moremind.cn/md/java/collection/LinkedList-Source/</guid>
@@ -587,6 +614,29 @@ Java容器里只能放对象，对于基本类型(int, long, float, double等)�
       <enclosure url="https://gitee.com/forge-logic/images-lib/raw/master/img/Java-collection-cheat-sheet.PNG" type="image/"/>
     </item>
     <item>
+      <title>TreeMap&amp;TreeSet源码解析</title>
+      <link>https://www.moremind.cn/md/java/collection/TreeMap&amp;TreeSet-Source/</link>
+      <guid>https://www.moremind.cn/md/java/collection/TreeMap&amp;TreeSet-Source/</guid>
+      <source url="https://www.moremind.cn/rss.xml">TreeMap&amp;TreeSet源码解析</source>
+      <category>Java-Collection</category>
+      <pubDate>Wed, 06 Apr 2022 13:44:30 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="集合关系图谱"> 集合关系图谱</h2>
+<blockquote>
+<p>Java集合框架包括Collection和Map，Collection主要用于存储对象，Map主要用用于存储键值对数据。</p>
+</blockquote>
+<h2 id="collection"> Collection</h2>
+<h3 id="list"> List</h3>
+<h4 id="arraylist"> ArrayList</h4>
+<h4 id="linkedlist"> LinkedList</h4>
+<h3 id="set"> Set</h3>
+<h4 id="hashset"> Hashset</h4>
+<h4 id="linkedhashset"> LinkedHashSet</h4>
+<h3 id="queue"> Queue</h3>
+<h4 id="deque"> Deque</h4>
+<h4 id="arraydeque"> ArrayDeque</h4>
+]]></content:encoded>
+    </item>
+    <item>
       <title>Java IO框架图谱</title>
       <link>https://www.moremind.cn/md/java/io/</link>
       <guid>https://www.moremind.cn/md/java/io/</guid>
@@ -708,6 +758,18 @@ gradlew clean build run
       <category>Java-Thread</category>
       <pubDate>Thu, 13 Jan 2022 09:49:12 GMT</pubDate>
       <content:encoded><![CDATA[<p>JVM 内存分析图</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>线程池基础知识</title>
+      <link>https://www.moremind.cn/md/java/thread/thread-pool-basic/</link>
+      <guid>https://www.moremind.cn/md/java/thread/thread-pool-basic/</guid>
+      <source url="https://www.moremind.cn/rss.xml">线程池基础知识</source>
+      <category>Java-Thread</category>
+      <pubDate>Wed, 06 Apr 2022 13:44:30 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="_1-线程池的创建方式"> 1.线程池的创建方式</h2>
+<h2 id="_2-线程池的关键参数"> 2.线程池的关键参数</h2>
+<h2 id="_3-线程池设计的技巧"> 3.线程池设计的技巧</h2>
 ]]></content:encoded>
     </item>
     <item>

@@ -6,7 +6,7 @@
   <author>
     <name>Moremind</name>
   </author>
-  <updated>2022-02-25T09:39:51.392Z</updated>
+  <updated>2022-04-06T13:46:31.765Z</updated>
   <generator>@mr-hope/vuepress-plugin-feed</generator>
   <link rel="self" href="https://www.moremind.cn/atom.xml"/>
   <link rel="alternate" href="https://www.moremind.cn/"/>
@@ -49,12 +49,16 @@
     <title type="html">My Book For 2022</title>
     <id>https://www.moremind.cn/book/</id>
     <link href="https://www.moremind.cn/book/"/>
-    <updated>2022-01-18T16:47:42.000Z</updated>
+    <updated>2022-04-06T13:44:30.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_2022-阅读书籍"> 2022 阅读书籍</h2>
 <h3 id="专业书籍"> 专业书籍</h3>
 <ul>
 <li><input type="checkbox"  disabled="disabled" id="task-item-0"><label for="task-item-0"> Plan A</label></li>
-<li><input type="checkbox" checked="checked" disabled="disabled" id="task-item-1"><label for="task-item-1"> Plan B</label></li>
+<li><input type="checkbox"  disabled="disabled" id="task-item-1"><label for="task-item-1"> Plan B</label></li>
+</ul>
+<h3 id="非专业书籍"> 非专业书籍</h3>
+<ul>
+<li><input type="checkbox"  disabled="disabled" id="task-item-2"><label for="task-item-2"> 结构性改革-中国经济的问题与对策</label></li>
 </ul>
 ]]></content>
     <author>
@@ -617,6 +621,36 @@ Java容器里只能放对象，对于基本类型(int, long, float, double等)�
     <rights>Copyright by Moremind</rights>
   </entry>
   <entry>
+    <title type="html">HashSet源码解析</title>
+    <id>https://www.moremind.cn/md/java/collection/HashMap&amp;HashSet-Source/</id>
+    <link href="https://www.moremind.cn/md/java/collection/HashMap&amp;HashSet-Source/"/>
+    <updated>2022-04-06T13:44:30.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="集合关系图谱"> 集合关系图谱</h2>
+<blockquote>
+<p>Java集合框架包括Collection和Map，Collection主要用于存储对象，Map主要用用于存储键值对数据。</p>
+</blockquote>
+<h2 id="collection"> Collection</h2>
+<h3 id="list"> List</h3>
+<h4 id="arraylist"> ArrayList</h4>
+<h4 id="linkedlist"> LinkedList</h4>
+<h3 id="set"> Set</h3>
+<h4 id="hashset"> Hashset</h4>
+<h4 id="linkedhashset"> LinkedHashSet</h4>
+<h3 id="queue"> Queue</h3>
+<h4 id="deque"> Deque</h4>
+<h4 id="arraydeque"> ArrayDeque</h4>
+]]></content>
+    <author>
+      <name>Moremind</name>
+    </author>
+    <category term="Java-Collection"/>
+    <contributor>
+      <name>Moremind</name>
+    </contributor>
+    <published>2022-04-06T13:44:30.000Z</published>
+    <rights>Copyright by Moremind</rights>
+  </entry>
+  <entry>
     <title type="html">LinkedList源码解析</title>
     <id>https://www.moremind.cn/md/java/collection/LinkedList-Source/</id>
     <link href="https://www.moremind.cn/md/java/collection/LinkedList-Source/"/>
@@ -752,6 +786,36 @@ Java容器里只能放对象，对于基本类型(int, long, float, double等)�
       <name>Moremind</name>
     </contributor>
     <published>2022-01-13T09:49:12.000Z</published>
+    <rights>Copyright by Moremind</rights>
+  </entry>
+  <entry>
+    <title type="html">TreeMap&amp;TreeSet源码解析</title>
+    <id>https://www.moremind.cn/md/java/collection/TreeMap&amp;TreeSet-Source/</id>
+    <link href="https://www.moremind.cn/md/java/collection/TreeMap&amp;TreeSet-Source/"/>
+    <updated>2022-04-06T13:44:30.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="集合关系图谱"> 集合关系图谱</h2>
+<blockquote>
+<p>Java集合框架包括Collection和Map，Collection主要用于存储对象，Map主要用用于存储键值对数据。</p>
+</blockquote>
+<h2 id="collection"> Collection</h2>
+<h3 id="list"> List</h3>
+<h4 id="arraylist"> ArrayList</h4>
+<h4 id="linkedlist"> LinkedList</h4>
+<h3 id="set"> Set</h3>
+<h4 id="hashset"> Hashset</h4>
+<h4 id="linkedhashset"> LinkedHashSet</h4>
+<h3 id="queue"> Queue</h3>
+<h4 id="deque"> Deque</h4>
+<h4 id="arraydeque"> ArrayDeque</h4>
+]]></content>
+    <author>
+      <name>Moremind</name>
+    </author>
+    <category term="Java-Collection"/>
+    <contributor>
+      <name>Moremind</name>
+    </contributor>
+    <published>2022-04-06T13:44:30.000Z</published>
     <rights>Copyright by Moremind</rights>
   </entry>
   <entry>
@@ -911,6 +975,25 @@ gradlew clean build run
     </contributor>
     <published>2022-01-13T09:49:12.000Z</published>
     <rights>Copyright by Moremind</rights>
+  </entry>
+  <entry>
+    <title type="html">线程池基础知识</title>
+    <id>https://www.moremind.cn/md/java/thread/thread-pool-basic/</id>
+    <link href="https://www.moremind.cn/md/java/thread/thread-pool-basic/"/>
+    <updated>2022-04-06T13:44:30.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="_1-线程池的创建方式"> 1.线程池的创建方式</h2>
+<h2 id="_2-线程池的关键参数"> 2.线程池的关键参数</h2>
+<h2 id="_3-线程池设计的技巧"> 3.线程池设计的技巧</h2>
+]]></content>
+    <author>
+      <name>moremind</name>
+    </author>
+    <category term="Java-Thread"/>
+    <contributor>
+      <name>moremind</name>
+    </contributor>
+    <published>2022-04-06T13:44:30.000Z</published>
+    <rights>Copyright by moremind</rights>
   </entry>
   <entry>
     <title type="html">到底什么是线程安全和线程不安全？</title>
