@@ -6,8 +6,8 @@
     <link>https://www.moremind.cn/</link>
     <description>Stay Hungry, Stay Foolish!</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 06 Apr 2022 13:46:31 GMT</pubDate>
-    <lastBuildDate>Wed, 06 Apr 2022 13:46:31 GMT</lastBuildDate>
+    <pubDate>Mon, 18 Apr 2022 08:36:55 GMT</pubDate>
+    <lastBuildDate>Mon, 18 Apr 2022 08:36:55 GMT</lastBuildDate>
     <generator>@mr-hope/vuepress-plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>Copyright © 2017-present By Finen | Vuepress Theme By vuepress-theme-hope</copyright>
@@ -435,35 +435,13 @@ JVM 内存分析图</p>
       <source url="https://www.moremind.cn/rss.xml">ArrayList源码解析</source>
       <category>Java-Collection</category>
       <pubDate>Thu, 24 Feb 2022 09:46:27 GMT</pubDate>
-      <content:encoded><![CDATA[<h2 id="集合关系图谱"> 集合关系图谱</h2>
-<blockquote>
-<p>Java集合框架包括Collection和Map，Collection主要用于存储对象，Map主要用用于存储键值对数据。
-<img src="https://gitee.com/forge-logic/images-lib/raw/master/img/Java-collection-cheat-sheet.PNG" alt="Java-Collection" /></p>
-</blockquote>
-<h2 id="介绍"> 介绍</h2>
-<p>容器，就是可以容纳其他Java对象的对象。*Java Collections Framework(JCF)*为Java开发者提供了通用的容器，其始于JDK 1.2，优点是:</p>
-<ul>
-<li>降低编程难度</li>
-<li>提高程序性能</li>
-<li>提高API间的互操作性</li>
-<li>降低学习难度</li>
-<li>降低设计和实现相关API的难度</li>
-<li>增加程序的重用性
-Java容器里只能放对象，对于基本类型(int, long, float, double等)，需要将其包装成对象类型后(Integer, Long, Float, Double等)才能放到容器里。很多时候拆包装和解包装能够自动完成。这虽然会导致额外的性能和空间开销，但简化了设计和编程。</li>
-</ul>
-<h2 id="collection"> Collection</h2>
-<h3 id="list"> List</h3>
-<h4 id="arraylist简介"> ArrayList简介</h4>
-<p>ArrayList继承自<code>AbstractList</code>，实现了 List 接口。底层基于数组实现容量大小动态变化。允许 null 的存在。同时还实现了<code>RandomAccess</code>、<code>Cloneable</code>、<code>Serializable</code> 接口，所以ArrayList 是支持快速访问、复制、序列化的。基于动态数组实现，支持随机访问。</p>
-<h4 id="linkedlist"> LinkedList</h4>
-<h3 id="set"> Set</h3>
-<h4 id="hashset"> Hashset</h4>
-<h4 id="linkedhashset"> LinkedHashSet</h4>
-<h3 id="queue"> Queue</h3>
-<h4 id="deque"> Deque</h4>
-<h4 id="arraydeque"> ArrayDeque</h4>
+      <content:encoded><![CDATA[<h2 id="arraylist是什么"> ArrayList是什么?</h2>
+<h2 id="为什么要使用arraylist"> 为什么要使用ArrayList?</h2>
+<h2 id="在什么环境下使用arraylist"> 在什么环境下使用ArrayList?</h2>
+<h2 id="怎么使用arraylist"> 怎么使用ArrayList?</h2>
+<h3 id="基本api"> 基本API</h3>
+<h3 id="基本源码"> 基本源码</h3>
 ]]></content:encoded>
-      <enclosure url="https://gitee.com/forge-logic/images-lib/raw/master/img/Java-collection-cheat-sheet.PNG" type="image/"/>
     </item>
     <item>
       <title>HashSet源码解析</title>
