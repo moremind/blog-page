@@ -6,14 +6,14 @@
   <author>
     <name>Moremind</name>
   </author>
-  <updated>2022-04-18T08:47:36.791Z</updated>
+  <updated>2022-05-05T10:24:54.976Z</updated>
   <generator>@mr-hope/vuepress-plugin-feed</generator>
   <link rel="self" href="https://www.moremind.cn/atom.xml"/>
   <link rel="alternate" href="https://www.moremind.cn/"/>
   <rights>Copyright © 2017-present By Finen | Vuepress Theme By vuepress-theme-hope</rights>
   <category term="jvm"/>
-  <category term="JPA"/>
   <category term="Hibernate"/>
+  <category term="JPA"/>
   <category term="Mybaits"/>
   <category term="Relation-Database"/>
   <category term="MySQL"/>
@@ -408,23 +408,6 @@ JVM 内存分析图</p>
     <rights>Copyright by Moremind</rights>
   </entry>
   <entry>
-    <title type="html">jpa</title>
-    <id>https://www.moremind.cn/md/data-persistence/jpa/</id>
-    <link href="https://www.moremind.cn/md/data-persistence/jpa/"/>
-    <updated>2022-01-21T15:41:02.000Z</updated>
-    <content type="html"><![CDATA[<p>JVM 内存分析图</p>
-]]></content>
-    <author>
-      <name>Moremind</name>
-    </author>
-    <category term="JPA"/>
-    <contributor>
-      <name>Moremind</name>
-    </contributor>
-    <published>2022-01-13T09:49:12.000Z</published>
-    <rights>Copyright by Moremind</rights>
-  </entry>
-  <entry>
     <title type="html">hibernate</title>
     <id>https://www.moremind.cn/md/data-persistence/hibernate/</id>
     <link href="https://www.moremind.cn/md/data-persistence/hibernate/"/>
@@ -435,6 +418,23 @@ JVM 内存分析图</p>
       <name>Moremind</name>
     </author>
     <category term="Hibernate"/>
+    <contributor>
+      <name>Moremind</name>
+    </contributor>
+    <published>2022-01-13T09:49:12.000Z</published>
+    <rights>Copyright by Moremind</rights>
+  </entry>
+  <entry>
+    <title type="html">jpa</title>
+    <id>https://www.moremind.cn/md/data-persistence/jpa/</id>
+    <link href="https://www.moremind.cn/md/data-persistence/jpa/"/>
+    <updated>2022-01-21T15:41:02.000Z</updated>
+    <content type="html"><![CDATA[<p>JVM 内存分析图</p>
+]]></content>
+    <author>
+      <name>Moremind</name>
+    </author>
+    <category term="JPA"/>
     <contributor>
       <name>Moremind</name>
     </contributor>
@@ -813,6 +813,1316 @@ Java容器里只能放对象，对于基本类型(int, long, float, double等)�
     </contributor>
     <published>2022-01-13T09:49:12.000Z</published>
     <rights>Copyright by Moremind</rights>
+  </entry>
+  <entry>
+    <title type="html">JVM前奏-JVM堆栈内存简析</title>
+    <id>https://www.moremind.cn/md/java/jvm/JVM-1/</id>
+    <link href="https://www.moremind.cn/md/java/jvm/JVM-1/"/>
+    <updated>2022-05-05T10:22:38.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="_1-官网"> 1 官网</h2>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310000943157.png" alt="image-20220310000943157" /></p>
+<h3 id="_1-1-jdk8"> 1.1 JDK8</h3>
+<h3 id="_1-2-the-relation-of-jdk-jre-jvm"> 1.2 The relation of JDK/JRE/JVM</h3>
+<p>Reference -&gt; Developer Guides -&gt; 定位到:https://docs.oracle.com/javase/8/docs/index.html</p>
+<blockquote>
+<p>JDK 8 is a superset of JRE 8, and contains everything that is in JRE 8, plus tools such as the compilers and debuggers necessary for developing applets and applications. JRE 8 provides the libraries, the Java Virtual Machine (JVM), and other components to run applets and applications written in the Java programming language. Note that the JRE includes components not required by the Java SE specification, including both standard and non-standard Java components.</p>
+</blockquote>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309202058012.png" alt="image-20220309202058012" /></p>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309203220133.png" alt="image-20220309203220133" /></p>
+<h2 id="_2-源码到类文件"> 2 源码到类文件</h2>
+<h3 id="_2-1-源码"> 2.1 源码</h3>
+<div><pre><code><span>class</span> <span>Person</span><span>{</span>
+    <span>private</span> <span>String</span> name<span>;</span>
+    <span>private</span> <span>int</span> age<span>;</span>
+    <span>private</span> <span>static</span> <span>String</span> address<span>;</span>
+    <span>private</span> <span>final</span> <span>static</span> <span>String</span> hobby<span>=</span><span>"Programming"</span><span>;</span>
+    <span>public</span> <span>void</span> <span>say</span><span>(</span><span>)</span><span>{</span>
+        <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"person say..."</span><span>)</span><span>;</span>
+    <span>}</span>
+    <span>public</span> <span>int</span> <span>calc</span><span>(</span><span>int</span> op1<span>,</span><span>int</span> op2<span>)</span><span>{</span>
+        <span>return</span> op1<span>+</span>op2<span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br></div></div><h3 id="_2-2-编译过程"> 2.2 编译过程</h3>
+<blockquote>
+<p>Person.java -&gt; 词法分析器 -&gt; tokens流 -&gt; 语法分析器 -&gt; 语法树/抽象语法树 -&gt; 语义分析器 -&gt; 注解抽象语法树 -&gt; 字节码生成器 -&gt; Person.class文件</p>
+</blockquote>
+<h3 id="_2-3-类文件-class文件"> 2.3 类文件(Class文件)</h3>
+<p>官网The class File Format :https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-4.html</p>
+<div><pre><code>cafe babe 0000 0034 0027 0a00 0600 1809
+0019 001a 0800 1b0a 001c 001d 0700 1e07
+001f 0100 046e 616d 6501 0012 4c6a 6176
+612f 6c61 6e67 2f53 7472 696e 673b 0100
+0361 6765 0100 0149 0100 0761 6464 7265
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309204252776.png" alt="image-20220309204252776" /></p>
+<p><strong>minor_version, major_version</strong></p>
+<div><pre><code>minor_version, major_version
+</code></pre>
+<div><span>1</span><br></div></div><p><strong>constant_pool_count</strong></p>
+<p>0027 对应十进制27，代表常量池中27个常量</p>
+<div><pre><code>ClassFile {
+    u4             magic;
+    u2             minor_version;
+    u2             major_version;
+    u2             constant_pool_count;
+    cp_info        constant_pool[constant_pool_count-1];
+    u2             access_flags;
+    u2             this_class;
+    u2             super_class;
+    u2             interfaces_count;
+    u2             interfaces[interfaces_count];
+    u2             fields_count;
+    field_info     fields[fields_count];
+    u2             methods_count;
+    method_info    methods[methods_count];
+    u2             attributes_count;
+    attribute_info attributes[attributes_count];
+}
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div><p><strong>.class字节码文件</strong></p>
+<div><pre><code>魔数与class文件版本
+常量池
+访问标志
+类索引、父类索引、接口索引
+字段表集合
+方法表集合
+属性表集合
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><h2 id="_3-类文件到虚拟机-类加载机制"> 3 类文件到虚拟机(类加载机制)</h2>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309204625348.png" alt="image-20220309204625348" /></p>
+<h3 id="_3-1-装载-load"> 3.1 装载(Load)</h3>
+<p><a href="https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-5.html" target="_blank" rel="noopener noreferrer">Chapter 5. Loading, Linking, and Initializing (oracle.com)</a></p>
+<p>a.找到类文件所在的位置---:磁盘--&gt;类装载器ClassLoader --&gt; 寻找类</p>
+<p>b.类文件的信息交给JVM  --&gt; 类文件字节码流静态存储结构 --&gt; JVM里卖弄的某一块区域</p>
+<p>c.类文件所对应的对象Class ---&gt; JVM</p>
+<p>查找和导入class文件 --&gt; JVM --&gt; 堆</p>
+<div><pre><code>(1)通过一个类的全限定名获取定义此类的二进制字节流
+(2)将这个字节流所代表的静态存储结构转化为方法区的运行时数据结构
+(3)在Java堆中生成一个代表这个类的java.lang.Class对象，作为对方法区中这些数据的访问入口
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h3 id="_3-2-链接-link"> 3.2 链接(Link)</h3>
+<h4 id="_3-2-1-验证-verify-保证被加载类的正确性"> 3.2.1 验证(Verify):保证被加载类的正确性</h4>
+<ul>
+<li>
+<p>文件格式验证</p>
+</li>
+<li>
+<p>元数据验证</p>
+</li>
+<li>
+<p>字节码验证</p>
+</li>
+<li>
+<p>符号引用验证</p>
+</li>
+</ul>
+<h4 id="_3-2-2-准备-prepare"> 3.2.2 准备(Prepare)</h4>
+<p><strong>为类的静态变量分配内存，并将其初始化为默认值</strong></p>
+<p>static int num = 10; // 在准备阶段为num分配内存空间，并初始化其值为0</p>
+<h4 id="_3-2-3-解析-resolve"> 3.2.3 解析(Resolve)</h4>
+<p><strong>把类中的符号引用转换为直接引用</strong></p>
+<p>地址：String str =地址是什么，直接对应到内存中某个地址指向。</p>
+<h3 id="_3-3-初始化-initialize"> 3.3 初始化(Initialize)</h3>
+<p>对类的静态变量，静态代码块执行初始化操作</p>
+<p>static int num = 10; // 此时，num才会被真正的赋值为10</p>
+<h3 id="_3-4-类加载机制图解"> 3.4 类加载机制图解</h3>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309205334127.png" alt="image-20220309205334127" /></p>
+<h2 id="_4-类装载器classloader"> 4 类装载器ClassLoader</h2>
+<p>在装载(Load)阶段，其中第(1)步:通过类的全限定名获取其定义的二进制字节流，需要借助类装载 器完成，顾名思义，就是用来装载Class文件的。</p>
+<p>(1)通过一个类的全限定名获取定义此类的二进制字节流。</p>
+<h3 id="_4-1-分类"> 4.1 分类</h3>
+<p>1）Bootstrap ClassLoader 负责加载$JAVA_HOME中 jre/lib/rt.jar 里所有的class或 Xbootclassoath选项指定的jar包。由C++实现，不是ClassLoader子类。</p>
+<p>2）Extension ClassLoader 负责加载java平台中扩展功能的一些jar包，包括$JAVA_HOME中 jre/lib/*.jar 或 -Djava.ext.dirs指定目录下的jar包。</p>
+<p>3）App ClassLoader 负责加载classpath中指定的jar包及 Djava.class.path 所指定目录下的类和 jar包。</p>
+<p>4）Custom ClassLoader 通过java.lang.ClassLoader的子类自定义加载class，属于应用程序根据 自身需要自定义的ClassLoader，如tomcat、jboss都会根据j2ee规范自行实现ClassLoader。</p>
+<h3 id="_4-2-图解"> 4.2 图解</h3>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309205433326.png" alt="image-20220309205433326" /></p>
+<h3 id="_4-3-加载原则"> 4.3 加载原则</h3>
+<p><strong>检查某个类是否已经加载：顺序是自底向上，从Custom ClassLoader到BootStrap ClassLoader逐层检 查，只要某个Classloader已加载，就视为已加载此类，保证此类只所有ClassLoader加载一次。</strong></p>
+<p><strong>加载的顺序：加载的顺序是自顶向下，也就是由上层来逐层尝试加载此类。</strong></p>
+<p><strong>双亲委派机制：</strong></p>
+<blockquote>
+<p>定义：如果一个类加载器在接到加载类的请求时，它首先不会自己尝试去加载这个类，而是把 这个请求任务委托给父类加载器去完成，依次递归，如果父类加载器可以完成类加载任务，就 成功返回；只有父类加载器无法完成此加载任务时，才自己去加载。</p>
+</blockquote>
+<blockquote>
+<p>优势：Java类随着加载它的类加载器一起具备了一种带有优先级的层次关系。比如，Java中的 Object类，它存放在rt.jar之中,无论哪一个类加载器要加载这个类，最终都是委派给处于模型 最顶端的启动类加载器进行加载，因此Object在各种类加载环境中都是同一个类。如果不采用 双亲委派模型，那么由各个类加载器自己取加载的话，那么系统中会存在多种不同的Object 类。</p>
+</blockquote>
+<blockquote>
+<p>破坏：可以继承ClassLoader类，然后重写其中的loadClass方法，其他方式大家可以自己了解 拓展一下。</p>
+</blockquote>
+<h2 id="_5-运行时数据区-run-time-data-areas"> 5 运行时数据区(Run-Time Data Areas)</h2>
+<p>在装载阶段的第(2),(3)步可以发现有运行时数据，堆，方法区等名词</p>
+<p>(2)将这个字节流所代表的静态存储结构转化为方法区的运行时数据结构</p>
+<p>(3)在Java堆中生成一个代表这个类的java.lang.Class对象，作为对方法区中这些数据的访问入口</p>
+<p>说白了就是类文件被类装载器装载进来之后，类中的内容(比如变量，常量，方法，对象等这些数 据得要有个去处，也就是要存储起来，存储的位置肯定是在JVM中有对应的空间)</p>
+<h3 id="_5-1-官网概括"> 5.1 官网概括</h3>
+<p><a href="https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.5" target="_blank" rel="noopener noreferrer">Chapter 2. The Structure of the Java Virtual Machine (oracle.com)</a></p>
+<div><pre><code>The Java Virtual Machine defines various run-time data areas that are used during execution of a program. Some of these data areas are created on Java Virtual Machine start-up and are destroyed only when the Java Virtual Machine exits. Other data areas are per thread. Per-thread data areas are created when a thread is created and destroyed when the thread exits
+
+&gt;&gt;&gt; Java 虚拟机定义了在程序执行期间使用的各种运行时数据区域。 其中一些数据区是在 Java 虚拟机启动时创建的，只有在 Java 虚拟机退出时才会被销毁。 其他数据区域是每个线程。 每线程数据区在创建线程时创建，在线程退出时销毁
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h3 id="_5-2-图解"> 5.2 图解</h3>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309213359201.png" alt="image-20220309213359201" /></p>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309211847128.png" alt="image-20220309211847128" /></p>
+<h3 id="_5-3-常规理解"> 5.3 常规理解</h3>
+<h4 id="_5-3-1-method-area-方法区-类信息、常量、静态变量、即使编译器编译之后的代码"> 5.3.1 Method Area(方法区):类信息、常量、静态变量、即使编译器编译之后的代码</h4>
+<blockquote>
+<p>在JDK1.8中，方法区存放运行时常量池、方法数据、方法的代码和构造方法，包括类中的实例化方法和接口初始化方法。
+存放如下数据：</p>
+</blockquote>
+<div><pre><code><span>// 该类型数据存放在方法区</span>
+<span>public</span> <span>static</span> <span>final</span> CONSTSANT <span>=</span> <span>"constant"</span><span>;</span>
+
+<span>// 方法区存放方法以及方法的代码</span>
+<span>public</span> <span>class</span> <span>Test</span> <span>{</span>
+   <span>// 该方法存放在方法区</span>
+   <span>public</span> <span>Test</span><span>(</span><span>)</span> <span>{</span>
+   <span>}</span>
+   
+   <span>// 该方法存放在方法区</span>
+   <span>public</span> <span>void</span> <span>testMethod</span><span>(</span><span>)</span> <span>{</span>
+   <span>}</span>
+<span>}</span>
+
+<span>public</span> <span>interface</span> <span>IXXService</span><span>(</span><span>)</span> <span>{</span>
+   <span>// 该方法存放在方法区</span>
+   <span>default</span> <span>void</span> test <span>(</span><span>)</span> <span>{</span>
+       
+   <span>}</span>
+<span>}</span>
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br></div></div><div><pre><code>The Java Virtual Machine has a method area that is shared among all Java Virtual
+Machine threads.
+&gt;&gt; 方法区只有一个，线程共享的内存区域【线程非安全】，生命周期是跟虚拟机一样的。
+
+It stores per-class structures such as the run-time constant pool, field and method data, and the code for methods and constructors, including the special methods (§2.9) used in class and instance initialization and interface initialization.
+&gt;&gt; 类信息、常量、静态变量、即使编译器编译之后的代码。
+
+The method area is created on virtual machine start-up.
+
+Although the method area is logically part of the heap【逻辑上是属于堆的一部分】, simple implementations may choose not to either garbage collect or compact it.
+垃圾回收不太会讨论方法区的垃圾回收
+
+If memory in the method area cannot be made available to satisfy an allocation request, the Java Virtual Machine throws an OutOfMemoryError.
+&gt;&gt; OOM
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div><p><strong>方法区是各个线程共享的内存区域，在虚拟机启动时创建。</strong></p>
+<p><strong>用于存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据。</strong></p>
+<p><strong>虽然Java虚拟机规范把方法区描述为堆的一个逻辑部分，但是它却又一个别名叫做Non-Heap(非堆)，目 的是与Java堆区分开来。</strong></p>
+<p><strong>当方法区无法满足内存分配需求时，将抛出OutOfMemoryError异常。</strong></p>
+<blockquote>
+<p>此时回看装载阶段的第2步：(2)将这个字节流所代表的静态存储结构转化为方法区的运行时数据 结构</p>
+</blockquote>
+<p>如果这时候把从Class文件到装载的第(1)和(2)步合并起来理解的话，可以画个图</p>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309211440247.png" alt="image-20220309211440247" /></p>
+<p><strong>(1)方法区在JDK 8中就是Metaspace，在JDK6或7中就是Perm Space (2)Run-Time Constant Pool</strong></p>
+<p><strong>(2)Run-Time Constant Pool</strong></p>
+<p>Class文件中除了有类的版本、字段、方法、接口等描述信息外，</p>
+<p>还有一项信息就是常量池，用于存放编译时期生成的各种字面量和符号引用，这部分内容将在 类加载后进 入方法区的运行时常量池中存放。</p>
+<blockquote>
+<p>Each run-time constant pool is allocated from the Java Virtual Machine's method area (§2.5.4).s</p>
+<p>每个运行时常量池都是从 Java 虚拟机的方法中分配的区域 (§2.5.4).s</p>
+</blockquote>
+<h4 id="_5-3-2-heap-堆-对象或者数组"> 5.3.2 Heap(堆):对象或者数组</h4>
+<p>Java堆是Java虚拟机所管理内存中最大的一块，在虚拟机启动时创建，被所有线程共享。</p>
+<p>Java对象实例以及数组都在堆上分配。</p>
+<div><pre><code>The Java Virtual Machine has a heap that is shared among all Java Virtual Machine threads. 
+堆只有一个，线程共享内存区域的【线程非安全】，生命周期跟虚拟机一样。
+
+The heap is the run-time data area from which memory for all class instances and arrays is allocated.
+存储数据包括：对象或者数组
+
+The heap is created on virtual machine start-up. 
+
+If a computation requires more heap than can be made available by the automatic storage management system, the Java Virtual Machine throws an OutOfMemoryError.
+【如果内存不够，也会发生OOM】
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><p>此时回看装载阶段的第3步：(3)在Java堆中生成一个代表这个类的java.lang.Class对象，作为对方 法区中这些数据的访问入口</p>
+<p>此时装载(1)(2)(3)的图可以改动一下</p>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309211847128.png" alt="image-20220309211847128" /></p>
+<h4 id="_5-3-3-java-virtual-machine-stacks-虚拟机栈-局部变量、操作数、返回数"> 5.3.3 Java Virtual Machine Stacks(虚拟机栈):局部变量、操作数、返回数</h4>
+<div><pre><code>Each Java Virtual Machine thread has a private Java Virtual Machine stack,
+created at the same time as the thread. A Java Virtual Machine stack stores
+frames (§2.6)
+【每个线程独有的线程栈】
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><p>一个线程的创建代表一个栈，每个方法被当前线程调用了，就代表一个栈帧。</p>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309220003612.png" alt="image-20220309220003612" /></p>
+<div><pre><code>If the computation in a thread requires a larger Java Virtual Machine stack than is permitted, the Java Virtual Machine throws a StackOverflowError.
+【StackOverflowError】
+
+If Java Virtual Machine stacks can be dynamically expanded, and expansion is attempted but insufficient memory can be made available to effect the expansion, or if insufficient memory can be made available to create the initial Java Virtual Machine stack for a new thread, the Java Virtual Machine throws an OutOfMemoryError.
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><blockquote>
+<p>经过上面的分析，类加载机制的装载过程已经完成，后续的链接，初始化也会相应的生效。</p>
+<p>假如目前的阶段是初始化完成了，后续做啥呢？肯定是Use使用咯，不用的话这样折腾来折腾去 有什么意义？那怎样才能被使用到？换句话说里面内容怎样才能被执行？比如通过主函数main调 用其他方法，这种方式实际上是main线程执行之后调用的方法，即要想使用里面的各种内容，得 要以线程为单位，执行相应的方法才行。</p>
+<p>那一个线程执行的状态如何维护？一个线程可以执行多少个方法？这样的关系怎么维护呢？</p>
+</blockquote>
+<p>虚拟机栈是一个线程执行的区域，保存着一个线程中方法的调用状态。换句话说，一个Java线程的运行 状态，由一个虚拟机栈来保存，所以虚拟机栈肯定是线程私有的，独有的，随着线程的创建而创建。</p>
+<p>每一个被线程执行的方法，为该栈中的栈帧，即每个方法对应一个栈帧。</p>
+<p>调用一个方法，就会向栈中压入一个栈帧；一个方法调用完成，就会把该栈帧从栈中弹出。</p>
+<h4 id="_5-3-4-the-pc-register-程序计数器"> 5.3.4 The pc Register(程序计数器)</h4>
+<blockquote>
+<p>我们都知道一个JVM进程中有多个线程在执行，而线程中的内容是否能够拥有执行权，是根据 CPU调度来的。</p>
+<p>假如线程A正在执行到某个地方，突然失去了CPU的执行权，切换到线程B了，然后当线程A再获 得CPU执行权的时候，怎么能继续执行呢？这就是需要在线程中维护一个变量，记录线程执行到 的位置。</p>
+</blockquote>
+<p>程序计数器占用的内存空间很小，由于Java虚拟机的多线程是通过线程轮流切换，并分配处理器执行时 间的方式来实现的，在任意时刻，一个处理器只会执行一条线程中的指令。因此，为了线程切换后能够 恢复到正确的执行位置，每条线程需要有一个独立的程序计数器(线程私有)。</p>
+<p>如果线程正在执行Java方法，则计数器记录的是正在执行的虚拟机字节码指令的地址；</p>
+<p>如果正在执行的是Native方法，则这个计数器为空。</p>
+<div><pre><code>The Java Virtual Machine can support many threads of execution at once (JLS §17). Each Java Virtual Machine thread has its own pc (program counter)register. At any point, each Java Virtual Machine thread is executing the code of a single method, namely the current method (§2.6) for that thread. If that method is not native, the pc register contains the address of the Java Virtual Machine instruction currently being executed. If the method currently being executed by the thread is native, the value of the Java Virtual Machine&#39;s pcregister is undefined. The Java Virtual Machine&#39;s pc register is wide enough to hold a returnAddress or a native pointer on the specific platform
+</code></pre>
+<div><span>1</span><br></div></div><h4 id="_5-3-5-native-method-stacks-本地方法栈"> 5.3.5 Native Method Stacks(本地方法栈)</h4>
+<div><pre><code>An implementation of the Java Virtual Machine may use conventional stacks, colloquially called &quot;C stacks,&quot; to support native methods (methods written in a language other than the Java programming language).
+
+&gt;&gt; Java 虚拟机的实现可以使用传统的堆栈，通俗地称为“C 堆栈”，以支持本地方法（以 Java 编程语言以外的语言编写的方法）
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p>如果当前线程执行的方法是Native类型的，这些方法就会在本地方法栈中执行。</p>
+]]></content>
+    <author>
+      <name>finen</name>
+    </author>
+    <contributor>
+      <name>finen</name>
+    </contributor>
+    <published>2022-05-05T10:22:38.000Z</published>
+    <rights>Copyright by finen</rights>
+  </entry>
+  <entry>
+    <title type="html">JVM前奏-JVM堆栈内存详解</title>
+    <id>https://www.moremind.cn/md/java/jvm/JVM-2/</id>
+    <link href="https://www.moremind.cn/md/java/jvm/JVM-2/"/>
+    <updated>2022-05-05T10:22:38.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="_1-结合字节码指令理解java虚拟机栈和栈帧"> 1 结合字节码指令理解Java虚拟机栈和栈帧</h2>
+<blockquote>
+<p>官网 ：https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.6</p>
+<p>栈帧：每个栈帧对应一个被调用的方法，可以理解为一个方法的运行空间。</p>
+</blockquote>
+<p>每个栈帧中包括局部变量表(Local Variables)、操作数栈(Operand Stack)、指向运行时常量池的引用(A reference to the run-time constant pool)、方法返回地址(Return Address)和附加信息。</p>
+<div><pre><code>每个栈帧中包括局部变量表(Local Variables)、操作数栈(Operand Stack)、指向运行时常量池的引用(A reference to the run-time constant pool)、方法返回地址(Return Address)和附加信息。
+</code></pre>
+<div><span>1</span><br></div></div><div><pre><code>操作数栈:以压栈和出栈的方式存储操作数的
+</code></pre>
+<div><span>1</span><br></div></div><div><pre><code>动态链接:每个栈帧都包含一个指向运行时常量池中该栈帧所属方法的引用，持有这个引用是为了支持方法调用过程中的动态连接(Dynamic Linking)。
+</code></pre>
+<div><span>1</span><br></div></div><div><pre><code>方法返回地址:当一个方法开始执行后,只有两种方式可以退出，一种是遇到方法返回的字节码指令；一种是遇见异常，并且这个异常没有在方法体内得到处理。
+</code></pre>
+<div><span>1</span><br></div></div><p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309223600414.png" alt="image-20220309223600414" /></p>
+<div><pre><code><span>class</span> <span>Person</span><span>{</span>
+    <span>private</span> <span>String</span> name<span>=</span><span>"Jack"</span><span>;</span>
+    <span>private</span> <span>int</span> age<span>;</span>
+    <span>private</span> <span>final</span> <span>double</span> salary<span>=</span><span>100</span><span>;</span>
+    <span>private</span> <span>static</span> <span>String</span> address<span>;</span>
+    <span>private</span> <span>final</span> <span>static</span> <span>String</span> hobby<span>=</span><span>"Programming"</span><span>;</span>
+    <span>public</span> <span>void</span> <span>say</span><span>(</span><span>)</span><span>{</span>
+        <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"person say..."</span><span>)</span><span>;</span>
+    <span>}</span>
+    <span>public</span> <span>static</span> <span>int</span> <span>calc</span><span>(</span><span>int</span> op1<span>,</span><span>int</span> op2<span>)</span><span>{</span>
+        op1<span>=</span><span>3</span><span>;</span>
+        <span>int</span> result<span>=</span>op1<span>+</span>op2<span>;</span>
+        <span>return</span> result<span>;</span>
+    <span>}</span>
+    <span>public</span> <span>static</span> <span>void</span> <span>order</span><span>(</span><span>)</span><span>{</span>
+    <span>}</span>
+    <span>public</span> <span>static</span> <span>void</span> <span>main</span><span>(</span><span>String</span><span>[</span><span>]</span> args<span>)</span><span>{</span>
+        <span>calc</span><span>(</span><span>1</span><span>,</span><span>2</span><span>)</span><span>;</span>
+        <span>order</span><span>(</span><span>)</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br></div></div><blockquote>
+<p>此时你需要一个能够看懂反编译指令的宝典</p>
+<p>比如官网的：https://docs.oracle.com/javase/specs/jvms/se8/html/index.html</p>
+</blockquote>
+<div><pre><code><span>class</span> <span>Person</span> <span>{</span>
+  <span>Person</span><span>(</span><span>)</span><span>;</span>
+    <span>Code</span><span>:</span>
+       <span>0</span><span>:</span> aload_0
+       <span>1</span><span>:</span> invokespecial #<span>1</span>                  <span>// Method java/lang/Object."&lt;init>":()V</span>
+       <span>4</span><span>:</span> aload_0
+       <span>5</span><span>:</span> ldc           #<span>2</span>                  <span>// String Jack</span>
+       <span>7</span><span>:</span> putfield      #<span>3</span>                  <span>// Field name:Ljava/lang/String;</span>
+      <span>10</span><span>:</span> aload_0
+      <span>11</span><span>:</span> ldc2_w        #<span>4</span>                  <span>// double 100.0d</span>
+      <span>14</span><span>:</span> putfield      #<span>6</span>                  <span>// Field salary:D</span>
+      <span>17</span><span>:</span> <span>return</span>
+
+  <span>public</span> <span>void</span> <span>say</span><span>(</span><span>)</span><span>;</span>
+    <span>Code</span><span>:</span>
+       <span>0</span><span>:</span> getstatic     #<span>7</span>                  <span>// Field java/lang/System.out:Ljava/io/PrintStream;</span>
+       <span>3</span><span>:</span> ldc           #<span>8</span>                  <span>// String person say...</span>
+       <span>5</span><span>:</span> invokevirtual #<span>9</span>                  <span>// Method java/io/PrintStream.println:(Ljava/lang/String;)V</span>
+       <span>8</span><span>:</span> <span>return</span>
+
+  <span>public</span> <span>static</span> <span>int</span> <span>calc</span><span>(</span><span>int</span><span>,</span> <span>int</span><span>)</span><span>;</span>
+    <span>Code</span><span>:</span>
+       <span>0</span><span>:</span> iconst_3  <span>//将int类型常量3压入[操作数栈]</span>
+       <span>1</span><span>:</span> istore_0  <span>//将int类型值存入局部变量表[局部变量0] ==> op = 3</span>
+       <span>2</span><span>:</span> iload_0   <span>//从[局部变量0]中装载int类型值入栈</span>
+       <span>3</span><span>:</span> iload_1   <span>//从[局部变量1]中装载int类型值入栈</span>
+       <span>4</span><span>:</span> iadd      <span>//将栈顶元素弹出栈，执行int类型的加法，结果入栈</span>
+       <span>5</span><span>:</span> istore_2  <span>//将栈顶int类型值保存到[局部变量2]中</span>
+       <span>6</span><span>:</span> iload_2   <span>//从[局部变量2]中装载int类型值入栈</span>
+       <span>7</span><span>:</span> ireturn   <span>//从方法中返回int类型的数据</span>
+
+  <span>public</span> <span>static</span> <span>void</span> <span>order</span><span>(</span><span>)</span><span>;</span>
+    <span>Code</span><span>:</span>
+       <span>0</span><span>:</span> <span>return</span>
+
+  <span>public</span> <span>static</span> <span>void</span> <span>main</span><span>(</span><span><span>java<span>.</span>lang<span>.</span></span>String</span><span>[</span><span>]</span><span>)</span><span>;</span>
+    <span>Code</span><span>:</span>
+       <span>0</span><span>:</span> iconst_1
+       <span>1</span><span>:</span> iconst_2
+       <span>2</span><span>:</span> invokestatic  #<span>10</span>                 <span>// Method calc:(II)I</span>
+       <span>5</span><span>:</span> pop
+       <span>6</span><span>:</span> invokestatic  #<span>11</span>                 <span>// Method order:()V</span>
+       <span>9</span><span>:</span> <span>return</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br></div></div><p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309223510002.png" alt="image-20220309223510002" /></p>
+<h2 id="_2-折腾一下"> 2 折腾一下</h2>
+<h3 id="_2-1栈指向堆"> 2.1栈指向堆</h3>
+<p>如果在栈帧中有一个变量，类型为引用类型，比如Object obj=new Object()，这时候就是典型的栈中元素指向堆中的对象。</p>
+<div><pre><code><span>class</span> <span>Person</span> <span>{</span>
+    <span>public</span> <span>void</span> <span>order</span><span>(</span><span>)</span> <span>{</span>
+        <span>Object</span> obj <span>=</span> <span>new</span> <span>Object</span><span>(</span><span>)</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309230040459.png" alt="image-20220309230040459" /></p>
+<h3 id="_2-2-方法区指向堆"> 2.2 方法区指向堆</h3>
+<p>方法区中会存放静态变量，常量等数据。如果是下面这种情况，就是典型的方法区中元素指向堆中的对象。</p>
+<div><pre><code><span>class</span> <span>Person</span> <span>{</span>
+    <span>private</span> <span>static</span> <span>Object</span> obj<span>=</span><span>new</span> <span>Object</span><span>(</span><span>)</span><span>;</span> <span>// 方法区指向堆</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309230410111.png" alt="image-20220309230410111" /></p>
+<h3 id="_2-3-堆指向方法区"> 2.3 堆指向方法区</h3>
+<p>方法区中会包含类的信息，堆中会有对象，那怎么知道对象是哪个类创建的呢？</p>
+<p>思考 ：一个对象怎么知道它是由哪个类创建出来的？怎么记录？这就需要了解一个Java对象的具体信息咯。</p>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309230858070.png" alt="image-20220309230858070" /></p>
+<h3 id="_2-4-java对象内存布局"> 2.4 Java对象内存布局</h3>
+<p>一个Java对象在内存中包括3个部分：对象头、实例数据和对齐填充</p>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309230913143.png" alt="image-20220309230913143" /></p>
+<h2 id="_3-内存模型"> 3 内存模型</h2>
+<h3 id="_3-1-图解"> 3.1 图解</h3>
+<div><pre><code>一块是非堆区，一块是堆区。
+堆区分为两大块，一个是Old区，一个是Young区。
+Young区分为两大块，一个是Survivor区（S0+S1），一块是Eden区。 Eden:S0:S1=8:1:1
+S0和S1一样大，也可以叫From和To。
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309233401625.png" alt="image-20220309233401625" /></p>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309233506458.png" alt="image-20220309233506458" /></p>
+<p>根据之前对于Heap的介绍可以知道，一般对象和数组的创建会在堆中分配内存空间，关键是堆中有这么多区 域，那一个对象的创建到底在哪个区域呢？</p>
+<h3 id="_3-2-对象创建所在区域"> 3.2 对象创建所在区域</h3>
+<p>一般情况下，新创建的对象都会被分配到Eden区，一些特殊的大的对象会直接分配到Old区。</p>
+<blockquote>
+<p>比如有对象A，B，C等创建在Eden区，但是Eden区的内存空间肯定有限，比如有100M，假如已经使用了 100M或者达到一个设定的临界值，这时候就需要对Eden内存空间进行清理，即垃圾收集(Garbage Collect)， 这样的GC我们称之为Minor GC，Minor GC指得是Young区的GC。 经过GC之后，有些对象就会被清理掉，有些对象可能还存活着，对于存活着的对象需要将其复制到Survivor 区，然后再清空Eden区中的这些对象。</p>
+</blockquote>
+<h3 id="_3-3-survivor区详解"> 3.3 Survivor区详解</h3>
+<p>由图解可以看出，Survivor区分为两块S0和S1，也可以叫做From和To。</p>
+<p>在同一个时间点上，S0和S1只能有一个区有数据，另外一个是空的。</p>
+<blockquote>
+<p>接着上面的GC来说，比如一开始只有Eden区和From中有对象，To中是空的。</p>
+<p>此时进行一次GC操作，From区中对象的年龄就会+1，我们知道Eden区中所有存活的对象会被复制到To区， From区中还能存活的对象会有两个去处。</p>
+<p>若对象年龄达到之前设置好的年龄阈值，此时对象会被移动到Old区，如果Eden区和From区没有达到阈值的</p>
+<p>对象会被复制到To区。 此时Eden区和From区已经被清空(被GC的对象肯定没了，没有被GC的对象都有了各 自的去处)</p>
+<p>这时候From和To交换角色，之前的From变成了To，之前的To变成了From。</p>
+<p>也就是说无论如何都要保证名为To的Survivor区域是空的。</p>
+<p>Minor GC会一直重复这样的过程，直到To区被填满，然后会将所有对象复制到老年代中。</p>
+</blockquote>
+<p>从上面的分析可以看出，一般Old区都是年龄比较大的对象，或者相对超过了某个阈值的对象。</p>
+<p>在Old区也会有GC的操作，Old区的GC我们称作为Major GC。</p>
+<h3 id="_3-4-old区详解"> 3.4 Old区详解</h3>
+<p>从上面的分析可以看出，一般Old区都是年龄比较大的对象，或者相对超过了某个阈值的对象。 在Old区也会有GC的操作，Old区的GC我们称作为Major GC。</p>
+<h3 id="_3-5-对象的一辈子理解"> 3.5 对象的一辈子理解</h3>
+<div><pre><code>我是一个普通的Java对象,我出生在Eden区,在Eden区我还看到和我长的很像的小兄弟,我们在Eden区中玩了挺长时间。有一天Eden区中的人实在是太多了,我就被迫去了Survivor区的“From”区,自从去了Survivor区,我就开始漂了,有时候在Survivor的“From”区,有时候在Survivor的“To”区,居无定所。直到我18岁的时候,爸爸说我成人了,该去社会上闯闯了。
+于是我就去了年老代那边,年老代里,人很多,并且年龄都挺大的,我在这里也认识了很多人。在年老代里,我生活了20年(每次GC加一岁),然后被回收。
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309235221230.png" alt="image-20220309235221230" /></p>
+<h3 id="_3-6-常见问题"> 3.6 常见问题</h3>
+<ul>
+<li>
+<p>如何理解Minor/Major/Full GC</p>
+<div><pre><code>Minor GC:新生代
+Major GC:老年代
+Full GC:新生代+老年代
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div></li>
+<li>
+<p>为什么需要Survivor区?只有Eden不行吗？</p>
+<div><pre><code>如果没有Survivor,Eden区每进行一次Minor GC,并且没有年龄限制的话，存活的对象就会被送到老年代。
+这样一来，老年代很快被填满,触发Major GC(因为Major GC一般伴随着Minor GC,也可以看做触发了Full GC)。
+老年代的内存空间远大于新生代,进行一次Full GC消耗的时间比Minor GC长得多。
+执行时间长有什么坏处?频发的Full GC消耗的时间很长,会影响大型程序的执行和响应速度。
+
+可能你会说，那就对老年代的空间进行增加或者较少咯。
+假如增加老年代空间，更多存活对象才能填满老年代。虽然降低Full GC频率，但是随着老年代空间加大,一旦发生Full GC,执行所需要的时间更长。
+假如减少老年代空间，虽然Full GC所需时间减少，但是老年代很快被存活对象填满,Full GC频率增加。
+
+所以Survivor的存在意义,就是减少被送到老年代的对象,进而减少Full GC的发生,Survivor的预筛选保证,只有经历16次Minor GC还能在新生代中存活的对象,才会被送到老年代。
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div></li>
+<li>
+<p>为什么需要两个Survivor区?</p>
+<div><pre><code>最大的好处就是解决了碎片化。也就是说为什么一个Survivor区不行?第一部分中,我们知道了必须设置Survivor区。假设现在只有一个Survivor区,我们来模拟一下流程:
+刚刚新建的对象在Eden中,一旦Eden满了,触发一次Minor GC,Eden中的存活对象就会被移动Survivor区。这样继续循环下去,下一次Eden满了的时候,问题来了,此时进行Minor GC,Eden和Survivor各有一些存活对象,如果此时把Eden区的存活对象硬放到Survivor区,很明显这两部分对象所占有的内存是不连续的,也就导致了内存碎片化。
+永远有一个Survivor space是空的,另一个非空的Survivor space无碎片。
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div></li>
+<li>
+<p>新生代中Eden:S1:S2为什么是8:1:1？</p>
+<div><pre><code>新生代中的可用内存：复制算法用来担保的内存为9：1
+可用内存中Eden：S1区为8：1
+即新生代中Eden:S1:S2 = 8：1：1
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div></li>
+</ul>
+<h2 id="_4-体验与验证"> 4 体验与验证</h2>
+<h3 id="_4-1-使用jvisualvm查看"> 4.1 使用jvisualvm查看</h3>
+<p>visualgc插件下载链接 ： https://visualvm.github.io/pluginscenters.html ---&gt;选择对应版本链接---&gt;Tools---&gt;Visual GC</p>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310000015238.png" alt="image-20220310000015238" /></p>
+<h3 id="_4-1-堆内存溢出"> 4.1 堆内存溢出</h3>
+<h4 id="_4-1-1-代码"> 4.1.1 代码</h4>
+<div><pre><code><span>@RestController</span>
+<span>public</span> <span>class</span> <span>HeapController</span> <span>{</span>
+    <span>List</span><span><span>&lt;</span><span>Person</span><span>></span></span> list<span>=</span><span>new</span> <span>ArrayList</span><span><span>&lt;</span><span>Person</span><span>></span></span><span>(</span><span>)</span><span>;</span>
+    <span>@GetMapping</span><span>(</span><span>"/heap"</span><span>)</span>
+    <span>public</span> <span>String</span> <span>heap</span><span>(</span><span>)</span> <span>throws</span> <span>Exception</span><span>{</span>
+        <span>while</span><span>(</span><span>true</span><span>)</span><span>{</span>
+            list<span>.</span><span>add</span><span>(</span><span>new</span> <span>Person</span><span>(</span><span>)</span><span>)</span><span>;</span>
+            <span>Thread</span><span>.</span><span>sleep</span><span>(</span><span>1</span><span>)</span><span>;</span>
+        <span>}</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><blockquote>
+<p>记得设置参数比如-Xmx20M -Xms20M</p>
+</blockquote>
+<h4 id="_4-1-2-运行结果"> 4.1.2 运行结果</h4>
+<p>访问-&gt;http://localhost:8080/heap</p>
+<blockquote>
+<p>Exception in thread &quot;http-nio-8080-exec-2&quot; java.lang.OutOfMemoryError: GC overhead limit exceeded</p>
+</blockquote>
+<h3 id="_4-2-方法区内存溢出"> 4.2 方法区内存溢出</h3>
+<blockquote>
+<p>比如向方法区中添加Class的信息</p>
+</blockquote>
+<h4 id="_4-2-1-asm依赖和class代码"> 4.2.1 asm依赖和Class代码</h4>
+<div><pre><code><span><span><span>&lt;</span>dependency</span><span>></span></span>
+   <span><span><span>&lt;</span>groupId</span><span>></span></span>asm<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+   <span><span><span>&lt;</span>artifactId</span><span>></span></span>asm<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+   <span><span><span>&lt;</span>version</span><span>></span></span>3.3.1<span><span><span>&lt;/</span>version</span><span>></span></span>
+<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><div><pre><code><span>public</span> <span>class</span> <span>MetaspaceUtil</span> <span>extends</span> <span>ClassLoader</span> <span>{</span>
+
+    <span>public</span> <span>static</span> <span>List</span><span><span>&lt;</span><span>Class</span><span>&lt;</span><span>?</span><span>></span><span>></span></span> <span>createClasses</span><span>(</span><span>)</span> <span>{</span>
+        <span>List</span><span><span>&lt;</span><span>Class</span><span>&lt;</span><span>?</span><span>></span><span>></span></span> classes <span>=</span> <span>new</span> <span>ArrayList</span><span><span>&lt;</span><span>Class</span><span>&lt;</span><span>?</span><span>></span><span>></span></span><span>(</span><span>)</span><span>;</span>
+        <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> <span>10000000</span><span>;</span> <span>++</span>i<span>)</span> <span>{</span>
+            <span>ClassWriter</span> cw <span>=</span> <span>new</span> <span>ClassWriter</span><span>(</span><span>0</span><span>)</span><span>;</span>
+            cw<span>.</span><span>visit</span><span>(</span><span>Opcodes</span><span>.</span>V1_1<span>,</span> <span>Opcodes</span><span>.</span>ACC_PUBLIC<span>,</span> <span>"Class"</span> <span>+</span> i<span>,</span> <span>null</span><span>,</span>
+                    <span>"java/lang/Object"</span><span>,</span> <span>null</span><span>)</span><span>;</span>
+            <span>MethodVisitor</span> mw <span>=</span> cw<span>.</span><span>visitMethod</span><span>(</span><span>Opcodes</span><span>.</span>ACC_PUBLIC<span>,</span> <span>"&lt;init>"</span><span>,</span>
+                    <span>"()V"</span><span>,</span> <span>null</span><span>,</span> <span>null</span><span>)</span><span>;</span>
+            mw<span>.</span><span>visitVarInsn</span><span>(</span><span>Opcodes</span><span>.</span>ALOAD<span>,</span> <span>0</span><span>)</span><span>;</span>
+            mw<span>.</span><span>visitMethodInsn</span><span>(</span><span>Opcodes</span><span>.</span>INVOKESPECIAL<span>,</span> <span>"java/lang/Object"</span><span>,</span>
+                    <span>"&lt;init>"</span><span>,</span> <span>"()V"</span><span>)</span><span>;</span>
+            mw<span>.</span><span>visitInsn</span><span>(</span><span>Opcodes</span><span>.</span>RETURN<span>)</span><span>;</span>
+            mw<span>.</span><span>visitMaxs</span><span>(</span><span>1</span><span>,</span> <span>1</span><span>)</span><span>;</span>
+            mw<span>.</span><span>visitEnd</span><span>(</span><span>)</span><span>;</span>
+            <span>MetaspaceUtil</span> test <span>=</span> <span>new</span> <span>MetaspaceUtil</span><span>(</span><span>)</span><span>;</span>
+            <span>byte</span><span>[</span><span>]</span> code <span>=</span> cw<span>.</span><span>toByteArray</span><span>(</span><span>)</span><span>;</span>
+            <span>Class</span><span><span>&lt;</span><span>?</span><span>></span></span> exampleClass <span>=</span> test<span>.</span><span>defineClass</span><span>(</span><span>"Class"</span> <span>+</span> i<span>,</span> code<span>,</span> <span>0</span><span>,</span> code<span>.</span>length<span>)</span><span>;</span>
+            classes<span>.</span><span>add</span><span>(</span>exampleClass<span>)</span><span>;</span>
+        <span>}</span>
+        <span>return</span> classes<span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br></div></div><h4 id="_4-2-2-代码"> 4.2.2 代码</h4>
+<div><pre><code><span>@RestController</span>
+<span>public</span> <span>class</span> <span>NonHeapController</span> <span>{</span>
+    <span>List</span><span><span>&lt;</span><span>Class</span><span>&lt;</span><span>?</span><span>></span><span>></span></span> list<span>=</span><span>new</span> <span>ArrayList</span><span><span>&lt;</span><span>Class</span><span>&lt;</span><span>?</span><span>></span><span>></span></span><span>(</span><span>)</span><span>;</span>
+    <span>@GetMapping</span><span>(</span><span>"/nonheap"</span><span>)</span>
+    <span>public</span> <span>String</span> <span>heap</span><span>(</span><span>)</span> <span>throws</span> <span>Exception</span><span>{</span>
+        <span>while</span><span>(</span><span>true</span><span>)</span><span>{</span>
+            list<span>.</span><span>addAll</span><span>(</span><span>MetaspaceUtil</span><span>.</span><span>createClasses</span><span>(</span><span>)</span><span>)</span><span>;</span>
+            <span>Thread</span><span>.</span><span>sleep</span><span>(</span><span>5</span><span>)</span><span>;</span>
+        <span>}</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><h4 id="_4-2-3-运行结果"> 4.2.3 运行结果</h4>
+<blockquote>
+<p>访问-&gt;http://localhost:8080/nonheap</p>
+</blockquote>
+<div><pre><code>java.lang.OutOfMemoryError: Metaspace
+at java.lang.ClassLoader.defineClass1(Native Method) ~[na:1.8.0_191]
+at java.lang.ClassLoader.defineClass(ClassLoader.java:763) ~[na:1.8.0_191]
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h3 id="_4-3-虚拟机栈"> 4.3 虚拟机栈</h3>
+<h4 id="_4-3-1-代码演示stackoverflow"> 4.3.1 代码演示StackOverFlow</h4>
+<div><pre><code><span>public</span> <span>class</span> <span>StackOverFlowDemo</span> <span>{</span>
+
+    <span>public</span> <span>static</span> <span>long</span> count<span>=</span><span>0</span><span>;</span>
+
+    <span>public</span> <span>static</span> <span>void</span> <span>method</span><span>(</span><span>long</span> i<span>)</span><span>{</span>
+        <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span>count<span>++</span><span>)</span><span>;</span>
+        <span>method</span><span>(</span>i<span>)</span><span>;</span>
+    <span>}</span>
+
+    <span>public</span> <span>static</span> <span>void</span> <span>main</span><span>(</span><span>String</span><span>[</span><span>]</span> args<span>)</span> <span>{</span>
+        <span>method</span><span>(</span><span>1</span><span>)</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><h4 id="_4-3-2-运行结果"> 4.3.2 运行结果</h4>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310000555900.png" alt="image-20220310000555900" /></p>
+<h4 id="_4-3-3-理解和说明"> 4.3.3 理解和说明</h4>
+<div><pre><code>Stack Space用来做方法的递归调用时压入Stack Frame(栈帧)。所以当递归调用太深的时候，就有可能耗尽StackSpace，爆出StackOverflow的错误。
+
+-Xss128k：设置每个线程的堆栈大小。JDK 5以后每个线程堆栈大小为1M，以前每个线程堆栈大小为256K。根据应用的线程所需内存大小进行调整。在相同物理内存下，减小这个值能生成更多的线程。但是操作系统对一个进程内的线程数还是有限制的，不能无限生成，经验值在3000~5000左右。
+
+线程栈的大小是个双刃剑，如果设置过小，可能会出现栈溢出，特别是在该线程内有递归、大的循环时出现溢出的可能性更大，如果该值设置过大，就有影响到创建栈的数量，如果是多线程的应用，就会出现内存溢出的错误。
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div>]]></content>
+    <author>
+      <name>finen</name>
+    </author>
+    <contributor>
+      <name>finen</name>
+    </contributor>
+    <published>2022-05-05T10:22:38.000Z</published>
+    <rights>Copyright by finen</rights>
+  </entry>
+  <entry>
+    <title type="html">JVM升华-JVM垃圾回收算法以及垃圾回收器</title>
+    <id>https://www.moremind.cn/md/java/jvm/JVM-3/</id>
+    <link href="https://www.moremind.cn/md/java/jvm/JVM-3/"/>
+    <updated>2022-05-05T10:22:38.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="_1-garbage-collect-垃圾回收"> 1 Garbage Collect(垃圾回收)</h2>
+<p>GC Root:虚拟机栈中的本地变量、static成员、常量引用、本地方法栈[Thread C]中的变量</p>
+<p>类加载器：如果它找到一条路线，能到到达某个对象，也不能称为垃圾。</p>
+<p>Thread:Java进程(线程)</p>
+<h3 id="_1-1-如何确定一个对象是垃圾"> 1.1 如何确定一个对象是垃圾？</h3>
+<h4 id="_1-1-1-引用计数法"> 1.1.1 引用计数法</h4>
+<p>对于某个对象而言，只要应用程序中持有该对象的引用，就说明该对象不是垃圾，如果一个对象没有任 何指针对其 引用，它就是垃圾。</p>
+<blockquote>
+<p>弊端 :如果AB相互持有引用，导致永远不能被回收。</p>
+</blockquote>
+<h4 id="_1-1-2-可达性分析"> 1.1.2 可达性分析</h4>
+<p>通过GC Root的对象，开始向下寻找，看某个对象是否可达</p>
+<blockquote>
+<p>能作为GC Root:类加载器、Thread、虚拟机栈的本地变量表、static成员、常量引用、本地方法 栈的变量等。</p>
+</blockquote>
+<h3 id="_1-2-垃圾收集算法"> 1.2 垃圾收集算法</h3>
+<h4 id="_1-2-1-标记-清除-mark-sweep"> 1.2.1 标记-清除(Mark-Sweep)</h4>
+<ul>
+<li>标记</li>
+</ul>
+<p>找出内存中需要回收的对象，并且把它们标记出来</p>
+<blockquote>
+<p>此时堆中所有的对象都会被扫描一遍，从而才能确定需要回收的对象，比较耗时</p>
+</blockquote>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310004158070.png" alt="image-20220310004158070" /></p>
+<ul>
+<li>清除</li>
+</ul>
+<p>清除掉被标记需要回收的对象，释放出对应的内存空间</p>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310004225334.png" alt="image-20220310004225334" /></p>
+<p>缺点：</p>
+<div><pre><code>标记清除之后会产生大量不连续的内存碎片，空间碎片太多可能会导致以后在程序运行过程中需要分配较大对象时，无法找到足够的连续内存而不得不提前触发另一次垃圾收集动作。
+(1)标记和清除两个过程都比较耗时，效率不高
+(2)会产生大量不连续的内存碎片，空间碎片太多可能会导致以后在程序运行过程中需要分配较大对象时，无法找到足够的连续内存而不得不提前触发另一次垃圾收集动作。
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h4 id="_1-2-2-复制-copying"> 1.2.2 复制(Copying)</h4>
+<p>将内存划分为两块相等的区域，每次只使用其中一块，如下图所示：</p>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310004419137.png" alt="image-20220310004419137" /></p>
+<p>当其中一块内存使用完了，就将还存活的对象复制到另外一块上面，然后把已经使用过的内存空间一次 清除掉。</p>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310004442121.png" alt="image-20220310004442121" /></p>
+<p>缺点: 空间利用率降低。</p>
+<h4 id="_1-2-3-标记-整理-mark-compact"> 1.2.3 标记-整理(Mark-Compact)</h4>
+<p>标记过程仍然与&quot;标记-清除&quot;算法一样，但是后续步骤不是直接对可回收对象进行清理，而是让所有存活 的对象都向一端移动，然后直接清理掉端边界以外的内存。</p>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310004604646.png" alt="image-20220310004604646" /></p>
+<p>让所有存活的对象都向一端移动，清理掉边界意外的内存。</p>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310004633487.png" alt="image-20220310004633487" /></p>
+<h3 id="_1-3-分代收集算法"> 1.3 分代收集算法</h3>
+<p><strong>Young区：复制算法</strong>(对象在被分配之后，可能生命周期比较短，Young区复制效率比较高)</p>
+<p><strong>Old区：标记清除或标记整理</strong>(Old区对象存活时间比较长，复制来复制去没必要，不如做个标记再清理)</p>
+<h3 id="_1-4-垃圾收集器"> 1.4 垃圾收集器</h3>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310004914409.png" alt="image-20220310004914409" /></p>
+<h4 id="_1-4-1-serial收集器"> 1.4.1 Serial收集器</h4>
+<p>Serial收集器是最基本、发展历史最悠久的收集器，曾经（在JDK1.3.1之前）是虚拟机新生代收集的唯 一选择。</p>
+<p>它是一种单线程收集器，不仅仅意味着它只会使用一个CPU或者一条收集线程去完成垃圾收集工作，更 重要的是其在进行垃圾收集的时候需要暂停其他线程。</p>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310204357425.png" alt="image-20220310204357425" /></p>
+<h4 id="_1-4-2-parnew收集器"> 1.4.2 ParNew收集器</h4>
+<div><pre><code>优点：在多CPU时，比Serial效率高。
+缺点：收集过程暂停所有应用程序线程，单CPU时比Serial效率差。
+算法：复制算法
+适用范围：新生代
+应用：运行在Server模式下的虚拟机中首选的新生代收集器
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310204622369.png" alt="image-20220310204622369" /></p>
+<h4 id="_1-4-3-parallel-scavenge收集器"> 1.4.3 Parallel Scavenge收集器</h4>
+<p>Parallel Scavenge收集器是一个新生代收集器，它也是使用复制算法的收集器，又是并行的多线程收集 器，看上去和ParNew一样，但是<strong>Parallel Scanvenge更关注系统的吞吐量 。</strong></p>
+<div><pre><code>吞吐量=运行用户代码的时间/(运行用户代码的时间+垃圾收集时间)
+比如虚拟机总共运行了100分钟，垃圾收集时间用了1分钟，吞吐量=(100-1)/100=99%。
+若吞吐量越大，意味着垃圾收集的时间越短，则用户代码可以充分利用CPU资源，尽快完成程序的运算任务。
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><div><pre><code>-XX:MaxGCPauseMillis控制最大的垃圾收集停顿时间，
+-XX:GCTimeRatio直接设置吞吐量的大小。
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><h4 id="_1-4-4-serial-old收集器"> 1.4.4 Serial Old收集器</h4>
+<p>Serial Old收集器是Serial收集器的老年代版本，也是一个单线程收集器，不同的是<strong>采用&quot;标记-整理算 法&quot;</strong>，运行过程和Serial收集器一样。</p>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310205235758.png" alt="image-20220310205235758" /></p>
+<h4 id="_1-4-5-parallel-old收集器"> 1.4.5 Parallel Old收集器</h4>
+<p>Parallel Old收集器是Parallel Scavenge收集器的老年代版本，<strong>使用多线程和&quot;标记-整理算法&quot;进行垃圾 回收。</strong></p>
+<h4 id="_1-4-6-cms收集器"> 1.4.6 CMS收集器</h4>
+<p><strong>CMS(Concurrent Mark Sweep)收集器是一种以获取最短回收停顿时间 为目标的收集器。</strong></p>
+<p>采用的是&quot;标记-清除算法&quot;,整个过程分为4步</p>
+<div><pre><code>(1)初始标记 CMS initial mark 		标记GC Roots能关联到的对象 Stop The World---&gt;速度很快
+(2)并发标记 CMS concurrent mark 	进行GC Roots Tracing
+(3)重新标记 CMS remark 				修改并发标记因用户程序变动的内容 Stop The World
+4)并发清除 CMS concurrent sweep
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><blockquote>
+<p>由于整个过程中，并发标记和并发清除，收集器线程可以与用户线程一起工作，所以总体上来 说，CMS收集器的内存回收过程是与用户线程一起并发地执行的。</p>
+</blockquote>
+<div><pre><code>优点：并发收集、低停顿
+缺点：产生大量空间碎片、并发阶段会降低吞吐量
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310210434471.png" alt="image-20220310210434471" /></p>
+<h4 id="_1-4-7-g1收集器"> 1.4.7 G1收集器</h4>
+<ul>
+<li>G1特点:</li>
+</ul>
+<div><pre><code>并行与并发
+分代收集（仍然保留了分代的概念）
+空间整合（整体上属于“标记-整理”算法，不会导致空间碎片）
+可预测的停顿（比CMS更先进的地方在于能让使用者明确指定一个长度为M毫秒的时间片段内，消耗在垃圾收集上的时间不得超过N毫秒）
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><p>使用G1收集器时，Java堆的内存布局与就与其他收集器有很大差别，它将整个Java堆划分为多个 大小相等的独立区域（Region），虽然还保留有新生代和老年代的概念，但新生代和老年代不再 是物理隔离的了，它们都是一部分Region（不需要连续）的集合。</p>
+<ul>
+<li>工作过程分为以下几个阶段：</li>
+</ul>
+<div><pre><code>初始标记（Initial Marking） 标记一下GC Roots能够关联的对象，并且修改TAMS的值，需要暂停用户线程
+并发标记（Concurrent Marking） 从GC Roots进行可达性分析，找出存活的对象，与用户线程并发执行
+最终标记（Final Marking） 修正在并发标记阶段因为用户程序的并发执行导致变动的数据，需暂停用户线程
+筛选回收（Live Data Counting and Evacuation） 对各个Region的回收价值和成本进行排序，根据用户所期望的GC停顿时间制定回收计划
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310211903812.png" alt="image-20220310211903812" /></p>
+<ul>
+<li>判断是否需要使用G1收集器？</li>
+</ul>
+<div><pre><code>（1）50%以上的堆被存活对象占用
+（2）对象分配和晋升的速度变化非常大
+（3）垃圾回收时间比较长
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h4 id="_1-4-8-垃圾收集器分类"> 1.4.8 垃圾收集器分类</h4>
+<ul>
+<li>串行收集器-&gt;Serial和Serial Old</li>
+</ul>
+<p>只能有一个垃圾回收线程执行，用户线程暂停。 适用于内存比较小的嵌入式设备 。</p>
+<ul>
+<li>并行收集器[吞吐量优先]-&gt;Parallel Scanvenge、Parallel Old</li>
+</ul>
+<p>多条垃圾收集线程并行工作，但此时用户线程仍然处于等待状态。 适用于科学计算、后台处理等若交互场 景 。</p>
+<ul>
+<li>并发收集器[停顿时间优先]-&gt;CMS、G1</li>
+</ul>
+<p>用户线程和垃圾收集线程同时执行(但并不一定是并行的，可能是交替执行的)，垃圾收集线程在执行的 时候不会停顿用户线程的运行。 适用于相对时间有要求的场景，比如Web 。</p>
+<h4 id="_1-4-9-理解吞吐量和停顿时间"> 1.4.9 理解吞吐量和停顿时间</h4>
+<ul>
+<li>停顿时间-&gt;垃圾收集器 进行 垃圾回收终端应用执行响应的时间</li>
+<li>吞吐量-&gt;运行用户代码时间/(运行用户代码时间+垃圾收集时间)</li>
+</ul>
+<div><pre><code>停顿时间越短就越适合需要和用户交互的程序，良好的响应速度能提升用户体验；
+高吞吐量则可以高效地利用CPU时间，尽快完成程序的运算任务，主要适合在后台运算而不需要太多交互的任务。
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><h4 id="_1-4-10-如何选择合适的垃圾收集器"> 1.4.10 如何选择合适的垃圾收集器</h4>
+<p><a href="https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/collectors.html#sthref28" target="_blank" rel="noopener noreferrer">Available Collectors (oracle.com)</a></p>
+<ul>
+<li>优先调整堆的大小让服务器自己来选择</li>
+<li>如果内存小于100M，使用串行收集器</li>
+<li>如果是单核，并且没有停顿时间要求，使用串行或JVM自己选</li>
+<li>如果允许停顿时间超过1秒，选择并行或JVM自己选</li>
+<li>如果响应时间最重要，并且不能超过1秒，使用并发收集器 G1收集</li>
+</ul>
+<h4 id="_1-4-11-如何开启需要的垃圾收集器"> 1.4.11 如何开启需要的垃圾收集器</h4>
+<div><pre><code>（1）串行
+    -XX：+UseSerialGC
+    -XX：+UseSerialOldGC
+（2）并行(吞吐量优先)：
+    -XX：+UseParallelGC
+    -XX：+UseParallelOldGC
+（3）并发收集器(响应时间优先)
+    -XX：+UseConcMarkSweepGC
+    -XX：+UseG1GC
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div>]]></content>
+    <author>
+      <name>finen</name>
+    </author>
+    <contributor>
+      <name>finen</name>
+    </contributor>
+    <published>2022-05-05T10:22:38.000Z</published>
+    <rights>Copyright by finen</rights>
+  </entry>
+  <entry>
+    <title type="html">JVM实战-JVM性能分析以及调优分析</title>
+    <id>https://www.moremind.cn/md/java/jvm/JVM-4/</id>
+    <link href="https://www.moremind.cn/md/java/jvm/JVM-4/"/>
+    <updated>2022-05-05T10:22:38.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="_1-jvm实战篇"> 1 JVM实战篇</h1>
+<h2 id="_1-1-jvm参数"> 1.1 JVM参数</h2>
+<h4 id="_1-1-1-标准参数"> 1.1.1 标准参数</h4>
+<div><pre><code>-version
+-help
+-server
+-cp
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h4 id="_1-1-2-x参数"> 1.1.2 -X参数</h4>
+<div><pre><code>-Xint 解释执行
+-Xcomp 第一次使用就编译成本地代码
+-Xmixed 混合模式，JVM自己来决定
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h4 id="_1-1-3-xx参数"> 1.1.3 -XX参数</h4>
+<blockquote>
+<p>使用得最多的参数类型 非标准化参数，相对不稳定，主要用于JVM调优和Debug</p>
+</blockquote>
+<div><pre><code>a.Boolean类型
+格式：-XX:[+-]&lt;name&gt; +或-表示启用或者禁用name属性
+比如：-XX:+UseConcMarkSweepGC 表示启用CMS类型的垃圾回收器
+	 -XX:+UseG1GC 表示启用G1类型的垃圾回收器
+
+** b.非Boolean类型
+格式：-XX&lt;name&gt;=&lt;value&gt;表示name属性的值是value
+比如：-XX:MaxGCPauseMillis=500
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><h4 id="_1-1-4-其他参数"> 1.1.4 其他参数</h4>
+<div><pre><code>-Xms1000等价于-XX:InitialHeapSize=1000
+-Xmx1000等价于-XX:MaxHeapSize=1000
+-Xss100等价于-XX:ThreadStackSize=100
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h4 id="_1-1-5-查看参数"> 1.1.5 查看参数</h4>
+<blockquote>
+<p><strong>java -XX:+PrintFlagsFinal -version &gt; flags.txt</strong></p>
+</blockquote>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310215001216.png" alt="" /></p>
+<h4 id="_1-1-6-设置参数的方式"> 1.1.6 设置参数的方式</h4>
+<ul>
+<li>
+<p>开发工具中设置比如IDEA，eclipse</p>
+</li>
+<li>
+<p>运行jar包的时候:java -XX:+UseG1GC xxx.jar</p>
+</li>
+<li>
+<p>web容器比如tomcat，可以在脚本中的进行设置</p>
+</li>
+<li>
+<p><strong>通过jinfo实时调整某个java进程的参数(参数只有被标记为manageable的flags可以被实时修改)</strong></p>
+</li>
+</ul>
+<h4 id="_1-1-7-实践和单位换算"> 1.1.7 实践和单位换算</h4>
+<div><pre><code>1Byte(字节)=8bit(位)
+1KB=1024Byte(字节)
+1MB=1024KB
+1GB=1024MB
+1TB=1024GB
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><div><pre><code>(1)设置堆内存大小和参数打印
+	-Xmx100M -Xms100M -XX:+PrintFlagsFinal
+(2)查询+PrintFlagsFinal的值
+	:=true
+(3)查询堆内存大小MaxHeapSize
+	:= 104857600
+(4)换算
+104857600(Byte)/1024=102400(KB)
+102400(KB)/1024=100(MB)
+(5)结论
+	104857600是字节单位
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><h4 id="_1-1-8-常用参数含义"> 1.1.8 常用参数含义</h4>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309162923416.png" alt="image-20220309162923416" /></p>
+<h2 id="_1-2-常用命令"> 1.2 常用命令</h2>
+<h3 id="_1-2-1-jps"> 1.2.1 jps</h3>
+<blockquote>
+<p>查看java进程</p>
+</blockquote>
+<h3 id="_1-2-2-jinfo"> 1.2.2 jinfo</h3>
+<p>(1)实时查看和调整JVM配置参数</p>
+<p>(2)查看</p>
+<div><pre><code>jinfo -flag name PID 查看某个java进程的name属性的值
+</code></pre>
+<div><span>1</span><br></div></div><p>(3)修改</p>
+<blockquote>
+<p>参数只有被标记为manageable的flags可以被实时修改</p>
+<p>jinfo -flag [+|-] PID</p>
+<p>jinfo -flag = PID</p>
+</blockquote>
+<p>(4)查看曾经赋过值的一些参数</p>
+<div><pre><code>jinfo -flags PID
+</code></pre>
+<div><span>1</span><br></div></div><h3 id="_1-2-3-jstat"> 1.2.3 jstat</h3>
+<p>(1)查看虚拟机性能统计信息</p>
+<p>(2)查看类装载信息</p>
+<div><pre><code>jstat -class PID 1000 10 查看某个java进程的类装载信息，每1000毫秒输出一次，共输出10次
+</code></pre>
+<div><span>1</span><br></div></div><p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310220302064.png" alt="image-20220310220302064" /></p>
+<p>(3)查看垃圾收集信息</p>
+<div><pre><code>jstat -gc PID 1000 10
+</code></pre>
+<div><span>1</span><br></div></div><p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310220241447.png" alt="image-20220310220241447" /></p>
+<h3 id="_1-2-4-jstack"> 1.2.4 jstack</h3>
+<p>(1)查看线程堆栈信息</p>
+<p>(2)用法</p>
+<div><pre><code>jstack PID
+</code></pre>
+<div><span>1</span><br></div></div><p>(3) 排查死锁</p>
+<ul>
+<li>DeadLockDemo</li>
+</ul>
+<div><pre><code><span>//运行主类</span>
+<span>public</span> <span>class</span> <span>DeadLockDemo</span>
+<span>{</span>
+    <span>public</span> <span>static</span> <span>void</span> <span>main</span><span>(</span><span>String</span><span>[</span><span>]</span> args<span>)</span>
+    <span>{</span>
+        <span>DeadLock</span> d1<span>=</span><span>new</span> <span>DeadLock</span><span>(</span><span>true</span><span>)</span><span>;</span>
+        <span>DeadLock</span> d2<span>=</span><span>new</span> <span>DeadLock</span><span>(</span><span>false</span><span>)</span><span>;</span>
+        <span>Thread</span> t1<span>=</span><span>new</span> <span>Thread</span><span>(</span>d1<span>)</span><span>;</span>
+        <span>Thread</span> t2<span>=</span><span>new</span> <span>Thread</span><span>(</span>d2<span>)</span><span>;</span>
+        t1<span>.</span><span>start</span><span>(</span><span>)</span><span>;</span>
+        t2<span>.</span><span>start</span><span>(</span><span>)</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+<span>//定义锁对象</span>
+<span>class</span> <span>MyLock</span><span>{</span>
+    <span>public</span> <span>static</span> <span>Object</span> obj1<span>=</span><span>new</span> <span>Object</span><span>(</span><span>)</span><span>;</span>
+    <span>public</span> <span>static</span> <span>Object</span> obj2<span>=</span><span>new</span> <span>Object</span><span>(</span><span>)</span><span>;</span>
+<span>}</span>
+<span>//死锁代码</span>
+<span>class</span> <span>DeadLock</span> <span>implements</span> <span>Runnable</span><span>{</span>
+    <span>private</span> <span>boolean</span> flag<span>;</span>
+    <span>DeadLock</span><span>(</span><span>boolean</span> flag<span>)</span><span>{</span>
+        <span>this</span><span>.</span>flag<span>=</span>flag<span>;</span>
+    <span>}</span>
+    <span>public</span> <span>void</span> <span>run</span><span>(</span><span>)</span> <span>{</span>
+        <span>if</span><span>(</span>flag<span>)</span> <span>{</span>
+            <span>while</span><span>(</span><span>true</span><span>)</span> <span>{</span>
+                <span>synchronized</span><span>(</span><span>MyLock</span><span>.</span>obj1<span>)</span> <span>{</span>
+                    <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>Thread</span><span>.</span><span>currentThread</span><span>(</span><span>)</span><span>.</span><span>getName</span><span>(</span><span>)</span><span>+</span><span>"----if获得obj1锁"</span><span>)</span><span>;</span>
+                    <span>synchronized</span><span>(</span><span>MyLock</span><span>.</span>obj2<span>)</span> <span>{</span>
+                        <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>Thread</span><span>.</span><span>currentThread</span><span>(</span><span>)</span><span>.</span><span>getName</span><span>(</span><span>)</span><span>+</span><span>"----if获得obj2锁"</span><span>)</span><span>;</span>
+                    <span>}</span>
+                <span>}</span>
+            <span>}</span>
+        <span>}</span>
+        <span>else</span> <span>{</span>
+            <span>while</span><span>(</span><span>true</span><span>)</span><span>{</span>
+                <span>synchronized</span><span>(</span><span>MyLock</span><span>.</span>obj2<span>)</span> <span>{</span>
+                    <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>Thread</span><span>.</span><span>currentThread</span><span>(</span><span>)</span><span>.</span><span>getName</span><span>(</span><span>)</span><span>+</span><span>"----否则获得obj2锁"</span><span>)</span><span>;</span>
+                    <span>synchronized</span><span>(</span><span>MyLock</span><span>.</span>obj1<span>)</span> <span>{</span>
+                        <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>Thread</span><span>.</span><span>currentThread</span><span>(</span><span>)</span><span>.</span><span>getName</span><span>(</span><span>)</span><span>+</span><span>"----否则获得obj1锁"</span><span>)</span><span>;</span>
+
+                    <span>}</span>
+                <span>}</span>
+            <span>}</span>
+        <span>}</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br><span>46</span><br><span>47</span><br><span>48</span><br></div></div><ul>
+<li>jstack 分析</li>
+</ul>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310220950543.png" alt="" /></p>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310221042830.png" alt="image-20220310221042830" /></p>
+<h3 id="_1-2-5-jmap"> 1.2.5 jmap</h3>
+<p>(1)生成堆转储快照</p>
+<p>(2)打印出堆内存相关信息</p>
+<div><pre><code>1.设置：-XX:+PrintFlagsFinal -Xms300M -Xmx300M
+2.查看jmap -heap PID
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310221505262.png" alt="image-20220310221505262" /></p>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310221521362.png" alt="image-20220310221521362" /></p>
+<p>(3)dump出堆内存相关信息、</p>
+<div><pre><code>jmap -dump:format=b,file=heap.hprof PID
+jmap -dump:format=b,file=heap.hprof 44808
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310221914338.png" alt="image-20220310221914338" /></p>
+<p>(4)要是在发生堆内存溢出的时候，能自动dump出该文件就好了</p>
+<blockquote>
+<p>一般在开发中，JVM参数可以加上下面两句，这样内存溢出时，会自动dump出该文件</p>
+</blockquote>
+<div><pre><code>-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=heap.hprof
+</code></pre>
+<div><span>1</span><br></div></div><div><pre><code>设置堆内存大小: -Xms20M -Xmx20M
+启动，然后访问localhost:9090/heap，使得堆内存溢出
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><p>(5)关于dump下来的文件</p>
+<p>一般dump下来的文件可以结合工具来分析</p>
+<h2 id="_1-3-常用工具"> 1.3 常用工具</h2>
+<h3 id="_1-3-1-jconsole"> 1.3.1 jconsole</h3>
+<p>JConsole工具是JDK自带的可视化监控工具。查看java应用程序的运行概况、监控堆信息、永久区使用 情况、类加载情况等。</p>
+<blockquote>
+<p>启动命令：jconsole</p>
+</blockquote>
+<h3 id="_1-3-2-jvisualvm"> 1.3.2 jvisualvm</h3>
+<blockquote>
+<p>启动命令：jvisualvm</p>
+</blockquote>
+<h4 id="_1-3-2-1-监控本地java进程"> 1.3.2.1 监控本地Java进程</h4>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310222954259.png" alt="image-20220310222954259" /></p>
+<h4 id="_1-3-2-2-监控远端java进程"> 1.3.2.2 监控远端Java进程</h4>
+<blockquote>
+<p>比如监控远端tomcat，演示部署在阿里云服务器上的tomcat</p>
+</blockquote>
+<p>(1)在visualvm中选中“远程”，右击“添加”</p>
+<p>(2)主机名上写服务器的ip地址，比如31.100.39.63，然后点击“确定”</p>
+<p>(3)右击该主机“31.100.39.63”，添加“JMX”[也就是通过JMX技术具体监控远端服务器哪个Java进程]</p>
+<p>(4)要想让服务器上的tomcat被连接，需要改一下 bin/catalina.sh 这个文件</p>
+<div><pre><code><span>JAVA_OPTS</span><span>=</span><span>"<span>$JAVA_OPTS</span> -Dcom.sun.management.jmxremote -
+Djava.rmi.server.hostname=31.100.39.63 -Dcom.sun.management.jmxremote.port=8998
+-Dcom.sun.management.jmxremote.ssl=false -
+Dcom.sun.management.jmxremote.authenticate=true -
+Dcom.sun.management.jmxremote.access.file=../conf/jmxremote.access -
+Dcom.sun.management.jmxremote.password.file=../conf/jmxremote.password"</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><p>(5)在 ../conf 文件中添加两个文件jmxremote.access和jmxremote.password</p>
+<blockquote>
+<p>jmxremote.access 文件</p>
+<div><pre><code>guest readonly
+manager readwrite
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div></blockquote>
+<blockquote>
+<p>jmxremote.password 文件</p>
+<div><pre><code>guest guest
+manager manager
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div></blockquote>
+<p>授予权限 : chmod 600 * jmxremot *</p>
+<p>(6)将连接服务器地址改为公网ip地址</p>
+<div><pre><code>hostname -i 查看输出情况
+172.26.225.240 172.17.0.1
+vim /etc/hosts
+172.26.255.240 31.100.39.63
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><p>(7)设置上述端口对应的阿里云安全策略和防火墙策略</p>
+<p>(8)启动tomcat，来到bin目录</p>
+<div><pre><code>./startup.sh	
+</code></pre>
+<div><span>1</span><br></div></div><p>(9)查看tomcat启动日志以及端口监听</p>
+<div><pre><code><span>tail</span> -f <span>..</span>/logs/catalina.out
+<span>lsof</span> -i tcp:8080
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><p>(10)查看8998监听情况，可以发现多开了几个端口</p>
+<div><pre><code>lsof -i:8998 得到PID
+netstat -antup | grep PID
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><p>(11)在刚才的JMX中输入8998端口，并且输入用户名和密码则登录成功</p>
+<div><pre><code>端口:8998
+用户名:manager
+密码:manager
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h3 id="_1-3-3-arthas"> 1.3.3 Arthas</h3>
+<blockquote>
+<p>github ：https://github.com/alibaba/arthas</p>
+</blockquote>
+<blockquote>
+<p>Arthas 是Alibaba开源的Java诊断工具，采用命令行交互模式，是排查jvm相关问题的利器。</p>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310224532713.png" alt="" /></p>
+</blockquote>
+<h4 id="_1-3-3-1-下载安装"> 1.3.3.1 下载安装</h4>
+<div><pre><code>curl -O https://alibaba.github.io/arthas/arthas-boot.jar
+java -jar arthas-boot.jar
+# 然后可以选择一个Java进程
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p>Print usage</p>
+<div><pre><code>java -jar arthas-boot.jar -h
+</code></pre>
+<div><span>1</span><br></div></div><h4 id="_1-3-3-2-常用命令"> 1.3.3.2 常用命令</h4>
+<div><pre><code>version:查看arthas版本号
+help:查看命名帮助信息
+cls:清空屏幕
+session:查看当前会话信息
+quit:退出arthas客户端
+---
+dashboard:当前进程的实时数据面板
+thread:当前JVM的线程堆栈信息
+jvm:查看当前JVM的信息
+sysprop:查看JVM的系统属性
+---
+sc:查看JVM已经加载的类信息
+dump:dump已经加载类的byte code到特定目录
+jad:反编译指定已加载类的源码
+---
+monitor:方法执行监控
+watch:方法执行数据观测
+trace:方法内部调用路径，并输出方法路径上的每个节点上耗时
+stack:输出当前方法被调用的调用路径
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br></div></div><h3 id="_1-3-4-mat"> 1.3.4 MAT</h3>
+<blockquote>
+<p>Java堆分析器，用于查找内存泄漏
+Heap Dump，称为堆转储文件，是Java进程在某个时间内的快照
+下载地址 ：https://www.eclipse.org/mat/downloads.php</p>
+</blockquote>
+<h4 id="_1-3-4-1-dump信息包含的内容"> 1.3.4.1 Dump信息包含的内容</h4>
+<ul>
+<li>All Objects</li>
+</ul>
+<p>Class, fields, primitive values and references</p>
+<ul>
+<li>All Classes</li>
+</ul>
+<p>Classloader, name, super class, static fields</p>
+<ul>
+<li>Garbage Collection Roots</li>
+</ul>
+<p>Objects defined to be reachable by the JVM</p>
+<ul>
+<li>Thread Stacks and Local Variables</li>
+</ul>
+<p>The call-stacks of threads at the moment of the snapshot, and per-frame information about local objects</p>
+<h4 id="_1-3-4-2-获取dump文件"> 1.3.4.2 获取Dump文件</h4>
+<ul>
+<li>手动</li>
+</ul>
+<div><pre><code>jmap -dump:format=b,file=heap.hprof 44808
+</code></pre>
+<div><span>1</span><br></div></div><ul>
+<li>自动</li>
+</ul>
+<div><pre><code>-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=heap.hprof
+</code></pre>
+<div><span>1</span><br></div></div><h4 id="_1-3-4-3-使用"> 1.3.4.3 使用</h4>
+<ul>
+<li>Histogram</li>
+</ul>
+<blockquote>
+<p>Histogram可以列出内存中的对象，对象的个数及其大小</p>
+</blockquote>
+<div><pre><code>Class Name:类名称，java类名
+Objects:类的对象的数量，这个对象被创建了多少个
+Shallow Heap:一个对象内存的消耗大小，不包含对其他对象的引用
+Retained Heap:是shallow Heap的总和，即该对象被GC之后所能回收到内存的总和
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><div><pre><code>右击类名---&gt;List Objects---&gt;with incoming references---&gt;列出该类的实例
+</code></pre>
+<div><span>1</span><br></div></div><div><pre><code>右击Java对象名---&gt;Merge Shortest Paths to GC Roots---&gt;exclude all ...---&gt;找到GC Root以及原因
+</code></pre>
+<div><span>1</span><br></div></div><ul>
+<li>Leak Suspects</li>
+</ul>
+<blockquote>
+<p>查找并分析内存泄漏的可能原因</p>
+</blockquote>
+<div><pre><code>Reports---&gt;Leak Suspects---&gt;Details
+</code></pre>
+<div><span>1</span><br></div></div><ul>
+<li>Top Consumers</li>
+</ul>
+<blockquote>
+<p>Top Consumers</p>
+</blockquote>
+<h3 id="_1-3-5-gc日志分析工具"> 1.3.5 GC日志分析工具</h3>
+<div><pre><code>-XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps
+-Xloggc:gc.log
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><ul>
+<li>
+<p>在线 http://gceasy.io</p>
+</li>
+<li>
+<p><strong>GCViewer</strong></p>
+</li>
+</ul>
+]]></content>
+    <author>
+      <name>finen</name>
+    </author>
+    <contributor>
+      <name>finen</name>
+    </contributor>
+    <published>2022-05-05T10:22:38.000Z</published>
+    <rights>Copyright by finen</rights>
+  </entry>
+  <entry>
+    <title type="html">JVM终篇-JVM分析</title>
+    <id>https://www.moremind.cn/md/java/jvm/JVM-5/</id>
+    <link href="https://www.moremind.cn/md/java/jvm/JVM-5/"/>
+    <updated>2022-05-05T10:22:38.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="_1-jvm终结篇"> 1 JVM终结篇</h1>
+<h2 id="_1-1-重新认知jvm"> 1.1 重新认知JVM</h2>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310232017105.png" alt="image-20220310232017105" /></p>
+<h2 id="_1-2-gc优化"> 1.2 GC优化</h2>
+<blockquote>
+<p>内存被使用了之后，难免会有不够用或者达到设定值的时候，就需要对内存空间进行垃圾回收。</p>
+</blockquote>
+<h3 id="_1-2-1-垃圾收集发生的时机"> 1.2.1 垃圾收集发生的时机</h3>
+<blockquote>
+<p>GC是由JVM自动完成的，根据JVM系统环境而定，所以时机是不确定的。 当然，我们可以手动进行垃圾回收， 比如调用System.gc()方法通知JVM进行一次垃圾回收，但是具体什么时刻运行也无法控制。也就是说 System.gc()只是通知要回收，什么时候回收由JVM决定。 但是不建议手动调用该方法，因为消耗的资源比较 大。</p>
+</blockquote>
+<p>一般以下几种情况会发生垃圾回收:</p>
+<div><pre><code>（1）当Eden区或者S区不够用了
+（2）老年代空间不够用了
+（3）方法区空间不够用了
+（4）System.gc()
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h3 id="_1-2-2-实验环境准备"> 1.2.2 实验环境准备</h3>
+<h3 id="_1-2-3-gc日志文件"> 1.2.3 GC日志文件</h3>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310232235655.png" alt="image-20220310232235655" /></p>
+<blockquote>
+<p>要想分析日志的信息，得先拿到GC日志文件才行，所以得先配置一下，之前也看过这些参数。</p>
+</blockquote>
+<div><pre><code>-XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps
+-Xloggc:gc.log
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><p>然后启动项目，可以看到默认使用的是ParallelGC</p>
+<h4 id="_1-2-3-1-parallel-gc日志"> 1.2.3.1 Parallel GC日志</h4>
+<blockquote>
+<p>【吞吐量优先】</p>
+<div><pre><code>2019-06-10T23:21:53.305+0800: 1.303:
+[GC (Allocation Failure) [PSYoungGen: 65536K[Young区回收前]-&gt;10748K[Young区回收后]
+(76288K[Young区总大小])] 65536K[整个堆回收前]-&gt;15039K[整个堆回收后](251392K[整个堆总大小]),
+0.0113277 secs] [Times: user=0.00 sys=0.00, real=0.01 secs]
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><p>注意 如果回收的差值中间有出入，说明这部分空间是Old区释放出来的</p>
+</blockquote>
+<h4 id="_1-2-3-2-cms日志"> 1.2.3.2 CMS日志</h4>
+<blockquote>
+<p>【停顿时间优先】</p>
+<p>参数设置：-XX:+UseConcMarkSweepGC -Xloggc:cms-gc.log</p>
+</blockquote>
+<h4 id="_1-2-3-3-g1日志"> 1.2.3.3 G1日志</h4>
+<blockquote>
+<p>【停顿时间优先】</p>
+<p>参数设置：-XX:+UseG1GC -Xloggc:g1-gc.log</p>
+<p>理解G1日志格式：https://blogs.oracle.com/poonam/understanding-g1-gc-logs</p>
+<div><pre><code>-XX:+UseG1GC <span># 使用了G1垃圾收集器</span>
+<span># 什么时候发生的GC，相对的时间刻，GC发生的区域young，总共花费的时间，0.00478s，</span>
+<span># It is a stop-the-world activity and all</span>
+<span># the application threads are stopped at a safepoint during this time.</span>
+<span>2019</span>-12-18T16:06:46.508+0800: <span>0.458</span>: <span>[</span>GC pause <span>(</span>G1 Evacuation Pause<span>)</span> <span>(</span>young<span>)</span>,
+<span>0.0047804</span> secs<span>]</span>
+<span># 多少个垃圾回收线程，并行的时间</span>
+<span>[</span>Parallel Time: <span>3.0</span> ms, GC Workers: <span>4</span><span>]</span>
+<span># GC线程开始相对于上面的0.458的时间刻</span>
+<span>[</span>GC Worker Start <span>(</span>ms<span>)</span>: Min: <span>458.5</span>, Avg: <span>458.5</span>, Max: <span>458.5</span>, Diff: <span>0.0</span><span>]</span>
+<span># This gives us the time spent by each worker thread scanning the roots</span>
+<span># (globals, registers, thread stacks and VM data structures).</span>
+<span>[</span>Ext Root Scanning <span>(</span>ms<span>)</span>: Min: <span>0.2</span>, Avg: <span>0.4</span>, Max: <span>0.7</span>, Diff: <span>0.5</span>, Sum: <span>1.7</span><span>]</span>
+<span># Update RS gives us the time each thread spent in updating the Remembered Sets.</span>
+<span>[</span>Update RS <span>(</span>ms<span>)</span>: Min: <span>0.0</span>, Avg: <span>0.0</span>, Max: <span>0.0</span>, Diff: <span>0.0</span>, Sum: <span>0.0</span><span>]</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br></div></div></blockquote>
+<h3 id="_1-2-4-gc日志文件分析工具"> 1.2.4 GC日志文件分析工具</h3>
+<h4 id="_1-2-4-1-gceasy"> 1.2.4.1 gceasy</h4>
+<blockquote>
+<p>官网 ：https://gceasy.io</p>
+<p>可以比较不同的垃圾收集器的吞吐量和停顿时间</p>
+<p>比如打开cms-gc.log和g1-gc.log</p>
+</blockquote>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310232816712.png" alt="image-20220310232816712" /></p>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310232830568.png" alt="image-20220310232830568" /></p>
+<h4 id="_1-2-4-2-gcviewer"> 1.2.4.2 GCViewer</h4>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310232844104.png" alt="image-20220310232844104" /></p>
+<h3 id="_1-2-5-g1调优与最佳指南"> 1.2.5 G1调优与最佳指南</h3>
+<h4 id="_1-2-5-1-调优"> 1.2.5.1 调优</h4>
+<blockquote>
+<p>是否选用G1垃圾收集器的判断依据</p>
+<p>https://docs.oracle.com/javase/8/docs/technotes/guides/vm/G1.html#use_cases</p>
+<div><pre><code>（1）50%以上的堆被存活对象占用
+（2）对象分配和晋升的速度变化非常大
+（3）垃圾回收时间比较长
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p>思考 ：https://blogs.oracle.com/poonam/increased-heap-usage-with-g1-gc</p>
+</blockquote>
+<p>(1)使用G1GC垃圾收集器: -XX:+UseG1GC</p>
+<p>修改配置参数，获取到gc日志，使用GCViewer分析吞吐量和响应时间</p>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310233115552.png" alt="image-20220310233115552" /></p>
+<p>(2)调整内存大小再获取gc日志分析</p>
+<div><pre><code>-XX:MetaspaceSize=100M
+-Xms300M
+-Xmx300M
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p>比如设置堆内存的大小，获取到gc日志，使用GCViewer分析吞吐量和响应时间</p>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310233227857.png" alt="image-20220310233227857" /></p>
+<p>(3)调整最大停顿时间</p>
+<div><pre><code>-XX:MaxGCPauseMillis=20 设置最大GC停顿时间指标
+</code></pre>
+<div><span>1</span><br></div></div><p>比如设置最大停顿时间，获取到gc日志，使用GCViewer分析吞吐量和响应时间</p>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310233319130.png" alt="image-20220310233319130" /></p>
+<p>(4)启动并发GC时堆内存占用百分比</p>
+<div><pre><code>-XX:InitiatingHeapOccupancyPercent=45 G1用它来触发并发GC周期,基于整个堆的使用率,而不只是某一代内存的使用比例。值为 0 则表示“一直执行GC循环)&#39;. 默认值为 45 (例如, 全部的 45% 或者使用了45%).
+</code></pre>
+<div><span>1</span><br></div></div><p>比如设置该百分比参数，获取到gc日志，使用GCViewer分析吞吐量和响应时间</p>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310233428017.png" alt="image-20220310233428017" /></p>
+<h4 id="_1-2-5-2-最佳指南"> 1.2.5.2 最佳指南</h4>
+<blockquote>
+<p>官网建议 ：https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/g1_gc_tuning.html#recommendations</p>
+</blockquote>
+<p><strong>(1)不要手动设置新生代和老年代的大小，只要设置整个堆的大小</strong></p>
+<div><pre><code>G1收集器在运行过程中，会自己调整新生代和老年代的大小其实是通过adapt代的大小来调整对象晋升的速度和年龄，从而达到为收集器设置的暂停时间目标
+
+如果手动设置了大小就意味着放弃了G1的自动调优
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p><strong>(2)不断调优暂停时间目标</strong></p>
+<div><pre><code>一般情况下这个值设置到100ms或者200ms都是可以的(不同情况下会不一样)，但如果设置成50ms就不太合理。暂停时间设置的太短，就会导致出现G1跟不上垃圾产生的速度。最终退化成Full GC。所以对这个参数的调优是一个持续的过程，逐步调整到最佳状态。暂停时间只是一个目标，并不能总是得到满足。
+</code></pre>
+<div><span>1</span><br></div></div><p><strong>(3)使用-XX:ConcGCThreads=n来增加标记线程的数量</strong></p>
+<div><pre><code>IHOP如果阀值设置过高，可能会遇到转移失败的风险，比如对象进行转移时空间不足。如果阀值设置过低，就会使标记周期运行过于频繁，并且有可能混合收集期回收不到空间。
+
+IHOP值如果设置合理，但是在并发周期时间过长时，可以尝试增加并发线程数，调高ConcGCThreads。
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p><strong>(4)MixedGC调优</strong></p>
+<div><pre><code>-XX:InitiatingHeapOccupancyPercent
+-XX:G1MixedGCLiveThresholdPercent
+-XX:G1MixedGCCountTarger
+-XX:G1OldCSetRegionThresholdPercent
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><p>(5)适当增加堆内存大小</p>
+<h2 id="_1-3-高并发场景分析"> 1.3 高并发场景分析</h2>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220311001043190.png" alt="image-20220311001043190" /></p>
+<h2 id="_1-4-jvm性能优化指南"> 1.4 JVM性能优化指南</h2>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220311001107369.png" alt="image-20220311001107369" /></p>
+<h2 id="_1-5-常见问题思考"> 1.5 常见问题思考</h2>
+<p><strong>（1）内存泄漏与内存溢出的区别</strong></p>
+<p>内存泄漏：对象无法得到及时的回收，持续占用内存空间，从而造成内存空间的浪费。</p>
+<p>内存溢出：内存泄漏到一定的程度就会导致内存溢出，但是内存溢出也有可能是大对象导致的。</p>
+<p><strong>（2）young gc会有stw吗？</strong></p>
+<p>不管什么 GC，都会有 stop-the-world，只是发生时间的长短。</p>
+<p><strong>（3）major gc和full gc的区别</strong></p>
+<p><strong>major gc指的是老年代的gc，而full gc等于young+old+metaspace的gc。</strong></p>
+<p><strong>（4）G1与CMS的区别是什么</strong></p>
+<p>CMS 用于老年代的回收，而 G1 用于新生代和老年代的回收。 G1 使用了 Region 方式对堆内存进行了划分，且基于标记整理算法实现，整体减少了垃圾碎片的产生。</p>
+<p><strong>（5）什么是直接内存</strong></p>
+<p>直接内存是在java堆外的、直接向系统申请的内存空间。通常访问直接内存的速度会优于Java堆。因此出于性能的考 虑，读写频繁的场合可能会考虑使用直接内存。</p>
+<p><strong>（6）不可达的对象一定要被回收吗？</strong></p>
+<p>即使在可达性分析法中不可达的对象，也并非是“非死不可”的，这时候它们暂时处于“缓刑阶段”，要真正宣告一个对 象死亡，至少要经历两次标记过程；可达性分析法中不可达的对象被第一次标记并且进行一次筛选，筛选的条件是此 对象是否有必要执行 finalize 方法。当对象没有覆盖 finalize 方法，或 finalize 方法已经被虚拟机调用过时，虚拟机 将这两种情况视为没有必要执行。 被判定为需要执行的对象将会被放在一个队列中进行第二次标记，除非这个对象与引用链上的任何一个对象建立关 联，否则就会被真的回收。</p>
+<p><strong>（7）方法区中的无用类回收</strong></p>
+<p>方法区主要回收的是无用的类，那么如何判断一个类是无用的类的呢？ 判定一个常量是否是“废弃常量”比较简单，而要判定一个类是否是“无用的类”的条件则相对苛刻许多。类需要同时满 足下面 3 个条件才能算是 “无用的类” ： 该类所有的实例都已经被回收，也就是 Java 堆中不存在该类的任何实例。 加载该类的 ClassLoader 已经被回收。 该类对应的 java.lang.Class 对象没有在任何地方被引用，无法在任何地方通过反射访问该类的方法。 虚拟机可以对满足上述 3 个条件的无用类进行回收，这里说的仅仅是“可以”，而并不是和对象一样不使用了就会必然 被回收。</p>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220311003339439.png" alt="image-20220311003339439" /></p>
+<p><strong>（8）不同的引用</strong></p>
+<p>JDK1.2以后，Java对引用进行了扩充：强引用、软引用、弱引用和虚引用</p>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220311002742261.png" alt="image-20220311002742261" /></p>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220311002930038.png" alt="image-20220311002930038" /></p>
+<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220311003005058.png" alt="image-20220311003005058" /></p>
+]]></content>
+    <author>
+      <name>finen</name>
+    </author>
+    <contributor>
+      <name>finen</name>
+    </contributor>
+    <published>2022-05-05T10:22:38.000Z</published>
+    <rights>Copyright by finen</rights>
   </entry>
   <entry>
     <title type="html">JVM内存图谱</title>
