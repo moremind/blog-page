@@ -6,8 +6,8 @@
     <link>https://www.moremind.cn/</link>
     <description>Stay Hungry, Stay Foolish!</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 05 May 2022 10:24:54 GMT</pubDate>
-    <lastBuildDate>Thu, 05 May 2022 10:24:54 GMT</lastBuildDate>
+    <pubDate>Thu, 05 May 2022 11:46:46 GMT</pubDate>
+    <lastBuildDate>Thu, 05 May 2022 11:46:46 GMT</lastBuildDate>
     <generator>@mr-hope/vuepress-plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>Copyright © 2017-present By Finen | Vuepress Theme By vuepress-theme-hope</copyright>
@@ -895,10 +895,10 @@ If Java Virtual Machine stacks can be dynamically expanded, and expansion is att
       <enclosure url="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310000943157.png" type="image/png"/>
     </item>
     <item>
-      <title>JVM前奏-JVM堆栈内存详解</title>
+      <title>JVM进行时-JVM堆栈内存详解</title>
       <link>https://www.moremind.cn/md/java/jvm/JVM-2/</link>
       <guid>https://www.moremind.cn/md/java/jvm/JVM-2/</guid>
-      <source url="https://www.moremind.cn/rss.xml">JVM前奏-JVM堆栈内存详解</source>
+      <source url="https://www.moremind.cn/rss.xml">JVM进行时-JVM堆栈内存详解</source>
       <pubDate>Thu, 05 May 2022 10:22:38 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-结合字节码指令理解java虚拟机栈和栈帧"> 1 结合字节码指令理解Java虚拟机栈和栈帧</h2>
 <blockquote>
