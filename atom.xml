@@ -6,7 +6,7 @@
   <author>
     <name>Moremind</name>
   </author>
-  <updated>2022-05-05T11:46:46.272Z</updated>
+  <updated>2022-07-02T17:08:26.699Z</updated>
   <generator>@mr-hope/vuepress-plugin-feed</generator>
   <link rel="self" href="https://www.moremind.cn/atom.xml"/>
   <link rel="alternate" href="https://www.moremind.cn/"/>
@@ -663,11 +663,11 @@ JVM 内存分析图</p>
     <title type="html">java集合框架知识图谱</title>
     <id>https://www.moremind.cn/md/java/collection/</id>
     <link href="https://www.moremind.cn/md/java/collection/"/>
-    <updated>2022-02-25T09:39:24.000Z</updated>
+    <updated>2022-07-02T17:06:40.000Z</updated>
     <content type="html"><![CDATA[<h2 id="集合关系图谱"> 集合关系图谱</h2>
 <blockquote>
 <p>Java集合框架包括Collection和Map，Collection主要用于存储对象，Map主要用用于存储键值对数据。
-<img src="https://gitee.com/forge-logic/images-lib/raw/master/img/Java-collection-cheat-sheet.PNG" alt="Java-Collection" /></p>
+<img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/Java-collection-cheat-sheet.PNG" alt="Java-Collection" /></p>
 </blockquote>
 <h2 id="介绍"> 介绍</h2>
 <p>容器，就是可以容纳其他Java对象的对象。*Java Collections Framework(JCF)*为Java开发者提供了通用的容器，其始于JDK 1.2，优点是:</p>
@@ -818,17 +818,17 @@ Java容器里只能放对象，对于基本类型(int, long, float, double等)�
     <title type="html">JVM前奏-JVM堆栈内存简析</title>
     <id>https://www.moremind.cn/md/java/jvm/JVM-1/</id>
     <link href="https://www.moremind.cn/md/java/jvm/JVM-1/"/>
-    <updated>2022-05-05T10:22:38.000Z</updated>
+    <updated>2022-07-02T17:06:40.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-官网"> 1 官网</h2>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310000943157.png" alt="image-20220310000943157" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310000943157.png" alt="image-20220310000943157" /></p>
 <h3 id="_1-1-jdk8"> 1.1 JDK8</h3>
 <h3 id="_1-2-the-relation-of-jdk-jre-jvm"> 1.2 The relation of JDK/JRE/JVM</h3>
 <p>Reference -&gt; Developer Guides -&gt; 定位到:https://docs.oracle.com/javase/8/docs/index.html</p>
 <blockquote>
 <p>JDK 8 is a superset of JRE 8, and contains everything that is in JRE 8, plus tools such as the compilers and debuggers necessary for developing applets and applications. JRE 8 provides the libraries, the Java Virtual Machine (JVM), and other components to run applets and applications written in the Java programming language. Note that the JRE includes components not required by the Java SE specification, including both standard and non-standard Java components.</p>
 </blockquote>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309202058012.png" alt="image-20220309202058012" /></p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309203220133.png" alt="image-20220309203220133" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220309202058012.png" alt="image-20220309202058012" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220309203220133.png" alt="image-20220309203220133" /></p>
 <h2 id="_2-源码到类文件"> 2 源码到类文件</h2>
 <h3 id="_2-1-源码"> 2.1 源码</h3>
 <div><pre><code><span>class</span> <span>Person</span><span>{</span>
@@ -856,7 +856,7 @@ Java容器里只能放对象，对于基本类型(int, long, float, double等)�
 612f 6c61 6e67 2f53 7472 696e 673b 0100
 0361 6765 0100 0149 0100 0761 6464 7265
 </code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309204252776.png" alt="image-20220309204252776" /></p>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220309204252776.png" alt="image-20220309204252776" /></p>
 <p><strong>minor_version, major_version</strong></p>
 <div><pre><code>minor_version, major_version
 </code></pre>
@@ -891,7 +891,7 @@ Java容器里只能放对象，对于基本类型(int, long, float, double等)�
 属性表集合
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><h2 id="_3-类文件到虚拟机-类加载机制"> 3 类文件到虚拟机(类加载机制)</h2>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309204625348.png" alt="image-20220309204625348" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220309204625348.png" alt="image-20220309204625348" /></p>
 <h3 id="_3-1-装载-load"> 3.1 装载(Load)</h3>
 <p><a href="https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-5.html" target="_blank" rel="noopener noreferrer">Chapter 5. Loading, Linking, and Initializing (oracle.com)</a></p>
 <p>a.找到类文件所在的位置---:磁盘--&gt;类装载器ClassLoader --&gt; 寻找类</p>
@@ -928,7 +928,7 @@ Java容器里只能放对象，对于基本类型(int, long, float, double等)�
 <p>对类的静态变量，静态代码块执行初始化操作</p>
 <p>static int num = 10; // 此时，num才会被真正的赋值为10</p>
 <h3 id="_3-4-类加载机制图解"> 3.4 类加载机制图解</h3>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309205334127.png" alt="image-20220309205334127" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220309205334127.png" alt="image-20220309205334127" /></p>
 <h2 id="_4-类装载器classloader"> 4 类装载器ClassLoader</h2>
 <p>在装载(Load)阶段，其中第(1)步:通过类的全限定名获取其定义的二进制字节流，需要借助类装载 器完成，顾名思义，就是用来装载Class文件的。</p>
 <p>(1)通过一个类的全限定名获取定义此类的二进制字节流。</p>
@@ -938,7 +938,7 @@ Java容器里只能放对象，对于基本类型(int, long, float, double等)�
 <p>3）App ClassLoader 负责加载classpath中指定的jar包及 Djava.class.path 所指定目录下的类和 jar包。</p>
 <p>4）Custom ClassLoader 通过java.lang.ClassLoader的子类自定义加载class，属于应用程序根据 自身需要自定义的ClassLoader，如tomcat、jboss都会根据j2ee规范自行实现ClassLoader。</p>
 <h3 id="_4-2-图解"> 4.2 图解</h3>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309205433326.png" alt="image-20220309205433326" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220309205433326.png" alt="image-20220309205433326" /></p>
 <h3 id="_4-3-加载原则"> 4.3 加载原则</h3>
 <p><strong>检查某个类是否已经加载：顺序是自底向上，从Custom ClassLoader到BootStrap ClassLoader逐层检 查，只要某个Classloader已加载，就视为已加载此类，保证此类只所有ClassLoader加载一次。</strong></p>
 <p><strong>加载的顺序：加载的顺序是自顶向下，也就是由上层来逐层尝试加载此类。</strong></p>
@@ -964,8 +964,8 @@ Java容器里只能放对象，对于基本类型(int, long, float, double等)�
 &gt;&gt;&gt; Java 虚拟机定义了在程序执行期间使用的各种运行时数据区域。 其中一些数据区是在 Java 虚拟机启动时创建的，只有在 Java 虚拟机退出时才会被销毁。 其他数据区域是每个线程。 每线程数据区在创建线程时创建，在线程退出时销毁
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h3 id="_5-2-图解"> 5.2 图解</h3>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309213359201.png" alt="image-20220309213359201" /></p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309211847128.png" alt="image-20220309211847128" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220309213359201.png" alt="image-20220309213359201" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220309211847128.png" alt="image-20220309211847128" /></p>
 <h3 id="_5-3-常规理解"> 5.3 常规理解</h3>
 <h4 id="_5-3-1-method-area-方法区-类信息、常量、静态变量、即使编译器编译之后的代码"> 5.3.1 Method Area(方法区):类信息、常量、静态变量、即使编译器编译之后的代码</h4>
 <blockquote>
@@ -1017,7 +1017,7 @@ If memory in the method area cannot be made available to satisfy an allocation r
 <p>此时回看装载阶段的第2步：(2)将这个字节流所代表的静态存储结构转化为方法区的运行时数据 结构</p>
 </blockquote>
 <p>如果这时候把从Class文件到装载的第(1)和(2)步合并起来理解的话，可以画个图</p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309211440247.png" alt="image-20220309211440247" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220309211440247.png" alt="image-20220309211440247" /></p>
 <p><strong>(1)方法区在JDK 8中就是Metaspace，在JDK6或7中就是Perm Space (2)Run-Time Constant Pool</strong></p>
 <p><strong>(2)Run-Time Constant Pool</strong></p>
 <p>Class文件中除了有类的版本、字段、方法、接口等描述信息外，</p>
@@ -1042,7 +1042,7 @@ If a computation requires more heap than can be made available by the automatic 
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><p>此时回看装载阶段的第3步：(3)在Java堆中生成一个代表这个类的java.lang.Class对象，作为对方 法区中这些数据的访问入口</p>
 <p>此时装载(1)(2)(3)的图可以改动一下</p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309211847128.png" alt="image-20220309211847128" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220309211847128.png" alt="image-20220309211847128" /></p>
 <h4 id="_5-3-3-java-virtual-machine-stacks-虚拟机栈-局部变量、操作数、返回数"> 5.3.3 Java Virtual Machine Stacks(虚拟机栈):局部变量、操作数、返回数</h4>
 <div><pre><code>Each Java Virtual Machine thread has a private Java Virtual Machine stack,
 created at the same time as the thread. A Java Virtual Machine stack stores
@@ -1050,7 +1050,7 @@ frames (§2.6)
 【每个线程独有的线程栈】
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><p>一个线程的创建代表一个栈，每个方法被当前线程调用了，就代表一个栈帧。</p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309220003612.png" alt="image-20220309220003612" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220309220003612.png" alt="image-20220309220003612" /></p>
 <div><pre><code>If the computation in a thread requires a larger Java Virtual Machine stack than is permitted, the Java Virtual Machine throws a StackOverflowError.
 【StackOverflowError】
 
@@ -1094,7 +1094,7 @@ If Java Virtual Machine stacks can be dynamically expanded, and expansion is att
     <title type="html">JVM进行时-JVM堆栈内存详解</title>
     <id>https://www.moremind.cn/md/java/jvm/JVM-2/</id>
     <link href="https://www.moremind.cn/md/java/jvm/JVM-2/"/>
-    <updated>2022-05-05T11:46:17.000Z</updated>
+    <updated>2022-07-02T17:06:40.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-结合字节码指令理解java虚拟机栈和栈帧"> 1 结合字节码指令理解Java虚拟机栈和栈帧</h2>
 <blockquote>
 <p>官网 ：https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.6</p>
@@ -1109,7 +1109,7 @@ If Java Virtual Machine stacks can be dynamically expanded, and expansion is att
 </code></pre>
 <div><span>1</span><br></div></div><div><pre><code>方法返回地址:当一个方法开始执行后,只有两种方式可以退出，一种是遇到方法返回的字节码指令；一种是遇见异常，并且这个异常没有在方法体内得到处理。
 </code></pre>
-<div><span>1</span><br></div></div><p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309223600414.png" alt="image-20220309223600414" /></p>
+<div><span>1</span><br></div></div><p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220309223600414.png" alt="image-20220309223600414" /></p>
 <div><pre><code><span>class</span> <span>Person</span><span>{</span>
     <span>private</span> <span>String</span> name<span>=</span><span>"Jack"</span><span>;</span>
     <span>private</span> <span>int</span> age<span>;</span>
@@ -1181,7 +1181,7 @@ If Java Virtual Machine stacks can be dynamically expanded, and expansion is att
        <span>9</span><span>:</span> <span>return</span>
 <span>}</span>
 </code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br></div></div><p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309223510002.png" alt="image-20220309223510002" /></p>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br></div></div><p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220309223510002.png" alt="image-20220309223510002" /></p>
 <h2 id="_2-折腾一下"> 2 折腾一下</h2>
 <h3 id="_2-1栈指向堆"> 2.1栈指向堆</h3>
 <p>如果在栈帧中有一个变量，类型为引用类型，比如Object obj=new Object()，这时候就是典型的栈中元素指向堆中的对象。</p>
@@ -1191,21 +1191,21 @@ If Java Virtual Machine stacks can be dynamically expanded, and expansion is att
     <span>}</span>
 <span>}</span>
 </code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309230040459.png" alt="image-20220309230040459" /></p>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220309230040459.png" alt="image-20220309230040459" /></p>
 <h3 id="_2-2-方法区指向堆"> 2.2 方法区指向堆</h3>
 <p>方法区中会存放静态变量，常量等数据。如果是下面这种情况，就是典型的方法区中元素指向堆中的对象。</p>
 <div><pre><code><span>class</span> <span>Person</span> <span>{</span>
     <span>private</span> <span>static</span> <span>Object</span> obj<span>=</span><span>new</span> <span>Object</span><span>(</span><span>)</span><span>;</span> <span>// 方法区指向堆</span>
 <span>}</span>
 </code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309230410111.png" alt="image-20220309230410111" /></p>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220309230410111.png" alt="image-20220309230410111" /></p>
 <h3 id="_2-3-堆指向方法区"> 2.3 堆指向方法区</h3>
 <p>方法区中会包含类的信息，堆中会有对象，那怎么知道对象是哪个类创建的呢？</p>
 <p>思考 ：一个对象怎么知道它是由哪个类创建出来的？怎么记录？这就需要了解一个Java对象的具体信息咯。</p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309230858070.png" alt="image-20220309230858070" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220309230858070.png" alt="image-20220309230858070" /></p>
 <h3 id="_2-4-java对象内存布局"> 2.4 Java对象内存布局</h3>
 <p>一个Java对象在内存中包括3个部分：对象头、实例数据和对齐填充</p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309230913143.png" alt="image-20220309230913143" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220309230913143.png" alt="image-20220309230913143" /></p>
 <h2 id="_3-内存模型"> 3 内存模型</h2>
 <h3 id="_3-1-图解"> 3.1 图解</h3>
 <div><pre><code>一块是非堆区，一块是堆区。
@@ -1213,8 +1213,8 @@ If Java Virtual Machine stacks can be dynamically expanded, and expansion is att
 Young区分为两大块，一个是Survivor区（S0+S1），一块是Eden区。 Eden:S0:S1=8:1:1
 S0和S1一样大，也可以叫From和To。
 </code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309233401625.png" alt="image-20220309233401625" /></p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309233506458.png" alt="image-20220309233506458" /></p>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220309233401625.png" alt="image-20220309233401625" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220309233506458.png" alt="image-20220309233506458" /></p>
 <p>根据之前对于Heap的介绍可以知道，一般对象和数组的创建会在堆中分配内存空间，关键是堆中有这么多区 域，那一个对象的创建到底在哪个区域呢？</p>
 <h3 id="_3-2-对象创建所在区域"> 3.2 对象创建所在区域</h3>
 <p>一般情况下，新创建的对象都会被分配到Eden区，一些特殊的大的对象会直接分配到Old区。</p>
@@ -1241,7 +1241,7 @@ S0和S1一样大，也可以叫From和To。
 <div><pre><code>我是一个普通的Java对象,我出生在Eden区,在Eden区我还看到和我长的很像的小兄弟,我们在Eden区中玩了挺长时间。有一天Eden区中的人实在是太多了,我就被迫去了Survivor区的“From”区,自从去了Survivor区,我就开始漂了,有时候在Survivor的“From”区,有时候在Survivor的“To”区,居无定所。直到我18岁的时候,爸爸说我成人了,该去社会上闯闯了。
 于是我就去了年老代那边,年老代里,人很多,并且年龄都挺大的,我在这里也认识了很多人。在年老代里,我生活了20年(每次GC加一岁),然后被回收。
 </code></pre>
-<div><span>1</span><br><span>2</span><br></div></div><p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309235221230.png" alt="image-20220309235221230" /></p>
+<div><span>1</span><br><span>2</span><br></div></div><p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220309235221230.png" alt="image-20220309235221230" /></p>
 <h3 id="_3-6-常见问题"> 3.6 常见问题</h3>
 <ul>
 <li>
@@ -1283,7 +1283,7 @@ Full GC:新生代+老年代
 <h2 id="_4-体验与验证"> 4 体验与验证</h2>
 <h3 id="_4-1-使用jvisualvm查看"> 4.1 使用jvisualvm查看</h3>
 <p>visualgc插件下载链接 ： https://visualvm.github.io/pluginscenters.html ---&gt;选择对应版本链接---&gt;Tools---&gt;Visual GC</p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310000015238.png" alt="image-20220310000015238" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310000015238.png" alt="image-20220310000015238" /></p>
 <h3 id="_4-1-堆内存溢出"> 4.1 堆内存溢出</h3>
 <h4 id="_4-1-1-代码"> 4.1.1 代码</h4>
 <div><pre><code><span>@RestController</span>
@@ -1380,7 +1380,7 @@ at java.lang.ClassLoader.defineClass(ClassLoader.java:763) ~[na:1.8.0_191]
 <span>}</span>
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><h4 id="_4-3-2-运行结果"> 4.3.2 运行结果</h4>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310000555900.png" alt="image-20220310000555900" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310000555900.png" alt="image-20220310000555900" /></p>
 <h4 id="_4-3-3-理解和说明"> 4.3.3 理解和说明</h4>
 <div><pre><code>Stack Space用来做方法的递归调用时压入Stack Frame(栈帧)。所以当递归调用太深的时候，就有可能耗尽StackSpace，爆出StackOverflow的错误。
 
@@ -1402,7 +1402,7 @@ at java.lang.ClassLoader.defineClass(ClassLoader.java:763) ~[na:1.8.0_191]
     <title type="html">JVM升华-JVM垃圾回收算法以及垃圾回收器</title>
     <id>https://www.moremind.cn/md/java/jvm/JVM-3/</id>
     <link href="https://www.moremind.cn/md/java/jvm/JVM-3/"/>
-    <updated>2022-05-05T10:22:38.000Z</updated>
+    <updated>2022-07-02T17:06:40.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-garbage-collect-垃圾回收"> 1 Garbage Collect(垃圾回收)</h2>
 <p>GC Root:虚拟机栈中的本地变量、static成员、常量引用、本地方法栈[Thread C]中的变量</p>
 <p>类加载器：如果它找到一条路线，能到到达某个对象，也不能称为垃圾。</p>
@@ -1427,12 +1427,12 @@ at java.lang.ClassLoader.defineClass(ClassLoader.java:763) ~[na:1.8.0_191]
 <blockquote>
 <p>此时堆中所有的对象都会被扫描一遍，从而才能确定需要回收的对象，比较耗时</p>
 </blockquote>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310004158070.png" alt="image-20220310004158070" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310004158070.png" alt="image-20220310004158070" /></p>
 <ul>
 <li>清除</li>
 </ul>
 <p>清除掉被标记需要回收的对象，释放出对应的内存空间</p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310004225334.png" alt="image-20220310004225334" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310004225334.png" alt="image-20220310004225334" /></p>
 <p>缺点：</p>
 <div><pre><code>标记清除之后会产生大量不连续的内存碎片，空间碎片太多可能会导致以后在程序运行过程中需要分配较大对象时，无法找到足够的连续内存而不得不提前触发另一次垃圾收集动作。
 (1)标记和清除两个过程都比较耗时，效率不高
@@ -1440,24 +1440,24 @@ at java.lang.ClassLoader.defineClass(ClassLoader.java:763) ~[na:1.8.0_191]
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h4 id="_1-2-2-复制-copying"> 1.2.2 复制(Copying)</h4>
 <p>将内存划分为两块相等的区域，每次只使用其中一块，如下图所示：</p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310004419137.png" alt="image-20220310004419137" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310004419137.png" alt="image-20220310004419137" /></p>
 <p>当其中一块内存使用完了，就将还存活的对象复制到另外一块上面，然后把已经使用过的内存空间一次 清除掉。</p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310004442121.png" alt="image-20220310004442121" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310004442121.png" alt="image-20220310004442121" /></p>
 <p>缺点: 空间利用率降低。</p>
 <h4 id="_1-2-3-标记-整理-mark-compact"> 1.2.3 标记-整理(Mark-Compact)</h4>
 <p>标记过程仍然与&quot;标记-清除&quot;算法一样，但是后续步骤不是直接对可回收对象进行清理，而是让所有存活 的对象都向一端移动，然后直接清理掉端边界以外的内存。</p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310004604646.png" alt="image-20220310004604646" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310004604646.png" alt="image-20220310004604646" /></p>
 <p>让所有存活的对象都向一端移动，清理掉边界意外的内存。</p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310004633487.png" alt="image-20220310004633487" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310004633487.png" alt="image-20220310004633487" /></p>
 <h3 id="_1-3-分代收集算法"> 1.3 分代收集算法</h3>
 <p><strong>Young区：复制算法</strong>(对象在被分配之后，可能生命周期比较短，Young区复制效率比较高)</p>
 <p><strong>Old区：标记清除或标记整理</strong>(Old区对象存活时间比较长，复制来复制去没必要，不如做个标记再清理)</p>
 <h3 id="_1-4-垃圾收集器"> 1.4 垃圾收集器</h3>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310004914409.png" alt="image-20220310004914409" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310004914409.png" alt="image-20220310004914409" /></p>
 <h4 id="_1-4-1-serial收集器"> 1.4.1 Serial收集器</h4>
 <p>Serial收集器是最基本、发展历史最悠久的收集器，曾经（在JDK1.3.1之前）是虚拟机新生代收集的唯 一选择。</p>
 <p>它是一种单线程收集器，不仅仅意味着它只会使用一个CPU或者一条收集线程去完成垃圾收集工作，更 重要的是其在进行垃圾收集的时候需要暂停其他线程。</p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310204357425.png" alt="image-20220310204357425" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310204357425.png" alt="image-20220310204357425" /></p>
 <h4 id="_1-4-2-parnew收集器"> 1.4.2 ParNew收集器</h4>
 <div><pre><code>优点：在多CPU时，比Serial效率高。
 缺点：收集过程暂停所有应用程序线程，单CPU时比Serial效率差。
@@ -1465,7 +1465,7 @@ at java.lang.ClassLoader.defineClass(ClassLoader.java:763) ~[na:1.8.0_191]
 适用范围：新生代
 应用：运行在Server模式下的虚拟机中首选的新生代收集器
 </code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310204622369.png" alt="image-20220310204622369" /></p>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310204622369.png" alt="image-20220310204622369" /></p>
 <h4 id="_1-4-3-parallel-scavenge收集器"> 1.4.3 Parallel Scavenge收集器</h4>
 <p>Parallel Scavenge收集器是一个新生代收集器，它也是使用复制算法的收集器，又是并行的多线程收集 器，看上去和ParNew一样，但是<strong>Parallel Scanvenge更关注系统的吞吐量 。</strong></p>
 <div><pre><code>吞吐量=运行用户代码的时间/(运行用户代码的时间+垃圾收集时间)
@@ -1477,7 +1477,7 @@ at java.lang.ClassLoader.defineClass(ClassLoader.java:763) ~[na:1.8.0_191]
 </code></pre>
 <div><span>1</span><br><span>2</span><br></div></div><h4 id="_1-4-4-serial-old收集器"> 1.4.4 Serial Old收集器</h4>
 <p>Serial Old收集器是Serial收集器的老年代版本，也是一个单线程收集器，不同的是<strong>采用&quot;标记-整理算 法&quot;</strong>，运行过程和Serial收集器一样。</p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310205235758.png" alt="image-20220310205235758" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310205235758.png" alt="image-20220310205235758" /></p>
 <h4 id="_1-4-5-parallel-old收集器"> 1.4.5 Parallel Old收集器</h4>
 <p>Parallel Old收集器是Parallel Scavenge收集器的老年代版本，<strong>使用多线程和&quot;标记-整理算法&quot;进行垃圾 回收。</strong></p>
 <h4 id="_1-4-6-cms收集器"> 1.4.6 CMS收集器</h4>
@@ -1494,7 +1494,7 @@ at java.lang.ClassLoader.defineClass(ClassLoader.java:763) ~[na:1.8.0_191]
 <div><pre><code>优点：并发收集、低停顿
 缺点：产生大量空间碎片、并发阶段会降低吞吐量
 </code></pre>
-<div><span>1</span><br><span>2</span><br></div></div><p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310210434471.png" alt="image-20220310210434471" /></p>
+<div><span>1</span><br><span>2</span><br></div></div><p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310210434471.png" alt="image-20220310210434471" /></p>
 <h4 id="_1-4-7-g1收集器"> 1.4.7 G1收集器</h4>
 <ul>
 <li>G1特点:</li>
@@ -1513,7 +1513,7 @@ at java.lang.ClassLoader.defineClass(ClassLoader.java:763) ~[na:1.8.0_191]
 最终标记（Final Marking） 修正在并发标记阶段因为用户程序的并发执行导致变动的数据，需暂停用户线程
 筛选回收（Live Data Counting and Evacuation） 对各个Region的回收价值和成本进行排序，根据用户所期望的GC停顿时间制定回收计划
 </code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310211903812.png" alt="image-20220310211903812" /></p>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310211903812.png" alt="image-20220310211903812" /></p>
 <ul>
 <li>判断是否需要使用G1收集器？</li>
 </ul>
@@ -1576,7 +1576,7 @@ at java.lang.ClassLoader.defineClass(ClassLoader.java:763) ~[na:1.8.0_191]
     <title type="html">JVM实战-JVM性能分析以及调优分析</title>
     <id>https://www.moremind.cn/md/java/jvm/JVM-4/</id>
     <link href="https://www.moremind.cn/md/java/jvm/JVM-4/"/>
-    <updated>2022-05-05T10:22:38.000Z</updated>
+    <updated>2022-07-02T17:06:40.000Z</updated>
     <content type="html"><![CDATA[<h1 id="_1-jvm实战篇"> 1 JVM实战篇</h1>
 <h2 id="_1-1-jvm参数"> 1.1 JVM参数</h2>
 <h4 id="_1-1-1-标准参数"> 1.1.1 标准参数</h4>
@@ -1612,7 +1612,7 @@ at java.lang.ClassLoader.defineClass(ClassLoader.java:763) ~[na:1.8.0_191]
 <blockquote>
 <p><strong>java -XX:+PrintFlagsFinal -version &gt; flags.txt</strong></p>
 </blockquote>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310215001216.png" alt="" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310215001216.png" alt="" /></p>
 <h4 id="_1-1-6-设置参数的方式"> 1.1.6 设置参数的方式</h4>
 <ul>
 <li>
@@ -1648,7 +1648,7 @@ at java.lang.ClassLoader.defineClass(ClassLoader.java:763) ~[na:1.8.0_191]
 	104857600是字节单位
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><h4 id="_1-1-8-常用参数含义"> 1.1.8 常用参数含义</h4>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220309162923416.png" alt="image-20220309162923416" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220309162923416.png" alt="image-20220309162923416" /></p>
 <h2 id="_1-2-常用命令"> 1.2 常用命令</h2>
 <h3 id="_1-2-1-jps"> 1.2.1 jps</h3>
 <blockquote>
@@ -1673,11 +1673,11 @@ at java.lang.ClassLoader.defineClass(ClassLoader.java:763) ~[na:1.8.0_191]
 <p>(2)查看类装载信息</p>
 <div><pre><code>jstat -class PID 1000 10 查看某个java进程的类装载信息，每1000毫秒输出一次，共输出10次
 </code></pre>
-<div><span>1</span><br></div></div><p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310220302064.png" alt="image-20220310220302064" /></p>
+<div><span>1</span><br></div></div><p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310220302064.png" alt="image-20220310220302064" /></p>
 <p>(3)查看垃圾收集信息</p>
 <div><pre><code>jstat -gc PID 1000 10
 </code></pre>
-<div><span>1</span><br></div></div><p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310220241447.png" alt="image-20220310220241447" /></p>
+<div><span>1</span><br></div></div><p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310220241447.png" alt="image-20220310220241447" /></p>
 <h3 id="_1-2-4-jstack"> 1.2.4 jstack</h3>
 <p>(1)查看线程堆栈信息</p>
 <p>(2)用法</p>
@@ -1739,21 +1739,21 @@ at java.lang.ClassLoader.defineClass(ClassLoader.java:763) ~[na:1.8.0_191]
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br><span>46</span><br><span>47</span><br><span>48</span><br></div></div><ul>
 <li>jstack 分析</li>
 </ul>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310220950543.png" alt="" /></p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310221042830.png" alt="image-20220310221042830" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310220950543.png" alt="" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310221042830.png" alt="image-20220310221042830" /></p>
 <h3 id="_1-2-5-jmap"> 1.2.5 jmap</h3>
 <p>(1)生成堆转储快照</p>
 <p>(2)打印出堆内存相关信息</p>
 <div><pre><code>1.设置：-XX:+PrintFlagsFinal -Xms300M -Xmx300M
 2.查看jmap -heap PID
 </code></pre>
-<div><span>1</span><br><span>2</span><br></div></div><p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310221505262.png" alt="image-20220310221505262" /></p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310221521362.png" alt="image-20220310221521362" /></p>
+<div><span>1</span><br><span>2</span><br></div></div><p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310221505262.png" alt="image-20220310221505262" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310221521362.png" alt="image-20220310221521362" /></p>
 <p>(3)dump出堆内存相关信息、</p>
 <div><pre><code>jmap -dump:format=b,file=heap.hprof PID
 jmap -dump:format=b,file=heap.hprof 44808
 </code></pre>
-<div><span>1</span><br><span>2</span><br></div></div><p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310221914338.png" alt="image-20220310221914338" /></p>
+<div><span>1</span><br><span>2</span><br></div></div><p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310221914338.png" alt="image-20220310221914338" /></p>
 <p>(4)要是在发生堆内存溢出的时候，能自动dump出该文件就好了</p>
 <blockquote>
 <p>一般在开发中，JVM参数可以加上下面两句，这样内存溢出时，会自动dump出该文件</p>
@@ -1776,7 +1776,7 @@ jmap -dump:format=b,file=heap.hprof 44808
 <p>启动命令：jvisualvm</p>
 </blockquote>
 <h4 id="_1-3-2-1-监控本地java进程"> 1.3.2.1 监控本地Java进程</h4>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310222954259.png" alt="image-20220310222954259" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310222954259.png" alt="image-20220310222954259" /></p>
 <h4 id="_1-3-2-2-监控远端java进程"> 1.3.2.2 监控远端Java进程</h4>
 <blockquote>
 <p>比如监控远端tomcat，演示部署在阿里云服务器上的tomcat</p>
@@ -1835,7 +1835,7 @@ netstat -antup | grep PID
 </blockquote>
 <blockquote>
 <p>Arthas 是Alibaba开源的Java诊断工具，采用命令行交互模式，是排查jvm相关问题的利器。</p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310224532713.png" alt="" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310224532713.png" alt="" /></p>
 </blockquote>
 <h4 id="_1-3-3-1-下载安装"> 1.3.3.1 下载安装</h4>
 <div><pre><code>curl -O https://alibaba.github.io/arthas/arthas-boot.jar
@@ -1957,10 +1957,10 @@ Retained Heap:是shallow Heap的总和，即该对象被GC之后所能回收到�
     <title type="html">JVM终篇-JVM分析</title>
     <id>https://www.moremind.cn/md/java/jvm/JVM-5/</id>
     <link href="https://www.moremind.cn/md/java/jvm/JVM-5/"/>
-    <updated>2022-05-05T10:22:38.000Z</updated>
+    <updated>2022-07-02T17:06:40.000Z</updated>
     <content type="html"><![CDATA[<h1 id="_1-jvm终结篇"> 1 JVM终结篇</h1>
 <h2 id="_1-1-重新认知jvm"> 1.1 重新认知JVM</h2>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310232017105.png" alt="image-20220310232017105" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310232017105.png" alt="image-20220310232017105" /></p>
 <h2 id="_1-2-gc优化"> 1.2 GC优化</h2>
 <blockquote>
 <p>内存被使用了之后，难免会有不够用或者达到设定值的时候，就需要对内存空间进行垃圾回收。</p>
@@ -1977,7 +1977,7 @@ Retained Heap:是shallow Heap的总和，即该对象被GC之后所能回收到�
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h3 id="_1-2-2-实验环境准备"> 1.2.2 实验环境准备</h3>
 <h3 id="_1-2-3-gc日志文件"> 1.2.3 GC日志文件</h3>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310232235655.png" alt="image-20220310232235655" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310232235655.png" alt="image-20220310232235655" /></p>
 <blockquote>
 <p>要想分析日志的信息，得先拿到GC日志文件才行，所以得先配置一下，之前也看过这些参数。</p>
 </blockquote>
@@ -2029,10 +2029,10 @@ Retained Heap:是shallow Heap的总和，即该对象被GC之后所能回收到�
 <p>可以比较不同的垃圾收集器的吞吐量和停顿时间</p>
 <p>比如打开cms-gc.log和g1-gc.log</p>
 </blockquote>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310232816712.png" alt="image-20220310232816712" /></p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310232830568.png" alt="image-20220310232830568" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310232816712.png" alt="image-20220310232816712" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310232830568.png" alt="image-20220310232830568" /></p>
 <h4 id="_1-2-4-2-gcviewer"> 1.2.4.2 GCViewer</h4>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310232844104.png" alt="image-20220310232844104" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310232844104.png" alt="image-20220310232844104" /></p>
 <h3 id="_1-2-5-g1调优与最佳指南"> 1.2.5 G1调优与最佳指南</h3>
 <h4 id="_1-2-5-1-调优"> 1.2.5.1 调优</h4>
 <blockquote>
@@ -2046,24 +2046,24 @@ Retained Heap:是shallow Heap的总和，即该对象被GC之后所能回收到�
 </blockquote>
 <p>(1)使用G1GC垃圾收集器: -XX:+UseG1GC</p>
 <p>修改配置参数，获取到gc日志，使用GCViewer分析吞吐量和响应时间</p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310233115552.png" alt="image-20220310233115552" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310233115552.png" alt="image-20220310233115552" /></p>
 <p>(2)调整内存大小再获取gc日志分析</p>
 <div><pre><code>-XX:MetaspaceSize=100M
 -Xms300M
 -Xmx300M
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p>比如设置堆内存的大小，获取到gc日志，使用GCViewer分析吞吐量和响应时间</p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310233227857.png" alt="image-20220310233227857" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310233227857.png" alt="image-20220310233227857" /></p>
 <p>(3)调整最大停顿时间</p>
 <div><pre><code>-XX:MaxGCPauseMillis=20 设置最大GC停顿时间指标
 </code></pre>
 <div><span>1</span><br></div></div><p>比如设置最大停顿时间，获取到gc日志，使用GCViewer分析吞吐量和响应时间</p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310233319130.png" alt="image-20220310233319130" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310233319130.png" alt="image-20220310233319130" /></p>
 <p>(4)启动并发GC时堆内存占用百分比</p>
 <div><pre><code>-XX:InitiatingHeapOccupancyPercent=45 G1用它来触发并发GC周期,基于整个堆的使用率,而不只是某一代内存的使用比例。值为 0 则表示“一直执行GC循环)&#39;. 默认值为 45 (例如, 全部的 45% 或者使用了45%).
 </code></pre>
 <div><span>1</span><br></div></div><p>比如设置该百分比参数，获取到gc日志，使用GCViewer分析吞吐量和响应时间</p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220310233428017.png" alt="image-20220310233428017" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220310233428017.png" alt="image-20220310233428017" /></p>
 <h4 id="_1-2-5-2-最佳指南"> 1.2.5.2 最佳指南</h4>
 <blockquote>
 <p>官网建议 ：https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/g1_gc_tuning.html#recommendations</p>
@@ -2089,9 +2089,9 @@ IHOP值如果设置合理，但是在并发周期时间过长时，可以尝试�
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><p>(5)适当增加堆内存大小</p>
 <h2 id="_1-3-高并发场景分析"> 1.3 高并发场景分析</h2>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220311001043190.png" alt="image-20220311001043190" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220311001043190.png" alt="image-20220311001043190" /></p>
 <h2 id="_1-4-jvm性能优化指南"> 1.4 JVM性能优化指南</h2>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220311001107369.png" alt="image-20220311001107369" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220311001107369.png" alt="image-20220311001107369" /></p>
 <h2 id="_1-5-常见问题思考"> 1.5 常见问题思考</h2>
 <p><strong>（1）内存泄漏与内存溢出的区别</strong></p>
 <p>内存泄漏：对象无法得到及时的回收，持续占用内存空间，从而造成内存空间的浪费。</p>
@@ -2108,12 +2108,12 @@ IHOP值如果设置合理，但是在并发周期时间过长时，可以尝试�
 <p>即使在可达性分析法中不可达的对象，也并非是“非死不可”的，这时候它们暂时处于“缓刑阶段”，要真正宣告一个对 象死亡，至少要经历两次标记过程；可达性分析法中不可达的对象被第一次标记并且进行一次筛选，筛选的条件是此 对象是否有必要执行 finalize 方法。当对象没有覆盖 finalize 方法，或 finalize 方法已经被虚拟机调用过时，虚拟机 将这两种情况视为没有必要执行。 被判定为需要执行的对象将会被放在一个队列中进行第二次标记，除非这个对象与引用链上的任何一个对象建立关 联，否则就会被真的回收。</p>
 <p><strong>（7）方法区中的无用类回收</strong></p>
 <p>方法区主要回收的是无用的类，那么如何判断一个类是无用的类的呢？ 判定一个常量是否是“废弃常量”比较简单，而要判定一个类是否是“无用的类”的条件则相对苛刻许多。类需要同时满 足下面 3 个条件才能算是 “无用的类” ： 该类所有的实例都已经被回收，也就是 Java 堆中不存在该类的任何实例。 加载该类的 ClassLoader 已经被回收。 该类对应的 java.lang.Class 对象没有在任何地方被引用，无法在任何地方通过反射访问该类的方法。 虚拟机可以对满足上述 3 个条件的无用类进行回收，这里说的仅仅是“可以”，而并不是和对象一样不使用了就会必然 被回收。</p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220311003339439.png" alt="image-20220311003339439" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220311003339439.png" alt="image-20220311003339439" /></p>
 <p><strong>（8）不同的引用</strong></p>
 <p>JDK1.2以后，Java对引用进行了扩充：强引用、软引用、弱引用和虚引用</p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220311002742261.png" alt="image-20220311002742261" /></p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220311002930038.png" alt="image-20220311002930038" /></p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20220311003005058.png" alt="image-20220311003005058" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220311002742261.png" alt="image-20220311002742261" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220311002930038.png" alt="image-20220311002930038" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220311003005058.png" alt="image-20220311003005058" /></p>
 ]]></content>
     <author>
       <name>finen</name>
@@ -2145,7 +2145,7 @@ IHOP值如果设置合理，但是在并发周期时间过长时，可以尝试�
     <title type="html">Java 字节码反编译成汇编-使用JITWatch</title>
     <id>https://www.moremind.cn/md/java/jvm/java-jitwatch/</id>
     <link href="https://www.moremind.cn/md/java/jvm/java-jitwatch/"/>
-    <updated>2022-01-13T09:49:12.000Z</updated>
+    <updated>2022-07-02T17:06:40.000Z</updated>
     <content type="html"><![CDATA[<h1 id="java-字节码反编译成汇编"> Java 字节码反编译成汇编</h1>
 <blockquote>
 <p>本位以windows环境为前提，JDK版本为Oracle Sun JDK8-64位</p>
@@ -2170,7 +2170,7 @@ IHOP值如果设置合理，但是在并发周期时间过长时，可以尝试�
 </blockquote>
 <h3 id="_4-测试验证是否配置成功"> 4.测试验证是否配置成功</h3>
 <p>使用命令<code>java -XX:+UnlockDiagnosticVMOptions -XX:+PrintAssembly -version</code>验证是否配置成功。如果出现如下所示则说明配置成功。</p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20210414230849483.png" alt="image-20210414230849483" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20210414230849483.png" alt="image-20210414230849483" /></p>
 <h3 id="_5-自行构建hsdis-如果你有兴趣的话"> 5.自行构建hsdis(如果你有兴趣的话)</h3>
 <p>如果你有兴趣自行编译hsdis的话，可以参考如下的几个链接，然后把编译好的文件放在jdk的jre目录下的如上所<code>3</code>述路径。</p>
 <p>1.http://www.chrisnewland.com/building-hsdis-on-linux-amd64-on-debian-369</p>
@@ -2195,23 +2195,23 @@ gradlew clean build run
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h3 id="_2-配置运行jitwatch"> 2.配置运行JITWatch</h3>
 <p>a.启动，使用<code>java -jar jitwatch-ui-1.4.0-shaded-win.jar</code>启动jitwatch，启动成功后如下所示</p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20210414232505669.png" alt="image-20210414232505669" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20210414232505669.png" alt="image-20210414232505669" /></p>
 <p>b.配置，点击<code>sandbox</code>按钮打开窗口，再点击<code>Configure Sandbox</code>按钮，配置如下几个参数</p>
 <blockquote>
 <p>1.java classes目录</p>
 <p>2.java 运行目录为你本地的配置使用的JDK路径</p>
 <p>3.java运行参数，添加hsdis的运行参数配置</p>
 </blockquote>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20210414233652204.png" alt="image-20210414233652204" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20210414233652204.png" alt="image-20210414233652204" /></p>
 <p>c.运行，点击<code>open</code>按钮打开需要编译的java代码，点击<code>Run</code>按钮运行得到下图所示</p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20210414232726380.png" alt="image-20210414232726380" /></p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20210414234418226.png" alt="image-20210414234418226" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20210414232726380.png" alt="image-20210414232726380" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20210414234418226.png" alt="image-20210414234418226" /></p>
 <h3 id="_3-jitwatch简单使用"> 3.JITwatch简单使用</h3>
 <h4 id="模块化查看字节码和汇编码"> 模块化查看字节码和汇编码</h4>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20210414234700267.png" alt="image-20210414234700267" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20210414234700267.png" alt="image-20210414234700267" /></p>
 <h4 id="使用toplist查看资源占用率"> 使用topList查看资源占用率</h4>
 <p>在JITWatch窗口点击<code>TopList</code>按钮，即可查看资源占用率。</p>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/image-20210414235239556.png" alt="image-20210414235239556" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20210414235239556.png" alt="image-20210414235239556" /></p>
 <h4 id="更多资料"> 更多资料</h4>
 <p>1.https://www.chrisnewland.com/images/jitwatch/HotSpot_Profiling_Using_JITWatch.pdf</p>
 <p>2.https://github.com/AdoptOpenJDK/jitwatch/wiki</p>
@@ -2288,7 +2288,7 @@ gradlew clean build run
     <title type="html">到底什么是线程安全和线程不安全？</title>
     <id>https://www.moremind.cn/md/java/thread/thread-safety/</id>
     <link href="https://www.moremind.cn/md/java/thread/thread-safety/"/>
-    <updated>2022-01-17T15:11:57.000Z</updated>
+    <updated>2022-07-02T17:06:40.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-什么是线程安全"> 1.什么是线程安全？</h2>
 <p>维基百科给出的定义如下：</p>
 <blockquote>
@@ -2304,7 +2304,7 @@ gradlew clean build run
 </blockquote>
 <p>线程安全：在多线程同时访问一个资源时，线程间依照某种方式访问资源时，访问的结果总是能获取到正确的结果。</p>
 <h2 id="_2-java内存模型-jmm"> 2.Java内存模型-JMM</h2>
-<p><img src="https://gitee.com/forge-logic/images-lib/raw/master/img/16bf62d8c174d776.jpg" alt="16bf62d8c174d776" /></p>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/16bf62d8c174d776.jpg" alt="16bf62d8c174d776" /></p>
 <p>上图描述了一个多线程执行场景。 线程 A 和线程 B 分别对主内存的<code>变量</code>进行读写操作。其中<strong>主内存</strong>中的<code>变量</code>为<code>共享变量</code>,也就是说此变量只此一份，多个线程间共享。但是线程不能直接读写主内存的<code>共享变量</code>，每个线程都有自己的<strong>工作内存</strong>，线程需要读写主内存的<code>共享变量</code>时需要先将该变量拷贝一份副本到自己的工作内存，然后在自己的工作内存中对该变量进行所有操作，线程工作内存对变量副本完成操作之后需要将结果同步至主内存。</p>
 <blockquote>
 <p>线程的工作内存是线程私有内存，线程间无法互相访问对方的工作内存。</p>
