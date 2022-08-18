@@ -6,7 +6,7 @@
   <author>
     <name>Moremind</name>
   </author>
-  <updated>2022-08-18T16:21:34.287Z</updated>
+  <updated>2022-08-18T16:22:47.771Z</updated>
   <generator>@mr-hope/vuepress-plugin-feed</generator>
   <link rel="self" href="https://www.moremind.cn/atom.xml"/>
   <link rel="alternate" href="https://www.moremind.cn/"/>
@@ -74,7 +74,7 @@
     <title type="html">友链</title>
     <id>https://www.moremind.cn/friends/</id>
     <link href="https://www.moremind.cn/friends/"/>
-    <updated>2022-08-18T16:17:44.000Z</updated>
+    <updated>2022-08-18T16:20:06.000Z</updated>
     <content type="html"><![CDATA[<h3 id="左领右舍"> 左领右舍</h3>
 <table>
 <thead>
