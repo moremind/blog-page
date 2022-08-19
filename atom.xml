@@ -6,7 +6,7 @@
   <author>
     <name>Moremind</name>
   </author>
-  <updated>2022-08-18T16:22:47.771Z</updated>
+  <updated>2022-08-19T01:20:50.035Z</updated>
   <generator>@mr-hope/vuepress-plugin-feed</generator>
   <link rel="self" href="https://www.moremind.cn/atom.xml"/>
   <link rel="alternate" href="https://www.moremind.cn/"/>
@@ -74,7 +74,7 @@
     <title type="html">友链</title>
     <id>https://www.moremind.cn/friends/</id>
     <link href="https://www.moremind.cn/friends/"/>
-    <updated>2022-08-18T16:20:06.000Z</updated>
+    <updated>2022-08-19T01:20:12.000Z</updated>
     <content type="html"><![CDATA[<h3 id="左领右舍"> 左领右舍</h3>
 <table>
 <thead>
@@ -89,6 +89,11 @@
 <td>南瓜慢说</td>
 <td style="text-align:left"><a href="https://www.pkslow.com/" target="_blank" rel="noopener noreferrer">南瓜慢说</a></td>
 <td style="text-align:center">a niubility man</td>
+</tr>
+<tr>
+<td>云扬四海</td>
+<td style="text-align:left"><a href="https://www.cnblogs.com/yunlongn/" target="_blank" rel="noopener noreferrer">云扬四海</a></td>
+<td style="text-align:center">源码大佬</td>
 </tr>
 <tr>
 <td>赵俊</td>

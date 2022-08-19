@@ -6,8 +6,8 @@
     <link>https://www.moremind.cn/</link>
     <description>Stay Hungry, Stay Foolish!</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 18 Aug 2022 16:22:47 GMT</pubDate>
-    <lastBuildDate>Thu, 18 Aug 2022 16:22:47 GMT</lastBuildDate>
+    <pubDate>Fri, 19 Aug 2022 01:20:50 GMT</pubDate>
+    <lastBuildDate>Fri, 19 Aug 2022 01:20:50 GMT</lastBuildDate>
     <generator>@mr-hope/vuepress-plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>Copyright © 2017-present By Finen | Vuepress Theme By vuepress-theme-hope</copyright>
@@ -74,6 +74,11 @@
 <td>南瓜慢说</td>
 <td style="text-align:left"><a href="https://www.pkslow.com/" target="_blank" rel="noopener noreferrer">南瓜慢说</a></td>
 <td style="text-align:center">a niubility man</td>
+</tr>
+<tr>
+<td>云扬四海</td>
+<td style="text-align:left"><a href="https://www.cnblogs.com/yunlongn/" target="_blank" rel="noopener noreferrer">云扬四海</a></td>
+<td style="text-align:center">源码大佬</td>
 </tr>
 <tr>
 <td>赵俊</td>
