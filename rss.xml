@@ -6,8 +6,8 @@
     <link>https://www.moremind.cn/</link>
     <description>Stay Hungry, Stay Foolish!</description>
     <language>zh-CN</language>
-    <pubDate>Fri, 19 Aug 2022 01:20:50 GMT</pubDate>
-    <lastBuildDate>Fri, 19 Aug 2022 01:20:50 GMT</lastBuildDate>
+    <pubDate>Wed, 12 Oct 2022 16:24:47 GMT</pubDate>
+    <lastBuildDate>Wed, 12 Oct 2022 16:24:47 GMT</lastBuildDate>
     <generator>@mr-hope/vuepress-plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>Copyright © 2017-present By Finen | Vuepress Theme By vuepress-theme-hope</copyright>
@@ -427,6 +427,505 @@ JVM 内存分析图</p>
       <pubDate>Fri, 21 Jan 2022 15:41:02 GMT</pubDate>
       <content:encoded><![CDATA[<p>JVM 内存分析图</p>
 ]]></content:encoded>
+    </item>
+    <item>
+      <title>JVM源码解读-Integer类</title>
+      <link>https://www.moremind.cn/md/java/basic/Integer/</link>
+      <guid>https://www.moremind.cn/md/java/basic/Integer/</guid>
+      <source url="https://www.moremind.cn/rss.xml">JVM源码解读-Integer类</source>
+      <pubDate>Wed, 12 Oct 2022 16:22:28 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="_1-类图"> 1. 类图</h2>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/Integer.png" alt="Integer-Class" /></p>
+<h2 id="_2-存储位置"> 2. 存储位置</h2>
+<ul>
+<li><code>-128-127</code>的值存储在<code>JVM方法区的静态区</code>,是因为Integer内部有一个静态内部类IntegerCache</li>
+<li>其余的存储在<code>JVM堆区</code>，都是通过<code>new Integer(x)</code>创建出来</li>
+</ul>
+<div><pre><code><span>public</span> <span>class</span> <span>IntegerDemoTest</span> <span>{</span>
+
+    <span>@Test</span>
+    <span>public</span> <span>void</span> <span>newIntegerTest</span><span>(</span><span>)</span> <span>{</span>
+        <span>Integer</span> a <span>=</span> <span>3</span><span>;</span>
+        <span>Integer</span> b <span>=</span> <span>3</span><span>;</span>
+        <span>Integer</span> a <span>=</span> <span>3</span><span>;</span> <span>&lt;=</span><span>=</span><span>></span> <span>Integer</span><span>.</span><span>valueOf</span><span>(</span><span>3</span><span>)</span><span>;</span>
+        <span>// a == b 为true，是因为对应同一个IntegerCache游标的地址</span>
+        <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span>a <span>==</span> b<span>)</span><span>;</span>
+
+        <span>Integer</span> c <span>=</span> <span>129</span><span>;</span>
+        <span>Integer</span> d <span>=</span> <span>129</span><span>;</span>
+
+        <span>// c == d 为false,是因为本身就是两个不同的地址</span>
+        <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span>c <span>==</span> d<span>)</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br></div></div><h2 id="_3-源码解读"> 3. 源码解读</h2>
+<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/Integer-2.png" alt="" /></p>
+<h3 id="_3-1-主要属性"> 3.1 主要属性</h3>
+<h4 id="_3-1-1-第一部分-常量参数"> 3.1.1 第一部分-常量参数</h4>
+<div><pre><code><span>/**
+ * A constant holding the minimum value an {@code int} can
+ * have, -2^31.
+ */</span>
+<span>@Native</span> <span>public</span> <span>static</span> <span>final</span> <span>int</span>   MIN_VALUE <span>=</span> <span>0x80000000</span><span>;</span>
+
+<span>/**
+ * A constant holding the maximum value an {@code int} can
+ * have, 2^31-1.
+ */</span>
+<span>@Native</span> <span>public</span> <span>static</span> <span>final</span> <span>int</span>   MAX_VALUE <span>=</span> <span>0x7fffffff</span><span>;</span>
+
+<span>/**
+ * The {@code Class} instance representing the primitive type
+ * {@code int}.
+ *
+ * @since   JDK1.1
+ */</span>
+<span>@SuppressWarnings</span><span>(</span><span>"unchecked"</span><span>)</span>
+<span>public</span> <span>static</span> <span>final</span> <span>Class</span><span><span>&lt;</span><span>Integer</span><span>></span></span>  TYPE <span>=</span> <span>(</span><span>Class</span><span><span>&lt;</span><span>Integer</span><span>></span></span><span>)</span> <span>Class</span><span>.</span><span>getPrimitiveClass</span><span>(</span><span>"int"</span><span>)</span><span>;</span>
+
+<span>/**
+ * The number of bits used to represent an {@code int} value in two's
+ * complement binary form.
+ *
+ * @since 1.5
+ */</span>
+<span>@Native</span> <span>public</span> <span>static</span> <span>final</span> <span>int</span> SIZE <span>=</span> <span>32</span><span>;</span>
+
+<span>/**
+ * The number of bytes used to represent a {@code int} value in two's
+ * complement binary form.
+ *
+ * @since 1.8
+ */</span>
+<span>public</span> <span>static</span> <span>final</span> <span>int</span> BYTES <span>=</span> SIZE <span>/</span> <span>Byte</span><span>.</span>SIZE<span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br></div></div><ul>
+<li>MIN_VALUE为Integer可定义的最小值，为-2^31 = -2147483648。</li>
+<li>MIN_VALUE为Integer可定义的最大值，为2^31-1 = 2147483647。</li>
+<li>SIZE用来表示二进制补码形式的int值的比特数，值为32，静态变量且不可变。</li>
+<li>BYTES用来表示二进制补码形式的int值的字节数，值为SIZE除于Byte.SIZE，不同机器的值可能不一样，在16位机中为2字节，在32位机和64位机中为4字节。</li>
+<li>TYPE表示执行toString后的类型为<code>int</code>,Class的getPrimitiveClass是一个native方法，在Class.c中有个Java_java_lang_Class_getPrimitiveClass方法与之对应，所以JVM层面会通过JVM_FindPrimitiveClass函数根据”int”字符串获得jclass，最终到Java层则为Class<Integer>。</li>
+</ul>
+<h4 id="_3-1-2-第二部分-数组"> 3.1.2 第二部分-数组</h4>
+<div><pre><code><span>final</span> <span>static</span> <span>char</span> <span>[</span><span>]</span> <span>DigitTens</span> <span>=</span> <span>{</span>
+        <span>'0'</span><span>,</span> <span>'0'</span><span>,</span> <span>'0'</span><span>,</span> <span>'0'</span><span>,</span> <span>'0'</span><span>,</span> <span>'0'</span><span>,</span> <span>'0'</span><span>,</span> <span>'0'</span><span>,</span> <span>'0'</span><span>,</span> <span>'0'</span><span>,</span>
+        <span>'1'</span><span>,</span> <span>'1'</span><span>,</span> <span>'1'</span><span>,</span> <span>'1'</span><span>,</span> <span>'1'</span><span>,</span> <span>'1'</span><span>,</span> <span>'1'</span><span>,</span> <span>'1'</span><span>,</span> <span>'1'</span><span>,</span> <span>'1'</span><span>,</span>
+        <span>'2'</span><span>,</span> <span>'2'</span><span>,</span> <span>'2'</span><span>,</span> <span>'2'</span><span>,</span> <span>'2'</span><span>,</span> <span>'2'</span><span>,</span> <span>'2'</span><span>,</span> <span>'2'</span><span>,</span> <span>'2'</span><span>,</span> <span>'2'</span><span>,</span>
+        <span>'3'</span><span>,</span> <span>'3'</span><span>,</span> <span>'3'</span><span>,</span> <span>'3'</span><span>,</span> <span>'3'</span><span>,</span> <span>'3'</span><span>,</span> <span>'3'</span><span>,</span> <span>'3'</span><span>,</span> <span>'3'</span><span>,</span> <span>'3'</span><span>,</span>
+        <span>'4'</span><span>,</span> <span>'4'</span><span>,</span> <span>'4'</span><span>,</span> <span>'4'</span><span>,</span> <span>'4'</span><span>,</span> <span>'4'</span><span>,</span> <span>'4'</span><span>,</span> <span>'4'</span><span>,</span> <span>'4'</span><span>,</span> <span>'4'</span><span>,</span>
+        <span>'5'</span><span>,</span> <span>'5'</span><span>,</span> <span>'5'</span><span>,</span> <span>'5'</span><span>,</span> <span>'5'</span><span>,</span> <span>'5'</span><span>,</span> <span>'5'</span><span>,</span> <span>'5'</span><span>,</span> <span>'5'</span><span>,</span> <span>'5'</span><span>,</span>
+        <span>'6'</span><span>,</span> <span>'6'</span><span>,</span> <span>'6'</span><span>,</span> <span>'6'</span><span>,</span> <span>'6'</span><span>,</span> <span>'6'</span><span>,</span> <span>'6'</span><span>,</span> <span>'6'</span><span>,</span> <span>'6'</span><span>,</span> <span>'6'</span><span>,</span>
+        <span>'7'</span><span>,</span> <span>'7'</span><span>,</span> <span>'7'</span><span>,</span> <span>'7'</span><span>,</span> <span>'7'</span><span>,</span> <span>'7'</span><span>,</span> <span>'7'</span><span>,</span> <span>'7'</span><span>,</span> <span>'7'</span><span>,</span> <span>'7'</span><span>,</span>
+        <span>'8'</span><span>,</span> <span>'8'</span><span>,</span> <span>'8'</span><span>,</span> <span>'8'</span><span>,</span> <span>'8'</span><span>,</span> <span>'8'</span><span>,</span> <span>'8'</span><span>,</span> <span>'8'</span><span>,</span> <span>'8'</span><span>,</span> <span>'8'</span><span>,</span>
+        <span>'9'</span><span>,</span> <span>'9'</span><span>,</span> <span>'9'</span><span>,</span> <span>'9'</span><span>,</span> <span>'9'</span><span>,</span> <span>'9'</span><span>,</span> <span>'9'</span><span>,</span> <span>'9'</span><span>,</span> <span>'9'</span><span>,</span> <span>'9'</span><span>,</span>
+        <span>}</span> <span>;</span>
+
+<span>final</span> <span>static</span> <span>char</span> <span>[</span><span>]</span> <span>DigitOnes</span> <span>=</span> <span>{</span>
+        <span>'0'</span><span>,</span> <span>'1'</span><span>,</span> <span>'2'</span><span>,</span> <span>'3'</span><span>,</span> <span>'4'</span><span>,</span> <span>'5'</span><span>,</span> <span>'6'</span><span>,</span> <span>'7'</span><span>,</span> <span>'8'</span><span>,</span> <span>'9'</span><span>,</span>
+        <span>'0'</span><span>,</span> <span>'1'</span><span>,</span> <span>'2'</span><span>,</span> <span>'3'</span><span>,</span> <span>'4'</span><span>,</span> <span>'5'</span><span>,</span> <span>'6'</span><span>,</span> <span>'7'</span><span>,</span> <span>'8'</span><span>,</span> <span>'9'</span><span>,</span>
+        <span>'0'</span><span>,</span> <span>'1'</span><span>,</span> <span>'2'</span><span>,</span> <span>'3'</span><span>,</span> <span>'4'</span><span>,</span> <span>'5'</span><span>,</span> <span>'6'</span><span>,</span> <span>'7'</span><span>,</span> <span>'8'</span><span>,</span> <span>'9'</span><span>,</span>
+        <span>'0'</span><span>,</span> <span>'1'</span><span>,</span> <span>'2'</span><span>,</span> <span>'3'</span><span>,</span> <span>'4'</span><span>,</span> <span>'5'</span><span>,</span> <span>'6'</span><span>,</span> <span>'7'</span><span>,</span> <span>'8'</span><span>,</span> <span>'9'</span><span>,</span>
+        <span>'0'</span><span>,</span> <span>'1'</span><span>,</span> <span>'2'</span><span>,</span> <span>'3'</span><span>,</span> <span>'4'</span><span>,</span> <span>'5'</span><span>,</span> <span>'6'</span><span>,</span> <span>'7'</span><span>,</span> <span>'8'</span><span>,</span> <span>'9'</span><span>,</span>
+        <span>'0'</span><span>,</span> <span>'1'</span><span>,</span> <span>'2'</span><span>,</span> <span>'3'</span><span>,</span> <span>'4'</span><span>,</span> <span>'5'</span><span>,</span> <span>'6'</span><span>,</span> <span>'7'</span><span>,</span> <span>'8'</span><span>,</span> <span>'9'</span><span>,</span>
+        <span>'0'</span><span>,</span> <span>'1'</span><span>,</span> <span>'2'</span><span>,</span> <span>'3'</span><span>,</span> <span>'4'</span><span>,</span> <span>'5'</span><span>,</span> <span>'6'</span><span>,</span> <span>'7'</span><span>,</span> <span>'8'</span><span>,</span> <span>'9'</span><span>,</span>
+        <span>'0'</span><span>,</span> <span>'1'</span><span>,</span> <span>'2'</span><span>,</span> <span>'3'</span><span>,</span> <span>'4'</span><span>,</span> <span>'5'</span><span>,</span> <span>'6'</span><span>,</span> <span>'7'</span><span>,</span> <span>'8'</span><span>,</span> <span>'9'</span><span>,</span>
+        <span>'0'</span><span>,</span> <span>'1'</span><span>,</span> <span>'2'</span><span>,</span> <span>'3'</span><span>,</span> <span>'4'</span><span>,</span> <span>'5'</span><span>,</span> <span>'6'</span><span>,</span> <span>'7'</span><span>,</span> <span>'8'</span><span>,</span> <span>'9'</span><span>,</span>
+        <span>'0'</span><span>,</span> <span>'1'</span><span>,</span> <span>'2'</span><span>,</span> <span>'3'</span><span>,</span> <span>'4'</span><span>,</span> <span>'5'</span><span>,</span> <span>'6'</span><span>,</span> <span>'7'</span><span>,</span> <span>'8'</span><span>,</span> <span>'9'</span><span>,</span>
+        <span>}</span> <span>;</span>
+
+<span>final</span> <span>static</span> <span>char</span><span>[</span><span>]</span> digits <span>=</span> <span>{</span>
+        <span>'0'</span> <span>,</span> <span>'1'</span> <span>,</span> <span>'2'</span> <span>,</span> <span>'3'</span> <span>,</span> <span>'4'</span> <span>,</span> <span>'5'</span> <span>,</span>
+        <span>'6'</span> <span>,</span> <span>'7'</span> <span>,</span> <span>'8'</span> <span>,</span> <span>'9'</span> <span>,</span> <span>'a'</span> <span>,</span> <span>'b'</span> <span>,</span>
+        <span>'c'</span> <span>,</span> <span>'d'</span> <span>,</span> <span>'e'</span> <span>,</span> <span>'f'</span> <span>,</span> <span>'g'</span> <span>,</span> <span>'h'</span> <span>,</span>
+        <span>'i'</span> <span>,</span> <span>'j'</span> <span>,</span> <span>'k'</span> <span>,</span> <span>'l'</span> <span>,</span> <span>'m'</span> <span>,</span> <span>'n'</span> <span>,</span>
+        <span>'o'</span> <span>,</span> <span>'p'</span> <span>,</span> <span>'q'</span> <span>,</span> <span>'r'</span> <span>,</span> <span>'s'</span> <span>,</span> <span>'t'</span> <span>,</span>
+        <span>'u'</span> <span>,</span> <span>'v'</span> <span>,</span> <span>'w'</span> <span>,</span> <span>'x'</span> <span>,</span> <span>'y'</span> <span>,</span> <span>'z'</span>
+        <span>}</span><span>;</span>
+
+<span>final</span> <span>static</span> <span>int</span> <span>[</span><span>]</span> sizeTable <span>=</span> <span>{</span> <span>9</span><span>,</span> <span>99</span><span>,</span> <span>999</span><span>,</span> <span>9999</span><span>,</span> <span>99999</span><span>,</span> <span>999999</span><span>,</span> <span>9999999</span><span>,</span>
+        <span>99999999</span><span>,</span> <span>999999999</span><span>,</span> <span>Integer</span><span>.</span>MAX_VALUE <span>}</span><span>;</span>
+
+<span>// Requires positive x</span>
+<span>static</span> <span>int</span> <span>stringSize</span><span>(</span><span>int</span> x<span>)</span> <span>{</span>
+        <span>for</span> <span>(</span><span>int</span> i<span>=</span><span>0</span><span>;</span> <span>;</span> i<span>++</span><span>)</span>
+        <span>if</span> <span>(</span>x <span>&lt;=</span> sizeTable<span>[</span>i<span>]</span><span>)</span>
+        <span>return</span> i<span>+</span><span>1</span><span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br></div></div><ul>
+<li>DigitTens和DigitOnes两个数组放到一起讲更好理解，它们主要用于获取0到99之间某个数的十位和个位，比如48，通过DigitTens数组直接取出来十位为4，而通过DigitOnes数组取出来个位为8。</li>
+<li>digits数组用于表示数字的所有可能的字符，因为int支持从2进制到36进制，所以这里需要有36个字符才能表示所有不同进制的数字。</li>
+<li>sizeTable数组主要用在判断一个int型数字对应字符串的长度。比如相关的方法如下，这种方法可以高效得到对应字符串长度，避免了使用除法或求余等操作。</li>
+</ul>
+<h4 id="_3-1-3-integercache静态内部类"> 3.1.3 IntegerCache静态内部类</h4>
+<div><pre><code><span>private</span> <span>static</span> <span>class</span> <span>IntegerCache</span> <span>{</span>
+    <span>static</span> <span>final</span> <span>int</span> low <span>=</span> <span>-</span><span>128</span><span>;</span>
+    <span>static</span> <span>final</span> <span>int</span> high<span>;</span>
+    <span>static</span> <span>final</span> <span>Integer</span> cache<span>[</span><span>]</span><span>;</span>
+
+    <span>static</span> <span>{</span>
+        <span>// high value may be configured by property</span>
+        <span>int</span> h <span>=</span> <span>127</span><span>;</span>
+        <span>String</span> integerCacheHighPropValue <span>=</span>
+                sun<span>.</span>misc<span>.</span>VM<span>.</span><span>getSavedProperty</span><span>(</span><span>"java.lang.Integer.IntegerCache.high"</span><span>)</span><span>;</span>
+        <span>// 如果设置了cache的高位，缓存就设置为[-128, high]</span>
+        <span>if</span> <span>(</span>integerCacheHighPropValue <span>!=</span> <span>null</span><span>)</span> <span>{</span>
+            <span>try</span> <span>{</span>
+                <span>// 解析为int的静态值</span>
+                <span>int</span> i <span>=</span> <span>parseInt</span><span>(</span>integerCacheHighPropValue<span>)</span><span>;</span>
+                <span>// 取最大值</span>
+                i <span>=</span> <span>Math</span><span>.</span><span>max</span><span>(</span>i<span>,</span> <span>127</span><span>)</span><span>;</span>
+                <span>// 最大值是Integer.MAX_VALUE</span>
+                h <span>=</span> <span>Math</span><span>.</span><span>min</span><span>(</span>i<span>,</span> <span>Integer</span><span>.</span>MAX_VALUE <span>-</span> <span>(</span><span>-</span>low<span>)</span> <span>-</span><span>1</span><span>)</span><span>;</span>
+            <span>}</span> <span>catch</span><span>(</span> <span>NumberFormatException</span> nfe<span>)</span> <span>{</span>
+                <span>// If the property cannot be parsed into an int, ignore it.</span>
+            <span>}</span>
+        <span>}</span>
+        high <span>=</span> h<span>;</span>
+
+        <span>// cache空间为256</span>
+        cache <span>=</span> <span>new</span> <span>Integer</span><span>[</span><span>(</span>high <span>-</span> low<span>)</span> <span>+</span> <span>1</span><span>]</span><span>;</span>
+        <span>int</span> j <span>=</span> low<span>;</span>
+        <span>for</span><span>(</span><span>int</span> k <span>=</span> <span>0</span><span>;</span> k <span>&lt;</span> cache<span>.</span>length<span>;</span> k<span>++</span><span>)</span>
+            <span>// 生成cache值的缓存空间</span>
+            cache<span>[</span>k<span>]</span> <span>=</span> <span>new</span> <span>Integer</span><span>(</span>j<span>++</span><span>)</span><span>;</span>
+
+        <span>// range [-128, 127] must be interned (JLS7 5.1.7)</span>
+        <span>assert</span> <span>IntegerCache</span><span>.</span>high <span>>=</span> <span>127</span><span>;</span>
+    <span>}</span>
+
+    <span>private</span> <span>IntegerCache</span><span>(</span><span>)</span> <span>{</span><span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br></div></div><p>IntegerCache为静态内部类，存储在方法区中的静态区，IntegerCache中的cache参数存储在静态区，包含了int可能值的Integer数组，默认范围是[-128,127],最大值可通过指定方式进行调整，在启动时
+通过JVM参数<code>Djava.lang.Integer.IntegerCache.high=xxx</code>进行调整。当Integer的值范围在[-128,127]时则直接从缓存中获取对应的Integer对象，
+不必重新实例化。这些缓存值都是静态且final的，避免重复的实例化和回收。</p>
+<div><pre><code>    <span>public</span> <span>static</span> <span>Integer</span> <span>valueOf</span><span>(</span><span>int</span> i<span>)</span> <span>{</span>
+        <span>if</span> <span>(</span>i <span>>=</span> <span>IntegerCache</span><span>.</span>low <span>&amp;&amp;</span> i <span>&lt;=</span> <span>IntegerCache</span><span>.</span>high<span>)</span>
+            <span>// IntegerCache.cache空间如下:</span>
+            <span>[</span><span>0</span><span>]</span> <span>=</span> <span>-</span><span>128</span>
+            <span>[</span><span>1</span><span>]</span> <span>=</span> <span>-</span><span>127</span>
+            <span>.</span><span>.</span><span>.</span>
+            <span>[</span><span>129</span><span>]</span> <span>=</span> <span>1</span>
+            <span>[</span><span>130</span><span>]</span> <span>=</span> <span>2</span>
+            <span>[</span><span>256</span><span>]</span> <span>=</span> <span>127</span>
+            <span>// e.g. i = 1, 那就从IntegerCache.cache[1+128] => Integer.cache[129] = 1</span>
+            <span>return</span> <span>IntegerCache</span><span>.</span>cache<span>[</span>i <span>+</span> <span>(</span><span>-</span><span>IntegerCache</span><span>.</span>low<span>)</span><span>]</span><span>;</span>
+        <span>return</span> <span>new</span> <span>Integer</span><span>(</span>i<span>)</span><span>;</span>
+    <span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><p>由上述代码可知，当值在[-128,127]之间时，取值是直接从IntegerCache的cache中取值。</p>
+<h3 id="_3-2-核心方法"> 3.2 核心方法</h3>
+<h4 id="max-min-sum方法"> max/min/sum方法</h4>
+<div><pre><code><span>public</span> <span>final</span> <span>class</span> <span>Integer</span> <span>extends</span> <span>Number</span> <span>implements</span> <span>Comparable</span><span><span>&lt;</span><span>Integer</span><span>></span></span> <span>{</span>
+    <span>// 取两者之间的最大值</span>
+    <span>public</span> <span>static</span> <span>int</span> <span>max</span><span>(</span><span>int</span> a<span>,</span> <span>int</span> b<span>)</span> <span>{</span>
+        <span>return</span> <span>Math</span><span>.</span><span>max</span><span>(</span>a<span>,</span> b<span>)</span><span>;</span>
+    <span>}</span>
+    <span>// 取两者之间的最小值</span>
+    <span>public</span> <span>static</span> <span>int</span> <span>min</span><span>(</span><span>int</span> a<span>,</span> <span>int</span> b<span>)</span> <span>{</span>
+        <span>return</span> <span>Math</span><span>.</span><span>min</span><span>(</span>a<span>,</span> b<span>)</span><span>;</span>
+    <span>}</span>
+    <span>// 取两者之间的和</span>
+    <span>public</span> <span>static</span> <span>int</span> <span>sum</span><span>(</span><span>int</span> a<span>,</span> <span>int</span> b<span>)</span> <span>{</span>
+        <span>return</span> a <span>+</span> b<span>;</span>
+    <span>}</span>
+<span>}</span>
+<span>public</span> <span>class</span> <span>IntegerDemoTest</span> <span>{</span>
+    <span>@Test</span>
+    <span>public</span> <span>void</span> <span>maxTest</span><span>(</span><span>)</span> <span>{</span>
+        <span>// a => 97, b => 98 => max => 98</span>
+        <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>Integer</span><span>.</span><span>max</span><span>(</span><span>'a'</span><span>,</span> <span>'b'</span><span>)</span><span>)</span><span>;</span>
+        <span>// a => 97, b => 98 => min => 97</span>
+        <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>Integer</span><span>.</span><span>min</span><span>(</span><span>'a'</span><span>,</span> <span>'b'</span><span>)</span><span>)</span><span>;</span>
+        <span>// a => 97, b => 98 => sum => 195</span>
+        <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>Integer</span><span>.</span><span>sum</span><span>(</span><span>'a'</span><span>,</span> <span>'b'</span><span>)</span><span>)</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br></div></div><h4 id="getinteger方法"> getInteger方法</h4>
+<div><pre><code><span>public</span> <span>final</span> <span>class</span> <span>Integer</span> <span>extends</span> <span>Number</span> <span>implements</span> <span>Comparable</span><span><span>&lt;</span><span>Integer</span><span>></span></span> <span>{</span>
+    <span>public</span> <span>static</span> <span>Integer</span> <span>getInteger</span><span>(</span><span>String</span> nm<span>)</span> <span>{</span>
+        <span>return</span> <span>getInteger</span><span>(</span>nm<span>,</span> <span>null</span><span>)</span><span>;</span>
+    <span>}</span>
+    <span>public</span> <span>static</span> <span>Integer</span> <span>getInteger</span><span>(</span><span>String</span> nm<span>,</span> <span>int</span> val<span>)</span> <span>{</span>
+        <span>Integer</span> result <span>=</span> <span>getInteger</span><span>(</span>nm<span>,</span> <span>null</span><span>)</span><span>;</span>
+        <span>return</span> <span>(</span>result <span>==</span> <span>null</span><span>)</span> <span>?</span> <span>Integer</span><span>.</span><span>valueOf</span><span>(</span>val<span>)</span> <span>:</span> result<span>;</span>
+    <span>}</span>
+    <span>public</span> <span>static</span> <span>Integer</span> <span>getInteger</span><span>(</span><span>String</span> nm<span>,</span> <span>Integer</span> val<span>)</span> <span>{</span>
+        <span>String</span> v <span>=</span> <span>null</span><span>;</span>
+        <span>try</span> <span>{</span>
+            v <span>=</span> <span>System</span><span>.</span><span>getProperty</span><span>(</span>nm<span>)</span><span>;</span>
+        <span>}</span> <span>catch</span> <span>(</span><span>IllegalArgumentException</span> <span>|</span> <span>NullPointerException</span> e<span>)</span> <span>{</span>
+        <span>}</span>
+        <span>if</span> <span>(</span>v <span>!=</span> <span>null</span><span>)</span> <span>{</span>
+            <span>try</span> <span>{</span>
+                <span>return</span> <span>Integer</span><span>.</span><span>decode</span><span>(</span>v<span>)</span><span>;</span>
+            <span>}</span> <span>catch</span> <span>(</span><span>NumberFormatException</span> e<span>)</span> <span>{</span>
+            <span>}</span>
+        <span>}</span>
+        <span>return</span> val<span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br></div></div><p>Integer.getInteger(String)的功能是根据指定的名称得到系统属性的整数值。第一个参数将被认为是系统属性的名称。系统属性可以通过  System.getProperty(java.lang.String)方法访问得到。属性值字符串将被解释成一个整数，并且以表示这个值的Integer对象形式返回。可能出现的数字格式的详细说明可以在 getProperty 的定义说明里找到。</p>
+<div><pre><code>    <span>@Test</span>
+    <span>public</span> <span>void</span> <span>testGetInteger</span><span>(</span><span>)</span> <span>{</span>
+        <span>System</span><span>.</span><span>setProperty</span><span>(</span><span>"test-integer"</span><span>,</span> <span>"55"</span><span>)</span><span>;</span>
+        <span>Integer</span> testNumber <span>=</span> <span>Integer</span><span>.</span><span>getInteger</span><span>(</span><span>"test-integer"</span><span>)</span><span>;</span>
+        <span>Assertions</span><span>.</span><span>assertEquals</span><span>(</span><span>55</span><span>,</span> testNumber<span>)</span><span>;</span>
+    <span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h4 id="tostring方法"> toString方法</h4>
+<div><pre><code><span>public</span> <span>final</span> <span>class</span> <span>Integer</span> <span>extends</span> <span>Number</span> <span>implements</span> <span>Comparable</span><span><span>&lt;</span><span>Integer</span><span>></span></span> <span>{</span>
+
+    <span>public</span> <span>static</span> <span>String</span> <span>toString</span><span>(</span><span>int</span> i<span>)</span> <span>{</span>
+        <span>if</span> <span>(</span>i <span>==</span> <span>Integer</span><span>.</span>MIN_VALUE<span>)</span>
+            <span>return</span> <span>"-2147483648"</span><span>;</span>
+        <span>int</span> size <span>=</span> <span>(</span>i <span>&lt;</span> <span>0</span><span>)</span> <span>?</span> <span>stringSize</span><span>(</span><span>-</span>i<span>)</span> <span>+</span> <span>1</span> <span>:</span> <span>stringSize</span><span>(</span>i<span>)</span><span>;</span>
+        <span>char</span><span>[</span><span>]</span> buf <span>=</span> <span>new</span> <span>char</span><span>[</span>size<span>]</span><span>;</span>
+        <span>getChars</span><span>(</span>i<span>,</span> size<span>,</span> buf<span>)</span><span>;</span>
+        <span>return</span> <span>new</span> <span>String</span><span>(</span>buf<span>,</span> <span>true</span><span>)</span><span>;</span>
+    <span>}</span>
+
+    <span>public</span> <span>String</span> <span>toString</span><span>(</span><span>)</span> <span>{</span>
+        <span>return</span> <span>toString</span><span>(</span>value<span>)</span><span>;</span>
+    <span>}</span>
+    
+    <span>public</span> <span>static</span> <span>String</span> <span>toString</span><span>(</span><span>int</span> i<span>,</span> <span>int</span> radix<span>)</span> <span>{</span>
+        <span>if</span> <span>(</span>radix <span>&lt;</span> <span>Character</span><span>.</span>MIN_RADIX <span>||</span> radix <span>></span> <span>Character</span><span>.</span>MAX_RADIX<span>)</span>
+            radix <span>=</span> <span>10</span><span>;</span>
+
+        <span>/* Use the faster version */</span>
+        <span>if</span> <span>(</span>radix <span>==</span> <span>10</span><span>)</span> <span>{</span>
+            <span>return</span> <span>toString</span><span>(</span>i<span>)</span><span>;</span>
+        <span>}</span>
+
+        <span>char</span> buf<span>[</span><span>]</span> <span>=</span> <span>new</span> <span>char</span><span>[</span><span>33</span><span>]</span><span>;</span>
+        <span>boolean</span> negative <span>=</span> <span>(</span>i <span>&lt;</span> <span>0</span><span>)</span><span>;</span>
+        <span>int</span> charPos <span>=</span> <span>32</span><span>;</span>
+
+        <span>if</span> <span>(</span><span>!</span>negative<span>)</span> <span>{</span>
+            i <span>=</span> <span>-</span>i<span>;</span>
+        <span>}</span>
+
+        <span>while</span> <span>(</span>i <span>&lt;=</span> <span>-</span>radix<span>)</span> <span>{</span>
+            buf<span>[</span>charPos<span>--</span><span>]</span> <span>=</span> digits<span>[</span><span>-</span><span>(</span>i <span>%</span> radix<span>)</span><span>]</span><span>;</span>
+            i <span>=</span> i <span>/</span> radix<span>;</span>
+        <span>}</span>
+        buf<span>[</span>charPos<span>]</span> <span>=</span> digits<span>[</span><span>-</span>i<span>]</span><span>;</span>
+
+        <span>if</span> <span>(</span>negative<span>)</span> <span>{</span>
+            buf<span>[</span><span>--</span>charPos<span>]</span> <span>=</span> <span>'-'</span><span>;</span>
+        <span>}</span>
+
+        <span>return</span> <span>new</span> <span>String</span><span>(</span>buf<span>,</span> charPos<span>,</span> <span>(</span><span>33</span> <span>-</span> charPos<span>)</span><span>)</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br></div></div><p>一共有3个toString方法，两个静态方法一个是非静态方法，第一个toString方法很简单，就是先用stringSize得到数字是多少位，再用getChars获取数字对应的char数组，最后返回一个String类型。第二个toString调用第一个toString。第三个toString方法是带了进制信息的，它会转换成对应进制的字符串。凡是不在2到36进制范围之间的都会被处理成10进制，我们都知道从十进制转成其他进制时就是不断地除于进制数得到余数，然后把余数反过来串起来就是最后结果，所以这里其实也是这样子做的，得到余数后通过digits数组获取到对应的字符，而且这里是用负数的形式来运算的。</p>
+<h4 id="reversebytes方法"> reverseBytes方法</h4>
+<div><pre><code><span>public</span> <span>final</span> <span>class</span> <span>Integer</span> <span>extends</span> <span>Number</span> <span>implements</span> <span>Comparable</span><span><span>&lt;</span><span>Integer</span><span>></span></span> <span>{</span>
+    <span>public</span> <span>static</span> <span>int</span> <span>reverseBytes</span><span>(</span><span>int</span> i<span>)</span> <span>{</span>
+        <span>return</span> <span>(</span><span>(</span>i <span>>>></span> <span>24</span><span>)</span>           <span>)</span> <span>|</span>
+                <span>(</span><span>(</span>i <span>>></span>   <span>8</span><span>)</span> <span>&amp;</span>   <span>0xFF00</span><span>)</span> <span>|</span>
+                <span>(</span><span>(</span>i <span>&lt;&lt;</span>   <span>8</span><span>)</span> <span>&amp;</span> <span>0xFF0000</span><span>)</span> <span>|</span>
+                <span>(</span><span>(</span>i <span>&lt;&lt;</span> <span>24</span><span>)</span><span>)</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><p>该方法返回通过反转指定int值的二进制补码表示形式的字节顺序而获得的值。</p>
+<h4 id="signum方法"> signum方法</h4>
+<div><pre><code><span>public</span> <span>final</span> <span>class</span> <span>Integer</span> <span>extends</span> <span>Number</span> <span>implements</span> <span>Comparable</span><span><span>&lt;</span><span>Integer</span><span>></span></span> <span>{</span>
+    <span>public</span> <span>static</span> <span>int</span> <span>signum</span><span>(</span><span>int</span> i<span>)</span> <span>{</span>
+        <span>// HD, Section 2-7</span>
+        <span>return</span> <span>(</span>i <span>>></span> <span>31</span><span>)</span> <span>|</span> <span>(</span><span>-</span>i <span>>>></span> <span>31</span><span>)</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><p>改方法确定输入的数的符号，如果输入的是正数则返回1，如果输入的是零则返回0，如果输入的是负数则返回-1。</p>
+<div><pre><code>    <span>@Test</span>
+    <span>public</span> <span>void</span> <span>testSignum</span><span>(</span><span>)</span> <span>{</span>
+        <span>// the result is -1</span>
+        <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>Integer</span><span>.</span><span>signum</span><span>(</span><span>-</span><span>99</span><span>)</span><span>)</span><span>;</span>
+        <span>// the result is 1</span>
+        <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>Integer</span><span>.</span><span>signum</span><span>(</span><span>99</span><span>)</span><span>)</span><span>;</span>
+        <span>// the result is 0</span>
+        <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>Integer</span><span>.</span><span>signum</span><span>(</span><span>0</span><span>)</span><span>)</span><span>;</span>
+    <span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div><h4 id="reverse方法"> reverse方法</h4>
+<div><pre><code><span>public</span> <span>final</span> <span>class</span> <span>Integer</span> <span>extends</span> <span>Number</span> <span>implements</span> <span>Comparable</span><span><span>&lt;</span><span>Integer</span><span>></span></span> <span>{</span>
+    <span>public</span> <span>static</span> <span>int</span> <span>reverse</span><span>(</span><span>int</span> i<span>)</span> <span>{</span>
+        <span>// HD, Figure 7-1</span>
+        i <span>=</span> <span>(</span>i <span>&amp;</span> <span>0x55555555</span><span>)</span> <span>&lt;&lt;</span> <span>1</span> <span>|</span> <span>(</span>i <span>>>></span> <span>1</span><span>)</span> <span>&amp;</span> <span>0x55555555</span><span>;</span>
+        i <span>=</span> <span>(</span>i <span>&amp;</span> <span>0x33333333</span><span>)</span> <span>&lt;&lt;</span> <span>2</span> <span>|</span> <span>(</span>i <span>>>></span> <span>2</span><span>)</span> <span>&amp;</span> <span>0x33333333</span><span>;</span>
+        i <span>=</span> <span>(</span>i <span>&amp;</span> <span>0x0f0f0f0f</span><span>)</span> <span>&lt;&lt;</span> <span>4</span> <span>|</span> <span>(</span>i <span>>>></span> <span>4</span><span>)</span> <span>&amp;</span> <span>0x0f0f0f0f</span><span>;</span>
+        i <span>=</span> <span>(</span>i <span>&lt;&lt;</span> <span>24</span><span>)</span> <span>|</span> <span>(</span><span>(</span>i <span>&amp;</span> <span>0xff00</span><span>)</span> <span>&lt;&lt;</span> <span>8</span><span>)</span> <span>|</span>
+                <span>(</span><span>(</span>i <span>>>></span> <span>8</span><span>)</span> <span>&amp;</span> <span>0xff00</span><span>)</span> <span>|</span> <span>(</span>i <span>>>></span> <span>24</span><span>)</span><span>;</span>
+        <span>return</span> i<span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><p>用于返回指定int值的二进制补码二进制表示形式的位的相反顺序。</p>
+<div><pre><code>    <span>@Test</span>
+    <span>public</span> <span>void</span> <span>testReverse</span><span>(</span><span>)</span> <span>{</span>
+        <span>// the result is 100663296</span>
+        <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>Integer</span><span>.</span><span>reverse</span><span>(</span><span>96</span><span>)</span><span>)</span><span>;</span>
+    <span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><h4 id="rotateleft-rotateright方法"> rotateLeft/rotateRight方法</h4>
+<div><pre><code><span>public</span> <span>final</span> <span>class</span> <span>Integer</span> <span>extends</span> <span>Number</span> <span>implements</span> <span>Comparable</span><span><span>&lt;</span><span>Integer</span><span>></span></span> <span>{</span>
+    <span>public</span> <span>static</span> <span>int</span> <span>rotateRight</span><span>(</span><span>int</span> i<span>,</span> <span>int</span> distance<span>)</span> <span>{</span>
+        <span>return</span> <span>(</span>i <span>>>></span> distance<span>)</span> <span>|</span> <span>(</span>i <span>&lt;&lt;</span> <span>-</span>distance<span>)</span><span>;</span>
+    <span>}</span>
+    <span>public</span> <span>static</span> <span>int</span> <span>rotateLeft</span><span>(</span><span>int</span> i<span>,</span> <span>int</span> distance<span>)</span> <span>{</span>
+        <span>return</span> <span>(</span>i <span>&lt;&lt;</span> distance<span>)</span> <span>|</span> <span>(</span>i <span>>>></span> <span>-</span>distance<span>)</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><p>rotateRight该方法通过将指定int值a的二进制补码二进制表示形式向右旋转指定位数来返回获得的值。位向右移，即低位。</p>
+<div><pre><code>    <span>public</span> <span>static</span> <span>void</span> <span>main</span><span>(</span><span>String</span><span>[</span><span>]</span> args<span>)</span><span>{</span> 
+        <span>int</span> a <span>=</span> <span>64</span><span>;</span> 
+        <span>int</span> shifts <span>=</span> <span>0</span><span>;</span> 
+        <span>while</span> <span>(</span>shifts <span>&lt;</span> <span>3</span><span>)</span> <span>{</span>
+        <span>// It will return the value obtained by rotating left</span>
+            a <span>=</span> <span>Integer</span><span>.</span><span>rotateRight</span><span>(</span>a<span>,</span> <span>2</span><span>)</span><span>;</span> 
+            <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span>a<span>)</span><span>;</span> 
+            shifts<span>++</span><span>;</span> 
+        <span>}</span> 
+    <span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><div><pre><code><span>16</span>
+<span>4</span>
+<span>1</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p>rotateLeft该方法返回通过将指定int值的二进制补码二进制表示形式向左旋转指定数量的移位位数而获得的值。</p>
+<div><pre><code>    <span>public</span> <span>static</span> <span>void</span> <span>main</span><span>(</span><span>String</span><span>[</span><span>]</span> args<span>)</span><span>{</span>
+        <span>int</span> a <span>=</span> <span>2</span><span>;</span> 
+        <span>int</span> shifts <span>=</span> <span>0</span><span>;</span> 
+        <span>while</span> <span>(</span>shifts <span>&lt;</span> <span>6</span><span>)</span> <span>{</span>
+        <span>// It will return the value obtained by rotating left</span>
+            a <span>=</span> <span>Integer</span><span>.</span><span>rotateLeft</span><span>(</span>a<span>,</span> <span>2</span><span>)</span><span>;</span> 
+            <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span>a<span>)</span><span>;</span> 
+            shifts<span>++</span><span>;</span> 
+        <span>}</span> 
+    <span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><div><pre><code><span>8</span>
+<span>32</span>
+<span>128</span>
+<span>512</span>
+<span>2048</span>
+<span>8192</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h4 id="numberofleadingzeros-numberoftrailingzeros方法"> numberOfLeadingZeros/numberOfTrailingZeros方法</h4>
+<div><pre><code><span>public</span> <span>final</span> <span>class</span> <span>Integer</span> <span>extends</span> <span>Number</span> <span>implements</span> <span>Comparable</span><span><span>&lt;</span><span>Integer</span><span>></span></span> <span>{</span>
+    <span>public</span> <span>static</span> <span>int</span> <span>numberOfLeadingZeros</span><span>(</span><span>int</span> i<span>)</span> <span>{</span>
+        <span>// HD, Figure 5-6</span>
+        <span>if</span> <span>(</span>i <span>==</span> <span>0</span><span>)</span>
+            <span>return</span> <span>32</span><span>;</span>
+        <span>int</span> n <span>=</span> <span>1</span><span>;</span>
+        <span>if</span> <span>(</span>i <span>>>></span> <span>16</span> <span>==</span> <span>0</span><span>)</span> <span>{</span> n <span>+=</span> <span>16</span><span>;</span> i <span>&lt;&lt;=</span> <span>16</span><span>;</span> <span>}</span>
+        <span>if</span> <span>(</span>i <span>>>></span> <span>24</span> <span>==</span> <span>0</span><span>)</span> <span>{</span> n <span>+=</span>  <span>8</span><span>;</span> i <span>&lt;&lt;=</span>  <span>8</span><span>;</span> <span>}</span>
+        <span>if</span> <span>(</span>i <span>>>></span> <span>28</span> <span>==</span> <span>0</span><span>)</span> <span>{</span> n <span>+=</span>  <span>4</span><span>;</span> i <span>&lt;&lt;=</span>  <span>4</span><span>;</span> <span>}</span>
+        <span>if</span> <span>(</span>i <span>>>></span> <span>30</span> <span>==</span> <span>0</span><span>)</span> <span>{</span> n <span>+=</span>  <span>2</span><span>;</span> i <span>&lt;&lt;=</span>  <span>2</span><span>;</span> <span>}</span>
+        n <span>-=</span> i <span>>>></span> <span>31</span><span>;</span>
+        <span>return</span> n<span>;</span>
+    <span>}</span>
+    <span>public</span> <span>static</span> <span>int</span> <span>numberOfTrailingZeros</span><span>(</span><span>int</span> i<span>)</span> <span>{</span>
+        <span>// HD, Figure 5-14</span>
+        <span>int</span> y<span>;</span>
+        <span>if</span> <span>(</span>i <span>==</span> <span>0</span><span>)</span> <span>return</span> <span>32</span><span>;</span>
+        <span>int</span> n <span>=</span> <span>31</span><span>;</span>
+        y <span>=</span> i <span>&lt;&lt;</span><span>16</span><span>;</span> <span>if</span> <span>(</span>y <span>!=</span> <span>0</span><span>)</span> <span>{</span> n <span>=</span> n <span>-</span><span>16</span><span>;</span> i <span>=</span> y<span>;</span> <span>}</span>
+        y <span>=</span> i <span>&lt;&lt;</span> <span>8</span><span>;</span> <span>if</span> <span>(</span>y <span>!=</span> <span>0</span><span>)</span> <span>{</span> n <span>=</span> n <span>-</span> <span>8</span><span>;</span> i <span>=</span> y<span>;</span> <span>}</span>
+        y <span>=</span> i <span>&lt;&lt;</span> <span>4</span><span>;</span> <span>if</span> <span>(</span>y <span>!=</span> <span>0</span><span>)</span> <span>{</span> n <span>=</span> n <span>-</span> <span>4</span><span>;</span> i <span>=</span> y<span>;</span> <span>}</span>
+        y <span>=</span> i <span>&lt;&lt;</span> <span>2</span><span>;</span> <span>if</span> <span>(</span>y <span>!=</span> <span>0</span><span>)</span> <span>{</span> n <span>=</span> n <span>-</span> <span>2</span><span>;</span> i <span>=</span> y<span>;</span> <span>}</span>
+        <span>return</span> n <span>-</span> <span>(</span><span>(</span>i <span>&lt;&lt;</span> <span>1</span><span>)</span> <span>>>></span> <span>31</span><span>)</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br></div></div><h4 id="highestonebit-lowestonebit方法"> highestOneBit/lowestOneBit方法</h4>
+<div><pre><code><span>public</span> <span>final</span> <span>class</span> <span>Integer</span> <span>extends</span> <span>Number</span> <span>implements</span> <span>Comparable</span><span><span>&lt;</span><span>Integer</span><span>></span></span> <span>{</span>
+    <span>// 返回一个 int 值，最多有一个单个位，位于指定 int 值中最高（“最左边”）一位的位置。 如果指定的值在其二进制补码表示中没有一位，即等于零，则返回零。</span>
+    <span>public</span> <span>static</span> <span>int</span> <span>highestOneBit</span><span>(</span><span>int</span> i<span>)</span> <span>{</span>
+        <span>// HD, Figure 3-1</span>
+        i <span>|=</span> <span>(</span>i <span>>></span>  <span>1</span><span>)</span><span>;</span>
+        i <span>|=</span> <span>(</span>i <span>>></span>  <span>2</span><span>)</span><span>;</span>
+        i <span>|=</span> <span>(</span>i <span>>></span>  <span>4</span><span>)</span><span>;</span>
+        i <span>|=</span> <span>(</span>i <span>>></span>  <span>8</span><span>)</span><span>;</span>
+        i <span>|=</span> <span>(</span>i <span>>></span> <span>16</span><span>)</span><span>;</span>
+        <span>return</span> i <span>-</span> <span>(</span>i <span>>>></span> <span>1</span><span>)</span><span>;</span>
+    <span>}</span>
+    <span>public</span> <span>static</span> <span>int</span> <span>lowestOneBit</span><span>(</span><span>int</span> i<span>)</span> <span>{</span>
+        <span>// 返回一个 int 值，最多只有一个一位，位于指定 int 值中最低位（“最右边”）一位的位置。 如果指定的值在其二进制补码表示中没有一位，即等于零，则返回零。</span>
+        <span>// HD, Section 2-1</span>
+        <span>return</span> i <span>&amp;</span> <span>-</span>i<span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br></div></div><h4 id="tounsignedlong方法"> toUnsignedLong方法</h4>
+<div><pre><code><span>public</span> <span>final</span> <span>class</span> <span>Integer</span> <span>extends</span> <span>Number</span> <span>implements</span> <span>Comparable</span><span><span>&lt;</span><span>Integer</span><span>></span></span> <span>{</span>
+    <span>/**
+     * 
+     * @param x 它是一个用于转换为 unsigned long 的值。
+     * @return
+     */</span>
+    <span>public</span> <span>static</span> <span>long</span> <span>toUnsignedLong</span><span>(</span><span>int</span> x<span>)</span> <span>{</span>
+        <span>return</span> <span>(</span><span>(</span><span>long</span><span>)</span> x<span>)</span> <span>&amp;</span> <span>0</span>xffffffffL<span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><p>它通过无符号转换将参数转换为 long。在对 long 的无符号转换中，long 的 high-order 32 位为零，低 32 位等于整数参数的位。</p>
+<h4 id="divideunsigned方法"> divideUnsigned方法</h4>
+<div><pre><code><span>public</span> <span>final</span> <span>class</span> <span>Integer</span> <span>extends</span> <span>Number</span> <span>implements</span> <span>Comparable</span><span><span>&lt;</span><span>Integer</span><span>></span></span> <span>{</span>
+    <span>/**
+     * e.g. dividend=55,divisor=5, result为11
+     * @param dividend 它是一个将被分割的 int 值。
+     * @param divisor 将进行除法过程的值。
+     * @return
+     */</span>
+    
+    <span>public</span> <span>static</span> <span>int</span> <span>divideUnsigned</span><span>(</span><span>int</span> dividend<span>,</span> <span>int</span> divisor<span>)</span> <span>{</span>
+        <span>// In lieu of tricky code, for now just use long arithmetic.</span>
+        <span>return</span> <span>(</span><span>int</span><span>)</span> <span>(</span><span>toUnsignedLong</span><span>(</span>dividend<span>)</span> <span>/</span> <span>toUnsignedLong</span><span>(</span>divisor<span>)</span><span>)</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><p>该方法它返回第一个参数除以第二个参数的无符号商，其中每个参数和结果都被解释为一个无符号值。</p>
+<h4 id="remainderunsigned方法"> remainderUnsigned方法</h4>
+<div><pre><code><span>public</span> <span>final</span> <span>class</span> <span>Integer</span> <span>extends</span> <span>Number</span> <span>implements</span> <span>Comparable</span><span><span>&lt;</span><span>Integer</span><span>></span></span> <span>{</span>
+    <span>/**
+     * dividend=56, divisor=5, the result is 1
+     * @param dividend 它是一个将被分割的 int 值
+     * @param divisor 将进行除法过程的值
+     * @return
+     */</span>
+    <span>public</span> <span>static</span> <span>int</span> <span>remainderUnsigned</span><span>(</span><span>int</span> dividend<span>,</span> <span>int</span> divisor<span>)</span> <span>{</span>
+        <span>// In lieu of tricky code, for now just use long arithmetic.</span>
+        <span>return</span> <span>(</span><span>int</span><span>)</span> <span>(</span><span>toUnsignedLong</span><span>(</span>dividend<span>)</span> <span>%</span> <span>toUnsignedLong</span><span>(</span>divisor<span>)</span><span>)</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br></div></div><p>它返回第一个参数除以第二个参数的无符号余数，其中每个参数和结果都被解释为无符号值。</p>
+<h2 id="_4-经典面试题"> 4.经典面试题</h2>
+<h3 id="_1-integer-a-1、integer-a-new-integer-1-、integer-a-integer-valueof-1-的区别"> 1. Integer a = 1、Integer a = new Integer(1)、Integer a = Integer.valueOf(1)的区别</h3>
+<ul>
+<li>Integer a = 1与Integer.valueOf(1)含义相同,所存储的对象在方法区的静态区。new Integer(1)存储的位置在堆区。</li>
+<li><code>-128-127</code>的值存储在<code>JVM方法区的静态区</code>,是因为Integer内部有一个静态内部类IntegerCache。</li>
+<li>new Integer(1)存储在<code>JVM堆区</code>，都是通过<code>new Integer(x)</code>创建出来。</li>
+</ul>
+<h3 id="_2-你所了解到integercache"> 2. 你所了解到IntegerCache</h3>
+<ul>
+<li>IntegerCache是Integer类的中的内部静态类</li>
+<li>IntegerCache中有一个低位，有一个高位，有一个Integer类型的数组缓存。其中低位为-128，不可改变，高位如果不设置则为127,高位可以通过通过JVM参数<code>Djava.lang.Integer.IntegerCache.high=xxx</code>进行调整，用缓存的好处在于快速读取，不用再重新创建对象。</li>
+</ul>
+<h2 id="_5-文章参考"> 5. 文章参考</h2>
+<p>1.https://www.cmsblogs.com/article/1389544331186147328</p>
+]]></content:encoded>
+      <enclosure url="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/Integer.png" type="image/png"/>
     </item>
     <item>
       <title>java基础</title>
