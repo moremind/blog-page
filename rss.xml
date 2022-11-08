@@ -6,8 +6,8 @@
     <link>https://www.moremind.cn/</link>
     <description>Stay Hungry, Stay Foolish!</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 06 Nov 2022 16:00:42 GMT</pubDate>
-    <lastBuildDate>Sun, 06 Nov 2022 16:00:42 GMT</lastBuildDate>
+    <pubDate>Tue, 08 Nov 2022 14:23:37 GMT</pubDate>
+    <lastBuildDate>Tue, 08 Nov 2022 14:23:37 GMT</lastBuildDate>
     <generator>@mr-hope/vuepress-plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>Copyright © 2017-present By Finen | Vuepress Theme By vuepress-theme-hope</copyright>
@@ -1950,7 +1950,173 @@ at java.lang.ClassLoader.defineClass(ClassLoader.java:763) ~[na:1.8.0_191]
 	104857600是字节单位
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><h4 id="_1-1-8-常用参数含义"> 1.1.8 常用参数含义</h4>
-<p><img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220309162923416.png" alt="image-20220309162923416" /></p>
+<p>JVM参数说明：<a href="https://www.oracle.com/java/technologies/javase/vmoptions-jsp.html" target="_blank" rel="noopener noreferrer">JVM参数</a></p>
+<ul>
+<li>调优堆栈内存-堆栈大小典型配置参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">配置参数</th>
+<th style="text-align:left">说明</th>
+<th style="text-align:left">示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>-Xmx</code></td>
+<td style="text-align:left">设置最大堆大小。</td>
+<td style="text-align:left"><code>-Xmx3550m</code>，设置JVM最大可用内存为3550 MB。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-Xms</code></td>
+<td style="text-align:left">设置JVM初始内存。</td>
+<td style="text-align:left"><code>-Xms3550m</code>，设置JVM初始内存为3550 MB。此值建议与<code>-Xmx</code>相同，避免每次垃圾回收完成后JVM重新分配内存。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-Xmn</code></td>
+<td style="text-align:left">设置年轻代大小。</td>
+<td style="text-align:left"><code>-Xmn2g</code>，设置年轻代大小为2 GB。整个JVM内存大小=年轻代大小+年老代大小+持久代大小。持久代一般固定大小为64 MB，所以增大年轻代后，将会减小年老代大小。此值对系统性能影响较大，Sun官方推荐配置为整个堆的3/8。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-Xss</code></td>
+<td style="text-align:left">设置线程的栈大小。</td>
+<td style="text-align:left"><code>-Xss128k</code>，设置每个线程的栈大小为128 KB。<strong>说明</strong> JDK 5.0版本以后每个线程栈大小为1 MB，JDK 5.0以前版本每个线程栈大小为256 KB。请依据应用的线程所需内存大小进行调整。在相同物理内存下，减小该值可以生成更多的线程。但是操作系统对一个进程内的线程个数有一定的限制，无法无限生成，一般在3000个~5000个。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-XX:NewRatio=n</code></td>
+<td style="text-align:left">设置年轻代和年老代的比值。</td>
+<td style="text-align:left"><code>-XX:NewRatio=4</code>，设置年轻代（包括Eden和两个Survivor区）与年老代的比值（除去持久代）。如果设置为4，那么年轻代与年老代所占比值为1:4，年轻代占整个堆栈的1/5。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-XX:SurvivorRatio=n</code></td>
+<td style="text-align:left">年轻代中Eden区与两个Survivor区的比值。</td>
+<td style="text-align:left"><code>-XX:SurvivorRatio=4</code>，设置年轻代中Eden区与Survivor区的大小比值。如果设置为4，那么两个Survivor区与一个Eden区的比值为2:4，一个Survivor区占整个年轻代的1/6。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-XX:MaxPermSize=n</code></td>
+<td style="text-align:left">设置持久代大小。</td>
+<td style="text-align:left"><code>-XX:MaxPermSize=16m</code>，设置持久代大小为16 MB。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-XX:MaxTenuringThreshold=n</code></td>
+<td style="text-align:left">设置垃圾最大年龄。</td>
+<td style="text-align:left"><code>-XX:MaxTenuringThreshold=0</code>，设置垃圾最大年龄。如果设置为0，那么年轻代对象不经过Survivor区，直接进入年老代。对于年老代比较多的应用，提高了效率。如果将此值设置为较大值，那么年轻代对象会在Survivor区进行多次复制，增加了对象在年轻代的存活时间，增加在年轻代即被回收的概率。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>调优回收器GC-吞吐量优先的GC典型配置参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">配置参数</th>
+<th style="text-align:left">说明</th>
+<th style="text-align:left">示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>-XX:+UseParallelGC</code></td>
+<td style="text-align:left">选择垃圾收集器为并行收集器。</td>
+<td style="text-align:left"><code>-Xmx3800m -Xms3800m -Xmn2g -Xss128k -XX:+UseParallelGC -XX:ParallelGCThreads=20</code>，<code>-XX:+UseParallelGC</code>此配置仅对年轻代有效，即在示例配置下，年轻代使用并发收集，而年老代仍旧使用串行收集。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-XX:ParallelGCThreads</code></td>
+<td style="text-align:left">配置并行收集器的线程数，即同时多少个线程一起进行垃圾回收。<strong>说明</strong> 此值建议配置与处理器数目相等。</td>
+<td style="text-align:left"><code>-Xmx3800m -Xms3800m -Xmn2g -Xss128k -XX:+UseParallelGC -XX:ParallelGCThreads=20</code>，<code>-XX:ParallelGCThreads=20</code>表示配置并行收集器的线程数为20个。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-XX:+UseParallelOldGC</code></td>
+<td style="text-align:left">配置年老代垃圾收集方式为并行收集。<strong>说明</strong> JDK 6.0支持对年老代并行收集。</td>
+<td style="text-align:left"><code>-Xmx3550m -Xms3550m -Xmn2g -Xss128k -XX:+UseParallelGC -XX:ParallelGCThreads=20 -XX:+UseParallelOldGC</code>，<code>-XX:+UseParallelOldGC</code>表示对年老代进行并行收集。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-XX:MaxGCPauseMillis</code></td>
+<td style="text-align:left">设置每次年轻代垃圾回收的最长时间，如果无法满足此时间，JVM会自动调整年轻代大小，以满足此值。</td>
+<td style="text-align:left"><code>-Xmx3550m -Xms3550m -Xmn2g -Xss128k -XX:+UseParallelGC -XX:MaxGCPauseMillis=100</code>，<code>-XX:MaxGCPauseMillis=100</code>设置每次年轻代垃圾回收的最长时间为100 ms。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-XX:+UseAdaptiveSizePolicy</code></td>
+<td style="text-align:left">设置此选项后，并行收集器自动选择年轻代区大小和相应的Survivor区比例，以达到目标系统规定的最低响应时该间或者收集频率，该值建议使用并行收集器时，并且一直打开。</td>
+<td style="text-align:left"><code>-Xmx3550m -Xms3550m -Xmn2g -Xss128k -XX:+UseParallelGC -XX:MaxGCPauseMillis=100 -XX:+UseAda</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应时间优先的GC典型配置参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">配置参数</th>
+<th style="text-align:left">说明</th>
+<th style="text-align:left">示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>-XX:+UseConcMarkSweepGC</code></td>
+<td style="text-align:left">设置年老代为并发收集。<strong>说明</strong> 配置了<code>-XX:+UseConcMarkSweepGC</code>，建议年轻代大小使用<code>-Xmn</code>设置。</td>
+<td style="text-align:left"><code>-Xmx3550m -Xms3550m -Xmn2g -Xss128k -XX:ParallelGCThreads=20 -XX:+UseConcMarkSweepGC -XX:+UseParNewGC</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-XX:+UseParNewGC</code></td>
+<td style="text-align:left">设置年轻代为并行收集。可与CMS收集同时使用。JDK 5.0以上版本，JVM根据系统配置自行设置，无需再设置此值。</td>
+<td style="text-align:left"><code>-Xmx3550m -Xms3550m -Xmn2g -Xss128k -XX:ParallelGCThreads=20 -XX:+UseConcMarkSweepGC -XX:+UseParNewGC</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-XX:CMSFullGCsBeforeCompaction</code></td>
+<td style="text-align:left">由于并发收集器不对内存空间进行压缩、整理，所以运行一段时间以后会产生“碎片”，使得运行效率降低。此值设置运行多少次GC以后对内存空间进行压缩、整理。</td>
+<td style="text-align:left"><code>-Xmx3550m -Xms3550m -Xmn2g -Xss128k -XX:+UseConcMarkSweepGC -XX:CMSFullGCsBeforeCompaction=5 -XX:+UseCMSCompactAtFullCollection</code>，<code>-XX:CMSFullGCsBeforeCompaction=5</code>，表示运行GC5次后对内存空间进行压缩、整理。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-XX:+UseCMSCompactAtFullCollection</code></td>
+<td style="text-align:left">打开对年老代的压缩。<strong>说明</strong> 该值可能会影响性能，但是可以消除碎片。</td>
+<td style="text-align:left"><code>-Xmx3550m -Xms3550m -Xmn2g -Xss128k -XX:+UseConcMarkSweepGC -XX:CMSFullGCsBeforeCompaction=5 -XX:+UseCMSCompactAtFullCollection</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>用于辅助的GC典型配置参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">配置参数</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>-XX:+PrintGC</code></td>
+<td style="text-align:left">用于输出GC日志。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-XX:+PrintGCDetails</code></td>
+<td style="text-align:left">用于输出GC日志。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-XX:+PrintGCTimeStamps</code></td>
+<td style="text-align:left">用于输出GC时间戳（JVM启动到当前日期的总时长的时间戳形式）。示例如下：<code>0.855: [GC (Allocation Failure) [PSYoungGen: 33280K-&gt;5118K(38400K)] 33280K-&gt;5663K(125952K), 0.0067629 secs] [Times: user=0.01 sys=0.01, real=0.00 secs]</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-XX:+PrintGCDateStamps</code></td>
+<td style="text-align:left">用于输出GC时间戳（日期形式）。示例如下：<code>2022-01-27T16:22:20.885+0800: 0.299: [GC pause (G1 Evacuation Pause) (young), 0.0036685 secs]</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-XX:+PrintHeapAtGC</code></td>
+<td style="text-align:left">在进行GC前后打印出堆的信息。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-Xloggc:../logs/gc.log</code></td>
+<td style="text-align:left">日志文件的输出路径。</td>
+</tr>
+</tbody>
+</table>
+<p>全部参数查看：https://www.oracle.com/java/technologies/javase/vmoptions-jsp.html
+<img src="https://new-blog-1251602255.cos.ap-shanghai.myqcloud.com/img/image-20220309162923416.png" alt="image-20220309162923416" /></p>
 <h2 id="_1-2-常用命令"> 1.2 常用命令</h2>
 <h3 id="_1-2-1-jps"> 1.2.1 jps</h3>
 <blockquote>
