@@ -6,8 +6,8 @@
     <link>https://www.moremind.cn/</link>
     <description>Stay Hungry, Stay Foolish!</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 08 Nov 2022 16:28:55 GMT</pubDate>
-    <lastBuildDate>Tue, 08 Nov 2022 16:28:55 GMT</lastBuildDate>
+    <pubDate>Wed, 09 Nov 2022 02:16:55 GMT</pubDate>
+    <lastBuildDate>Wed, 09 Nov 2022 02:16:55 GMT</lastBuildDate>
     <generator>@mr-hope/vuepress-plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>Copyright © 2017-present By Finen | Vuepress Theme By vuepress-theme-hope</copyright>
@@ -636,7 +636,7 @@ JVM 内存分析图</p>
     <span>}</span>
 <span>}</span>
 </code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div><h3 id="_4-使用建议"> 4.使用建议</h3>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div><h2 id="_4-使用建议"> 4.使用建议</h2>
 <ul>
 <li>推荐使用Boolean.TRUE或Boolean.valueOf(true)或Boolean.valueOf(&quot;true&quot;)，避免重复创建对象</li>
 <li>两个值进行比较时，使用Boolean.TRUE.equals(xxx)进行判断</li>
