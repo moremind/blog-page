@@ -6,7 +6,7 @@
   <author>
     <name>Moremind</name>
   </author>
-  <updated>2022-11-14T05:20:58.148Z</updated>
+  <updated>2022-11-14T05:21:24.783Z</updated>
   <generator>@mr-hope/vuepress-plugin-feed</generator>
   <link rel="self" href="https://www.moremind.cn/atom.xml"/>
   <link rel="alternate" href="https://www.moremind.cn/"/>
@@ -3810,7 +3810,7 @@ concurrentMap.put(&quot;3&quot;, &quot;three&quot;);
     <title type="html">分布式基础-共识、线性一致性与顺序一致性</title>
     <id>https://www.moremind.cn/md/middleware/distributed-design/CAP%E7%90%86%E8%AE%BA-%E5%85%B1%E8%AF%86%E3%80%81%E7%BA%BF%E6%80%A7%E4%B8%80%E8%87%B4%E6%80%A7%E3%80%81%E9%A1%BA%E5%BA%8F%E4%B8%80%E8%87%B4%E6%80%A7/</id>
     <link href="https://www.moremind.cn/md/middleware/distributed-design/CAP%E7%90%86%E8%AE%BA-%E5%85%B1%E8%AF%86%E3%80%81%E7%BA%BF%E6%80%A7%E4%B8%80%E8%87%B4%E6%80%A7%E3%80%81%E9%A1%BA%E5%BA%8F%E4%B8%80%E8%87%B4%E6%80%A7/"/>
-    <updated>2022-11-14T05:20:28.000Z</updated>
+    <updated>2022-11-14T05:20:57.000Z</updated>
     <content type="html"><![CDATA[<h2 id="说明"> 说明</h2>
 <p>本文部分内容来自于：https://segmentfault.com/a/1190000022248118###</p>
 <p>本文将会根据该文章适当增减内容！</p>
@@ -4065,7 +4065,7 @@ D:                 -R(x,1)-      --R(x,2)--
 <p>ACID 是处理事务的原则，限定了原子性、一致性、隔离性、持久性。ACID、CAP、BASE这些都只是理论，只是在实现时的目标或者折中，ACID 专注于分布式事务，CAP 和 BASE是分布式通用理论。</p>
 <p>解决分布式事务时有 2pc、3pc、tcc 等方式，通过增加协调者来进行协商，里面也有最终一致的思想。</p>
 <p>而Paxos协议与分布式事务并不是同一层面的东西，Paxos用于解决多个副本之间的一致性问题。比如日志同步，保证各个节点的日志一致性，选主的唯一性。简而言之，2PC用于保证多个数据分片上事务的原子性，Paxos协议用于保证同一个数据分片在多个副本的一致性，所以两者可以是互补的关系，不是替代关系。对于2PC协调者单点问题，可以利用Paxos协议解决，当协调者出问题时，选一个新的协调者继续提供服务。原理上Paxos和 2PC相似，但目的上是不同的。etcd 中也有事务的操作，比如迷你事务</p>
-<h3 id="_3-参考"> 3.参考</h3>
+<h2 id="_3-参考"> 3.参考</h2>
 <ul>
 <li>https://zhuanlan.zhihu.com/p/27360832</li>
 <li>https://www.itcodemonkey.com/article/3932.html</li>
