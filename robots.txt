@@ -2,4 +2,4 @@
 User-agent:*
 Disallow:
 
-Sitemap: https://www.moremind.cn/sitemap.xml
+Sitemap: https://moremind.cn/sitemap.xml
