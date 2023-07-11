@@ -1,1 +1,0 @@
-import{_ as e}from"./plugin-vue_export-helper-c27b6911.js";import{o as c,c as o}from"./app-9b1c5904.js";const r={};function t(n,_){return c(),o("div")}const a=e(r,[["render",t],["__file","spring-ioc.html.vue"]]);export{a as default};
