@@ -1,0 +1,1 @@
+import{_ as t}from"./app-9c62f8e6.js";const n=async()=>{try{const{pageviewCount:e}=await t(()=>import("./app-9c62f8e6.js").then(r=>r.ak),[]);return e({serverURL:"https://comment.moremind.cn/"})}catch{console.error("@waline/client is not installed!");return}};export{n as updatePageview};
